@@ -1,0 +1,6 @@
+{
+  "artifacts": [
+    "max_scale_search_eval.json"
+  ],
+  "gate": "M3"
+}

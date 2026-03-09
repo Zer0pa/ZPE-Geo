@@ -1,0 +1,20 @@
+{
+  "p_at_10_mean": 1.0,
+  "pass": true,
+  "queries": {
+    "lane_merge": {
+      "latency_ms": 0.0010000003385357559,
+      "p_at_10": 1.0
+    },
+    "left_turn": {
+      "latency_ms": 0.002792003215290606,
+      "p_at_10": 1.0
+    },
+    "stop": {
+      "latency_ms": 0.0005420006345957518,
+      "p_at_10": 1.0
+    }
+  },
+  "threshold": 0.9,
+  "trajectory_count": 210
+}

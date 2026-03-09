@@ -1,0 +1,72 @@
+{
+  "claim_links": {
+    "GEO-C001": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "FAIL_FULL_CORPUS_NOT_EXECUTED",
+      "resources": [
+        "argoverse2"
+      ]
+    },
+    "GEO-C002": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "FAIL_FULL_CORPUS_NOT_EXECUTED",
+      "resources": [
+        "argoverse2",
+        "noaa_ais"
+      ]
+    },
+    "GEO-C003": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "desi_dr1"
+      ]
+    },
+    "GEO-C004": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "FAIL_FULL_CORPUS_NOT_EXECUTED",
+      "resources": [
+        "argoverse2",
+        "noaa_ais"
+      ]
+    },
+    "GEO-C005": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "noaa_gfs_aws"
+      ]
+    },
+    "GEO-C006": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "noaa_gfs_aws"
+      ]
+    },
+    "GEO-C007": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "desi_dr1"
+      ]
+    },
+    "GEO-C008": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "desi_dr1",
+        "autoware_runtime"
+      ]
+    }
+  },
+  "generated_at_utc": "2026-02-21T11:45:19+00:00",
+  "policy_note": "Appendix D7 requires full-corpus evidence; subset-only evidence cannot produce max-wave PASS for linked claims.",
+  "resource_status": {
+    "argoverse2": "ATTEMPTED",
+    "autoware_runtime": "PASS",
+    "desi_dr1": "ATTEMPTED",
+    "noaa_ais": "ATTEMPTED",
+    "noaa_gfs_aws": "ATTEMPTED"
+  }
+}

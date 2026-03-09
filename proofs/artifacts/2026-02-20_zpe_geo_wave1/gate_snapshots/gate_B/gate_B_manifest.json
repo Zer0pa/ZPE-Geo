@@ -1,0 +1,7 @@
+{
+  "artifacts": [
+    "geo_av_fidelity.json",
+    "geo_ais_fidelity.json"
+  ],
+  "gate": "B"
+}

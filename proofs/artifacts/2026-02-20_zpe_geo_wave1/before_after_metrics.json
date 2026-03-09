@@ -1,0 +1,26 @@
+{
+  "after": {
+    "ais_compression_ratio_mean": 450.8342525114636,
+    "ais_dtw_m_mean": 2.618543379980688,
+    "av_compression_ratio_mean": 123.0687903320822,
+    "av_rmse_m_mean": 0.8232161704426284,
+    "h3_roundtrip_consistent": true,
+    "maneuver_p_at_10_mean": 1.0,
+    "query_latency_ms_p95": 0.06437499541789293,
+    "stream_encode_latency_ms_p95": 0.12236269540153433
+  },
+  "before": {
+    "state": "UNTESTED",
+    "summary": "No code/runbooks/artifacts in lane at start (per PRD Section 2)."
+  },
+  "deltas_vs_threshold": {
+    "ais_cr_headroom_x": 18.033370100458544,
+    "ais_dtw_margin_m": 47.381456620019314,
+    "av_cr_headroom_x": 6.15343951660411,
+    "av_rmse_margin_m": 0.1767838295573716,
+    "query_latency_headroom_x": 15533.981688207647,
+    "search_margin": 0.09999999999999998,
+    "stream_latency_headroom_x": 81.72425400719482
+  },
+  "generated_at_utc": "2026-02-21T10:36:21+00:00"
+}

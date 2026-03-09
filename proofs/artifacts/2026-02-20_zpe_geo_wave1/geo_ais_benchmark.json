@@ -1,0 +1,21 @@
+{
+  "beat_dp": true,
+  "comparators": {
+    "acm_2025_framing": {
+      "paper_reference": "https://dl.acm.org/doi/10.1145/3764920.3770598",
+      "positioning": "In-lane benchmark includes incumbent DP baseline; direct paper dataset parity remains INCONCLUSIVE without supplementary dataset alignment."
+    },
+    "douglas_peucker": {
+      "avg_length_loss_ratio": 5.621962055001879e-05,
+      "compression_ratio_mean": 314.82616296757936,
+      "encoded_size_mean_bytes": 90.4421052631579
+    }
+  },
+  "compression_ratio_mean": 450.8342525114636,
+  "compression_ratio_median": 475.3225806451613,
+  "compression_ratio_p95": 706.375,
+  "encoded_size_mean_bytes": 55.4,
+  "pass": true,
+  "threshold": 25.0,
+  "trajectory_count": 190
+}

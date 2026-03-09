@@ -1,0 +1,9 @@
+{
+  "compression_ratio_mean": 123.0687903320822,
+  "compression_ratio_median": 107.38983050847457,
+  "compression_ratio_p95": 153.0566037735849,
+  "encoded_size_mean_bytes": 61.6,
+  "pass": true,
+  "threshold": 20.0,
+  "trajectory_count": 210
+}

@@ -1,0 +1,8 @@
+{
+  "artifacts": [
+    "autoware_version_matrix.json",
+    "autoware_smoke_results.json",
+    "impracticality_decisions.json"
+  ],
+  "gate": "M2"
+}

@@ -1,0 +1,10 @@
+{
+  "artifacts": [
+    "max_resource_lock.json",
+    "dataset_subset_coverage_report.json",
+    "trajectory_stratified_error_report.json",
+    "impracticality_decisions.json",
+    "h3_resolution_sweep_pack.json"
+  ],
+  "gate": "M1"
+}

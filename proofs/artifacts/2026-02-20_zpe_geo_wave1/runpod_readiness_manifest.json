@@ -1,0 +1,41 @@
+{
+  "command_chain": [
+    "set -euo pipefail",
+    "python3 -m pip install -r runpod_requirements_lock.txt",
+    "python3 scripts/gate_m1_max_resources.py",
+    "python3 scripts/gate_m2_autoware_attempt.py",
+    "python3 scripts/gate_m3_scale_search.py",
+    "python3 scripts/gate_m4_risk_closure.py",
+    "python3 scripts/gate_e_netnew_package.py"
+  ],
+  "deferred_tasks": [
+    "Autoware runtime smoke with ROS2 Humble + colcon",
+    "Full-corpus AV2 + NOAA AIS replay batches",
+    "Large-scale NOAA GFS archive replay"
+  ],
+  "expected_artifacts": [
+    "max_resource_lock.json",
+    "dataset_subset_coverage_report.json",
+    "trajectory_stratified_error_report.json",
+    "autoware_smoke_results.json",
+    "max_scale_search_eval.json",
+    "net_new_gap_closure_matrix.json",
+    "max_claim_resource_map.json",
+    "max_gate_matrix.json"
+  ],
+  "generated_at_utc": "2026-02-21T10:36:22+00:00",
+  "hardware_profile": {
+    "gpu": "NVIDIA A100/B200 class",
+    "ram_gb_min": 64,
+    "storage_gb_min": 300
+  },
+  "lockfile": "runpod_requirements_lock.txt",
+  "required": true,
+  "seed_policy": {
+    "adversarial_seed": 20260223,
+    "ais_seed": 20260222,
+    "av_seed": 20260221,
+    "master_seed": 20260220
+  },
+  "trigger_code": "IMP-COMPUTE"
+}

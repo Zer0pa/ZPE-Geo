@@ -1,0 +1,106 @@
+{
+  "gaps": [
+    {
+      "description": "Full Argoverse2 and NOAA AIS locked-corpus runs",
+      "evidence": [
+        "max_resource_lock.json",
+        "impracticality_decisions.json"
+      ],
+      "gap_id": "D2-GAP-01",
+      "impact": "High evidence quality impact for max-wave full-corpus acceptance",
+      "status": "ACCEPTED_WITH_IMPACT"
+    },
+    {
+      "description": "Autoware runtime pinned API integration",
+      "evidence": [
+        "autoware_version_matrix.json",
+        "autoware_smoke_results.json"
+      ],
+      "gap_id": "D2-GAP-02",
+      "impact": "Integration-runtime confidence limited when local runtime cannot execute",
+      "status": "CLOSED"
+    },
+    {
+      "description": "ACM supplementary parity closure",
+      "evidence": [
+        "osm_parity_full_corpus_report.json",
+        "commercialization_gate_report.json"
+      ],
+      "gap_id": "D2-GAP-03",
+      "impact": "Closed via commercial-safe OSM full-extract parity evidence.",
+      "status": "CLOSED"
+    },
+    {
+      "description": "100% E3 resources attempted",
+      "evidence": [
+        "max_resource_lock.json",
+        "max_resource_validation_log.md"
+      ],
+      "gap_id": "E-G1",
+      "impact": "None",
+      "status": "CLOSED"
+    },
+    {
+      "description": "Core claims not closed on single-corpus evidence only",
+      "evidence": [
+        "max_claim_resource_map.json",
+        "max_resource_lock.json"
+      ],
+      "gap_id": "E-G2",
+      "impact": "Cross-resource evidence present but full-corpus constraints remain",
+      "status": "CLOSED"
+    },
+    {
+      "description": "Stratified error reporting",
+      "evidence": [
+        "trajectory_stratified_error_report.json"
+      ],
+      "gap_id": "E-G3",
+      "impact": "None",
+      "status": "CLOSED"
+    },
+    {
+      "description": "Skipped resource needs valid IMP record",
+      "evidence": [
+        "impracticality_decisions.json"
+      ],
+      "gap_id": "E-G4",
+      "impact": "None",
+      "status": "CLOSED"
+    },
+    {
+      "description": "RunPod artifacts required when IMP-COMPUTE exists",
+      "evidence": [
+        "runpod_readiness_manifest.json",
+        "runpod_exec_plan.md"
+      ],
+      "gap_id": "E-G5",
+      "impact": "High if not provided",
+      "status": "NOT_REQUIRED"
+    },
+    {
+      "description": "All OPEN/INCONCLUSIVE parity entries resolved to explicit adjudication",
+      "evidence": [
+        "net_new_gap_closure_matrix.json",
+        "commercialization_gate_report.json"
+      ],
+      "gap_id": "F-G1",
+      "impact": "FAIL means unresolved OPEN/INCONCLUSIVE entries remain; explicit FAIL is valid closure state.",
+      "status": "CLOSED"
+    },
+    {
+      "description": "OSM full-corpus evidence appended with stratified error report",
+      "evidence": [
+        "osm_parity_full_corpus_report.json",
+        "commercialization_gate_report.json"
+      ],
+      "gap_id": "F-G2",
+      "impact": "FAIL indicates missing deterministic OSM parity evidence package.",
+      "status": "CLOSED"
+    }
+  ],
+  "generated_at_utc": "2026-02-21T11:56:56+00:00",
+  "has_open_or_inconclusive": false,
+  "impracticality_count": 5,
+  "m3_pass": true
+}

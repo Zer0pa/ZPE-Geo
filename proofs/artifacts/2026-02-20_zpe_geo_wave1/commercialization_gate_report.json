@@ -1,0 +1,41 @@
+{
+  "acm_supplementary_parity": {
+    "alternative": "OpenStreetMap full-extract parity benchmark",
+    "commercial_safe_alternative_used": true,
+    "evidence": [
+      "osm_parity_full_corpus_report.json",
+      "max_resource_lock.json"
+    ],
+    "reason": "Closed via commercial-safe OSM full-extract parity evidence.",
+    "status": "CLOSED"
+  },
+  "commercialization_rule": "If only restricted assets exist and no commercial-safe alternative exists, set PAUSED_EXTERNAL.",
+  "generated_at_utc": "2026-02-21T11:56:56+00:00",
+  "paused_external_resources": [],
+  "resources": [
+    {
+      "commercial_safe": true,
+      "evidence": "osm_parity_full_corpus_report.json",
+      "license": "ODbL-1.0",
+      "name": "OpenStreetMap extract"
+    },
+    {
+      "commercial_safe": true,
+      "evidence": "max_resource_lock.json",
+      "license": "Apache-2.0",
+      "name": "Argoverse2 Motion Forecasting"
+    },
+    {
+      "commercial_safe": true,
+      "evidence": "max_resource_lock.json",
+      "license": "US Government Open Data",
+      "name": "NOAA AIS/GFS"
+    },
+    {
+      "commercial_safe": true,
+      "evidence": "max_resource_lock.json",
+      "license": "Public release docs",
+      "name": "DESI DR1 sample"
+    }
+  ]
+}

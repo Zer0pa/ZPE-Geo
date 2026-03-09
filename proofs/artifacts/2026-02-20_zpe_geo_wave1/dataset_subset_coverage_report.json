@@ -1,0 +1,56 @@
+{
+  "generated_at_utc": "2026-02-21T10:26:49+00:00",
+  "representativeness_notes": {
+    "argoverse2": "Focal parquet subset covers thousands of focal trajectories but not full train.tar.",
+    "desi_dr1": "Exposure-level subset used as 3D proxy path stress.",
+    "noaa_ais": "Single-day streamed subset covers multiple vessel classes; full-year replay deferred.",
+    "noaa_gfs_aws": "Three-cycle weather subset used for reproducible stress, not full archive."
+  },
+  "resources": {
+    "argoverse2": {
+      "full_corpus_size_bytes": 50873856000,
+      "sample_path": "data/external_samples/av2_mf_focal_test_annotations.parquet",
+      "sha256": "46affe01a7998cb0da9ad1de3673446078abbcc06714248b169ee24b1a595a89",
+      "source_url": "https://s3.amazonaws.com/argoverse/datasets/av2/motion-forecasting/av2_mf_focal_test_annotations.parquet",
+      "subset_policy": "focal parquet subset up to 2000 tracks",
+      "subset_trajectories": 2000
+    },
+    "desi_dr1": {
+      "full_corpus_scale_note": "DR1 ecosystem is far larger than local subset; concept pack references 270TB class scale.",
+      "sample_path": "data/external_samples/desi_exposures_iron.csv",
+      "sha256": "f49d3438f0c44f4f176d8adc35bb566aa45e4615c1410001e2c78cd98ca5e2ab",
+      "source_url": "https://data.desi.lbl.gov/public/dr1/spectro/redux/iron/exposures-iron.csv",
+      "subset_rows": 9176,
+      "subset_trajectories": 2
+    },
+    "noaa_ais": {
+      "full_corpus_2025_size_gb": 61.0,
+      "source_url": "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2025/ais-2025-01-01.csv.zst",
+      "subset_policy": "Stream-first 300k rows, max 450 tracks, max 260 points/track",
+      "subset_rows_streamed": 300000,
+      "subset_trajectories": 450
+    },
+    "noaa_gfs_aws": {
+      "files": [
+        {
+          "bytes": 41528902,
+          "path": "data/external_samples/gfs.t00z.pgrb2.1p00.f000",
+          "sha256": "edaf4b30f5723f8c144a3d6af1d153024e8de266800b64e1b06a23d43f6bd3c9"
+        },
+        {
+          "bytes": 44085629,
+          "path": "data/external_samples/gfs.t00z.pgrb2.1p00.f003",
+          "sha256": "da39a10bfcf8f345e282766e84da29ac9ce613c0608f9b46e02def9b790e9fdd"
+        },
+        {
+          "bytes": 44614098,
+          "path": "data/external_samples/gfs.t00z.pgrb2.1p00.f006",
+          "sha256": "fe6ef66ad679c6d75dd1a4ea6d66acbc8953c677751750b48c5b942f71fcde58"
+        }
+      ],
+      "full_corpus_scale_note": "petabyte-scale archive (registry reference)",
+      "source_base": "https://noaa-gfs-bdp-pds.s3.amazonaws.com/gfs.20260220/00/atmos",
+      "subset_trajectories": 1
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "created_at_utc": "2026-02-21T10:25:00+00:00",
+  "schemas": {
+    "ais_trajectory": {
+      "point_fields": [
+        "t",
+        "lat",
+        "lon",
+        "speed",
+        "cog",
+        "timestamp_iso",
+        "mmsi"
+      ],
+      "required_fields": [
+        "trajectory_id",
+        "domain",
+        "coord_system",
+        "label",
+        "points"
+      ]
+    },
+    "av_trajectory": {
+      "point_fields": [
+        "t",
+        "x",
+        "y",
+        "speed",
+        "cog"
+      ],
+      "required_fields": [
+        "trajectory_id",
+        "domain",
+        "coord_system",
+        "label",
+        "points"
+      ]
+    },
+    "integration_contract": {
+      "fields": [
+        "movingpandas_adapter",
+        "autoware_plugin_stub",
+        "schema_version",
+        "status"
+      ]
+    },
+    "search_index_row": {
+      "fields": [
+        "trajectory_id",
+        "ground_truth",
+        "scores"
+      ]
+    },
+    "zpgeo_payload": {
+      "fields": [
+        "coord_flag",
+        "quant_step_cm",
+        "start_t",
+        "sample_dt_ms",
+        "step_count",
+        "run_count",
+        "origin",
+        "runs"
+      ],
+      "magic": "ZPGEO1",
+      "version": 1
+    }
+  }
+}

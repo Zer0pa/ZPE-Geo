@@ -1,0 +1,13 @@
+{
+  "artifacts": [
+    "max_resource_lock.json",
+    "max_resource_validation_log.md",
+    "max_claim_resource_map.json",
+    "impracticality_decisions.json",
+    "dataset_subset_coverage_report.json",
+    "trajectory_stratified_error_report.json",
+    "net_new_gap_closure_matrix.json",
+    "max_gate_matrix.json"
+  ],
+  "gate": "E2"
+}

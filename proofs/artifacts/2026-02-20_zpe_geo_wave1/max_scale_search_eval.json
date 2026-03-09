@@ -1,0 +1,29 @@
+{
+  "cohorts": {
+    "av2_subset_count": 1400,
+    "av_fixture_count": 210,
+    "total_indexed": 1610
+  },
+  "generated_at_utc": "2026-02-21T11:45:18+00:00",
+  "latency_ms_p95": 0.4645420049200766,
+  "p_at_10_mean": 1.0,
+  "pass": true,
+  "queries": {
+    "lane_merge": {
+      "latency_ms": 0.41554200288373977,
+      "p_at_10": 1.0
+    },
+    "left_turn": {
+      "latency_ms": 0.5726250019506551,
+      "p_at_10": 1.0
+    },
+    "stop": {
+      "latency_ms": 0.36495799577096477,
+      "p_at_10": 1.0
+    }
+  },
+  "thresholds": {
+    "latency_ms_p95_max": 1000.0,
+    "p_at_10_min": 0.9
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "indexed_trajectories": 210,
+  "pass": true,
+  "query_latency_ms_mean": 0.04011551383074321,
+  "query_latency_ms_p95": 0.06437499541789293,
+  "simulated_corpus": {
+    "indexed_count": 210,
+    "replication_factor": 47620,
+    "simulated_total": 10000200,
+    "target_count": 10000000
+  },
+  "threshold_s": 1.0
+}

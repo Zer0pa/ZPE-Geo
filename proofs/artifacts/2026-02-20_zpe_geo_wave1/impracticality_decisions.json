@@ -1,0 +1,52 @@
+{
+  "allowed_codes": [
+    "IMP-LICENSE",
+    "IMP-ACCESS",
+    "IMP-COMPUTE",
+    "IMP-STORAGE",
+    "IMP-NOCODE"
+  ],
+  "decisions": [
+    {
+      "claim_impact_note": "Max-wave full-corpus closure for GEO-C001..C004 remains INCONCLUSIVE pending RunPod batch replay.",
+      "command_evidence": "curl -I https://s3.amazonaws.com/argoverse/datasets/av2/tars/motion-forecasting/train.tar",
+      "error_signature": "Content-Length=50873856000 bytes exceeds local lane practical storage budget for this run.",
+      "fallback": "Use locked focal parquet subset + fixture-backed stress and prepare RunPod full replay plan.",
+      "impracticality_code": "IMP-STORAGE",
+      "resource": "Argoverse2 full-corpus train.tar run"
+    },
+    {
+      "claim_impact_note": "Max-wave full-corpus closure remains INCONCLUSIVE for GEO-C002/C004.",
+      "command_evidence": "curl -I https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2025/",
+      "error_signature": "Published full-year size is 61.0GB; full replay impractical in local lane cycle window.",
+      "fallback": "Use deterministic streamed subset with coverage report and RunPod full replay plan.",
+      "impracticality_code": "IMP-STORAGE",
+      "resource": "NOAA AIS full-year corpus replay"
+    },
+    {
+      "claim_impact_note": "Max-wave scale closure for GEO-C005/C006 remains INCONCLUSIVE pending large replay.",
+      "command_evidence": "curl -I https://registry.opendata.aws/noaa-gfs-bdp-pds/",
+      "error_signature": "Resource is petabyte-scale; local full replay impractical in lane window.",
+      "fallback": "Use deterministic 3-file subset and RunPod scale plan.",
+      "impracticality_code": "IMP-STORAGE",
+      "resource": "NOAA GFS full-corpus replay"
+    },
+    {
+      "claim_impact_note": "Max-wave closure for GEO-C003/C007/C008 remains INCONCLUSIVE until large-scale run.",
+      "command_evidence": "curl -I https://data.desi.lbl.gov/doc/releases/edr/",
+      "error_signature": "Full DESI corpus scale exceeds local lane storage/time envelope.",
+      "fallback": "Use exposure CSV subset + 3D proxy stress and RunPod full replay plan.",
+      "impracticality_code": "IMP-STORAGE",
+      "resource": "DESI DR1 full-corpus replay"
+    },
+    {
+      "claim_impact_note": "CARLA-native stress evidence remains INCONCLUSIVE for maximalization.",
+      "command_evidence": "python3 -m pip install --quiet --target third_party carla",
+      "error_signature": "  error: subprocess-exited-with-error\n  \n  \u00d7 Getting requirements to build wheel did not run successfully.\n  \u2502 exit code: 1\n  \u2570\u2500> [24 lines of output]\n      Traceback (most recent call last):\n        File \"/usr/local/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 389, in <module>\n          main()\n          ~~~~^^\n        File \"/usr/local/lib/python3.14/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py\", line 373, in main\n          js",
+      "fallback": "Fallback to deterministic CARLA-profile synthetic stress path (already in DT-GEO-2).",
+      "impracticality_code": "IMP-NOCODE",
+      "resource": "CARLA runtime stress battery"
+    }
+  ],
+  "generated_at_utc": "2026-02-21T11:56:56+00:00"
+}

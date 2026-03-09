@@ -1,0 +1,62 @@
+{
+  "domains": {
+    "argoverse2": {
+      "compression_ratio_mean": 37.079865352236396,
+      "rmse_mean": 3.4757320454313305,
+      "rmse_p95": 13.423325507745322,
+      "stratified_rmse": {
+        "len_40_99": {
+          "count": 1200,
+          "rmse_mean": 3.4757320454313305
+        }
+      },
+      "trajectory_count": 1200
+    },
+    "desi_dr1": {
+      "compression_ratio_mean": 30.638297872340427,
+      "rmse_mean": 0.0,
+      "rmse_p95": 0.0,
+      "stratified_rmse": {
+        "len_lt_40": {
+          "count": 2,
+          "rmse_mean": 0.0
+        }
+      },
+      "trajectory_count": 2,
+      "z_dimension_status": "INCONCLUSIVE_2D_CODEC_WITH_3D_PROXY_INPUT"
+    },
+    "noaa_ais": {
+      "compression_ratio_mean": 37.851998476042034,
+      "dtw_mean_m": 209.44920373931032,
+      "dtw_p95_m": 1197.4184004401327,
+      "stratified_dtw_m": {
+        "speed_2_8": {
+          "count": 81,
+          "dtw_mean_m": 233.7450195337235
+        },
+        "speed_ge_8": {
+          "count": 55,
+          "dtw_mean_m": 889.1860497024858
+        },
+        "speed_lt_2": {
+          "count": 214,
+          "dtw_mean_m": 25.55440183593594
+        }
+      },
+      "trajectory_count": 350
+    },
+    "noaa_gfs_weather_track": {
+      "compression_ratio_mean": 7.215686274509804,
+      "dtw_mean_m": 1530.887345680083,
+      "dtw_p95_m": 1530.887345680083,
+      "stratified_dtw_m": {
+        "speed_lt_2": {
+          "count": 1,
+          "dtw_mean_m": 1530.887345680083
+        }
+      },
+      "trajectory_count": 1
+    }
+  },
+  "generated_at_utc": "2026-02-21T10:26:49+00:00"
+}

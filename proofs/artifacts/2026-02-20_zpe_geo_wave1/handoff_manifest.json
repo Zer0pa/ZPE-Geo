@@ -1,0 +1,175 @@
+{
+  "artifact_root": "artifacts/2026-02-20_zpe_geo_wave1",
+  "claim_statuses": {
+    "GEO-C001": {
+      "evidence": "geo_av_benchmark.json",
+      "status": "PASS"
+    },
+    "GEO-C002": {
+      "evidence": "geo_ais_benchmark.json",
+      "status": "PASS"
+    },
+    "GEO-C003": {
+      "evidence": "geo_av_fidelity.json",
+      "status": "PASS"
+    },
+    "GEO-C004": {
+      "evidence": "geo_ais_fidelity.json",
+      "status": "PASS"
+    },
+    "GEO-C005": {
+      "evidence": "geo_maneuver_search_eval.json",
+      "status": "PASS"
+    },
+    "GEO-C006": {
+      "evidence": "geo_query_latency_benchmark.json",
+      "status": "PASS"
+    },
+    "GEO-C007": {
+      "evidence": "geo_stream_latency.json",
+      "status": "PASS"
+    },
+    "GEO-C008": {
+      "backend": "official_h3",
+      "evidence": "geo_h3_roundtrip_results.json",
+      "status": "PASS"
+    }
+  },
+  "file_hashes": {
+    "before_after_metrics.json": {
+      "bytes": 914,
+      "sha256": "6b523796b70760502fe35bbf8b19c8ccff0058978d1d35695c7718f13aa60715"
+    },
+    "claim_status_delta.md": {
+      "bytes": 755,
+      "sha256": "9d584bacde748792af283e668c9191e24e96131a8854c637fdbf2584a97d04e1"
+    },
+    "command_log.txt": {
+      "bytes": 8320,
+      "sha256": "08f49a62147c4c2fe2ac35ce580f0c6444458a03f77245d7937a9b57c005501e"
+    },
+    "concept_open_questions_resolution.md": {
+      "bytes": 1291,
+      "sha256": "3c20bac42a6e06aa189084b35dfc1b73819cdcfcbf58d3fe09a3b47346affcc0"
+    },
+    "concept_resource_traceability.json": {
+      "bytes": 2613,
+      "sha256": "03d8b37daf18b0bb6c802e80506f1af29f8e65ca1d496309c23f982da36b3c05"
+    },
+    "determinism_replay_results.json": {
+      "bytes": 1354,
+      "sha256": "f864f105ebfaa905ff69e729ada159790eec1c89ee90a8abc8e5e5364c2b1b3d"
+    },
+    "falsification_results.md": {
+      "bytes": 369,
+      "sha256": "8bcd9e55a36831aa46292fc4ff09bf054411d42657cdeb99940b835db3070fbe"
+    },
+    "geo_ais_benchmark.json": {
+      "bytes": 735,
+      "sha256": "58e12889476f139ed99c25e980c27193ee9ddbd786adbf684fb381a2b12a724a"
+    },
+    "geo_ais_fidelity.json": {
+      "bytes": 188,
+      "sha256": "ac8c024d3be81daed0bb6ab7677497372887483c57932459e42bd8d4c5e81b6e"
+    },
+    "geo_av_benchmark.json": {
+      "bytes": 245,
+      "sha256": "e0145c0d160d4e3694ac8c8960170aa23c7707e2727486096ae7c320f303d1b2"
+    },
+    "geo_av_fidelity.json": {
+      "bytes": 194,
+      "sha256": "d48aed3e4b1b76d4c90b904a40393199be7e17cfaabe5479bc9312fd6d3ce9b0"
+    },
+    "geo_h3_roundtrip_results.json": {
+      "bytes": 148,
+      "sha256": "221e439d07eda384659cc72bd8e49f3c1c553ab37660008eceaff233353ba244"
+    },
+    "geo_maneuver_search_eval.json": {
+      "bytes": 373,
+      "sha256": "7184d292a2a92df3b8a1bdaa14469972d675a79001df97375492dd23198884c2"
+    },
+    "geo_query_latency_benchmark.json": {
+      "bytes": 317,
+      "sha256": "10ae935963dc502732953b8c8be95e23b77aad3786768e50f0971ebd156caa9d"
+    },
+    "geo_stream_latency.json": {
+      "bytes": 246,
+      "sha256": "cdab2356270183382a8a2ed5c542c3b54d5ff1af562e71080e5f6333b54c27af"
+    },
+    "innovation_delta_report.md": {
+      "bytes": 619,
+      "sha256": "9d91499bd30bc2fce313cf9cb3355daa5880f1166d6a683b7792f94cb520fbb3"
+    },
+    "integration_readiness_contract.json": {
+      "bytes": 999,
+      "sha256": "63559b1cb978068e17cf076a5a9c4b93a0df042333c1edd4178523b3635c476b"
+    },
+    "quality_gate_scorecard.json": {
+      "bytes": 809,
+      "sha256": "5a1f3fee950a9c2d20e2d4a6dfa714429abe4d7cad1f5610bbeda1c322d308d8"
+    },
+    "regression_results.txt": {
+      "bytes": 103,
+      "sha256": "1df0dc843fbde79fd29b1d33831815ffd9089eb1b69f6ce31856db5fb25a1765"
+    },
+    "residual_risk_register.md": {
+      "bytes": 615,
+      "sha256": "cb5aa7db802463a545583b0e715cfec2e1d6d07a86cc4456839de2c88c837532"
+    }
+  },
+  "generated_at_utc": "2026-02-21T11:56:56+00:00",
+  "max_wave_files": [
+    "commercialization_gate_report.json",
+    "dataset_subset_coverage_report.json",
+    "impracticality_decisions.json",
+    "max_claim_resource_map.json",
+    "max_gate_matrix.json",
+    "max_resource_lock.json",
+    "max_resource_validation_log.md",
+    "net_new_gap_closure_matrix.json",
+    "osm_parity_full_corpus_report.json",
+    "runpod_exec_plan.md",
+    "runpod_readiness_manifest.json",
+    "runpod_requirements_lock.txt",
+    "trajectory_stratified_error_report.json"
+  ],
+  "max_wave_gate_matrix": {
+    "E-G1": true,
+    "E-G2": true,
+    "E-G3": true,
+    "E-G4": true,
+    "E-G5": true,
+    "F-G1": true,
+    "F-G2": true,
+    "M1": true,
+    "M2": true,
+    "M3": true,
+    "M4": true,
+    "generated_at_utc": "2026-02-21T11:56:56+00:00"
+  },
+  "max_wave_overall_go": true,
+  "missing_files": [],
+  "quality_gate_overall_pass": true,
+  "required_files": [
+    "before_after_metrics.json",
+    "claim_status_delta.md",
+    "command_log.txt",
+    "concept_open_questions_resolution.md",
+    "concept_resource_traceability.json",
+    "determinism_replay_results.json",
+    "falsification_results.md",
+    "geo_ais_benchmark.json",
+    "geo_ais_fidelity.json",
+    "geo_av_benchmark.json",
+    "geo_av_fidelity.json",
+    "geo_h3_roundtrip_results.json",
+    "geo_maneuver_search_eval.json",
+    "geo_query_latency_benchmark.json",
+    "geo_stream_latency.json",
+    "innovation_delta_report.md",
+    "integration_readiness_contract.json",
+    "quality_gate_scorecard.json",
+    "regression_results.txt",
+    "residual_risk_register.md"
+  ]
+}

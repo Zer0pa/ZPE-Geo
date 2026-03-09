@@ -1,0 +1,43 @@
+{
+  "cross_seed": {
+    "campaign": "DT-GEO-4",
+    "consistent": true,
+    "pass": true,
+    "policy": "seed-specific determinism (same seed => same hash; cross-seed => distinct hash)",
+    "runs": [
+      {
+        "hash": "db8c8f51785563d9e4d90ef2452e387d2c0a4182ed7e8878a8b87a6a8fa18143",
+        "seed": 91001
+      },
+      {
+        "hash": "8b558305c988adebf31a3dc55a316d8efaff8eb5b2fc423ddfe584c8ff7a946c",
+        "seed": 91002
+      },
+      {
+        "hash": "622f305e572df20671ac8b2bde7b8b292babb7ea299aadcb1398762557c4e379",
+        "seed": 91003
+      },
+      {
+        "hash": "e318f74ae677e8ac0bfdc184f544b2f8060f81caafca2397a9394793040cc10d",
+        "seed": 91004
+      },
+      {
+        "hash": "4f31090c0813cfa0d0b8ca2ef25e7a3dc89652a1ab9237922d67d10ff1a2c93f",
+        "seed": 91005
+      }
+    ]
+  },
+  "fixed_seed_replay": {
+    "consistent": true,
+    "fixed_seed": 91001,
+    "hashes": [
+      "2ba4ba4ad60fdfd765fc77ddd13ca09a5355a9215486b7a9075783e1e60557f3",
+      "2ba4ba4ad60fdfd765fc77ddd13ca09a5355a9215486b7a9075783e1e60557f3",
+      "2ba4ba4ad60fdfd765fc77ddd13ca09a5355a9215486b7a9075783e1e60557f3",
+      "2ba4ba4ad60fdfd765fc77ddd13ca09a5355a9215486b7a9075783e1e60557f3",
+      "2ba4ba4ad60fdfd765fc77ddd13ca09a5355a9215486b7a9075783e1e60557f3"
+    ],
+    "pass": true
+  },
+  "required_5_of_5_consistency": true
+}

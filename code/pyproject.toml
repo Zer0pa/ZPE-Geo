@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zpe-geo"
+version = "0.1.0"
+description = "Deterministic geospatial trajectory codec, search surface, and staged proof bundle."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+h3 = ["h3>=4.1"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["zpe_geo*"]

@@ -1,0 +1,9 @@
+{
+  "failures": 0,
+  "pass": true,
+  "rmse_m_max": 2.1671545568597153,
+  "rmse_m_mean": 0.8232161704426284,
+  "rmse_m_p95": 1.8642727110705997,
+  "threshold_m": 1.0,
+  "trajectory_count": 210
+}

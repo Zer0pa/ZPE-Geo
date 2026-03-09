@@ -1,0 +1,66 @@
+{
+  "created_at_utc": "2026-02-21T10:25:00+00:00",
+  "fixtures": [
+    {
+      "name": "argoverse2_schema_faithful_fixture_v1",
+      "path": "data/fixtures/av_argoverse2_fixture_v1.json",
+      "sha256": "8a591b8c5c02c669b1cbe9af660c6d011ff865175b4067fd632c70928888b41f",
+      "snapshot_version": "2026-02-20",
+      "trajectory_count": 210
+    },
+    {
+      "name": "noaa_ais_schema_faithful_fixture_v1",
+      "path": "data/fixtures/ais_noaa_fixture_v1.json",
+      "sha256": "51ec4ea7ae0c44a9fe90b81b23115c1224228b7378e5d75da6d3dfe4d2e8da14",
+      "snapshot_version": "2026-02-20",
+      "trajectory_count": 190
+    }
+  ],
+  "seeds": {
+    "adversarial": 20260223,
+    "ais_suite": 20260222,
+    "av_suite": 20260221,
+    "determinism_replay": [
+      91001,
+      91002,
+      91003,
+      91004,
+      91005
+    ],
+    "master": 20260220
+  },
+  "sources": {
+    "acm_2025_benchmark": {
+      "probe": {
+        "status": "http_error:403"
+      },
+      "url": "https://dl.acm.org/doi/10.1145/3764920.3770598"
+    },
+    "argoverse_av2": {
+      "probe": {
+        "status": "reachable:200"
+      },
+      "url": "https://argoverse.org/av2.html"
+    },
+    "noaa_ais": {
+      "probe": {
+        "status": "reachable:200"
+      },
+      "url": "https://marinecadastre.gov/ais/"
+    }
+  },
+  "substitution_notes": [
+    {
+      "comparability_impact": "MEDIUM",
+      "resource": "acm_2025_benchmark",
+      "status": "INCONCLUSIVE_UNTIL_EQUIVALENCE_PROVEN",
+      "substitution": "schema-faithful deterministic local fixture"
+    },
+    {
+      "comparability_impact": "LOW_TO_MEDIUM",
+      "resource": "argoverse_av2/noaa_ais runtime datasets",
+      "status": "EQUIVALENCE_PARTIAL_SCHEMA_LEVEL",
+      "substitution": "seed-locked schema-faithful fixtures for deterministic reproducibility"
+    }
+  ]
+}

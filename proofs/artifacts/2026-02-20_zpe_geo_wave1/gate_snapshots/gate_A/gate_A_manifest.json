@@ -1,0 +1,8 @@
+{
+  "artifacts": [
+    "dataset_lock.json",
+    "schema_inventory.json",
+    "resource_failures.log"
+  ],
+  "gate": "A"
+}

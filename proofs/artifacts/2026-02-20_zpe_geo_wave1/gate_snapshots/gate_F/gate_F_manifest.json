@@ -1,0 +1,10 @@
+{
+  "artifacts": [
+    "osm_parity_full_corpus_report.json",
+    "commercialization_gate_report.json",
+    "net_new_gap_closure_matrix.json",
+    "max_gate_matrix.json",
+    "handoff_manifest.json"
+  ],
+  "gate": "F"
+}

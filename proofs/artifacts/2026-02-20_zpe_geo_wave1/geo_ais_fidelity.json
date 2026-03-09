@@ -1,0 +1,9 @@
+{
+  "dtw_m_max": 9.16886546467421,
+  "dtw_m_mean": 2.618543379980688,
+  "dtw_m_p95": 7.768560702259005,
+  "failures": 0,
+  "pass": true,
+  "threshold_m": 50.0,
+  "trajectory_count": 190
+}

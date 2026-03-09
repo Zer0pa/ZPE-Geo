@@ -1,0 +1,11 @@
+{
+  "artifacts": [
+    "geo_av_benchmark.json",
+    "geo_ais_benchmark.json",
+    "geo_maneuver_search_eval.json",
+    "geo_query_latency_benchmark.json",
+    "geo_stream_latency.json",
+    "geo_h3_roundtrip_results.json"
+  ],
+  "gate": "C"
+}

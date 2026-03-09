@@ -1,0 +1,144 @@
+{
+  "dp_calibration": [
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 16.077975270111818,
+      "epsilon_m": 0.5,
+      "target_dtw_p95_m_max": 37.38574404903727
+    },
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 27.863310644814742,
+      "epsilon_m": 1.0,
+      "target_dtw_p95_m_max": 37.38574404903727
+    },
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 52.55608518557098,
+      "epsilon_m": 2.0,
+      "target_dtw_p95_m_max": 37.38574404903727
+    },
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 68.16749107818238,
+      "epsilon_m": 4.0,
+      "target_dtw_p95_m_max": 37.38574404903727
+    },
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 70.75756863876555,
+      "epsilon_m": 6.0,
+      "target_dtw_p95_m_max": 37.38574404903727
+    },
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 72.83543398787529,
+      "epsilon_m": 8.0,
+      "target_dtw_p95_m_max": 37.38574404903727
+    },
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 77.98581945189336,
+      "epsilon_m": 10.0,
+      "target_dtw_p95_m_max": 37.38574404903727
+    },
+    {
+      "calibration_count": 1200,
+      "dp_dtw_p95_m": 80.24300699076029,
+      "epsilon_m": 12.0,
+      "target_dtw_p95_m_max": 37.38574404903727
+    }
+  ],
+  "extract_lock": {
+    "bytes": 50212703,
+    "commercial_safe": true,
+    "license": "ODbL-1.0",
+    "path": "data/external_samples/rhode-island-latest.osm.pbf",
+    "sha256": "62fc9c136760f224bfcca052fefffb1926a158c9d2d843d41fe596cdeb2822d5",
+    "url": "https://download.geofabrik.de/north-america/us/rhode-island-latest.osm.pbf"
+  },
+  "generated_at_utc": "2026-02-21T11:56:56+00:00",
+  "metrics": {
+    "compression_advantage_vs_dp": 7.326999005831248,
+    "dp_compression_ratio_mean": 6.451015926687249,
+    "dp_dtw_p95_m": 16.75771332691078,
+    "dp_epsilon_m": 0.5,
+    "dtw_p95_m": 32.38574404903727,
+    "latency_ms_p95": 0.26058300136355683,
+    "maneuver_p_at_10_mean": 1.0,
+    "zpe_compression_ratio_mean": 13.778014932518497
+  },
+  "parity_pass": true,
+  "parse_summary": {
+    "nodes_parsed": 5620654,
+    "trajectory_count": 34668,
+    "ways_eligible": 34668,
+    "ways_total": 482327,
+    "ways_with_highway": 119970
+  },
+  "queries": {
+    "lane_merge": {
+      "latency_ms": 0.22341699514072388,
+      "p_at_10": 1.0
+    },
+    "left_turn": {
+      "latency_ms": 0.47966699639800936,
+      "p_at_10": 1.0
+    },
+    "stop": {
+      "latency_ms": 0.12775000504916534,
+      "p_at_10": 1.0
+    }
+  },
+  "search_corpus_count": 34916,
+  "seed": 20260221,
+  "stratified_metrics": {
+    "by_label": {
+      "lane_merge": {
+        "count": 976,
+        "dtw_mean_m": 5.752227596880628,
+        "dtw_p95_m": 19.322441413411987
+      },
+      "left_turn": {
+        "count": 8864,
+        "dtw_mean_m": 7.010594349310302,
+        "dtw_p95_m": 23.666459926259147
+      },
+      "right_turn": {
+        "count": 10531,
+        "dtw_mean_m": 6.366488209816623,
+        "dtw_p95_m": 20.828886139936067
+      },
+      "straight": {
+        "count": 14297,
+        "dtw_mean_m": 12.695428921491137,
+        "dtw_p95_m": 44.31668547281367
+      }
+    },
+    "by_length": {
+      "len_200m_1km": {
+        "count": 15967,
+        "dtw_mean_m": 11.594494746528964,
+        "dtw_p95_m": 33.13305960977475
+      },
+      "len_ge_1km": {
+        "count": 2002,
+        "dtw_mean_m": 40.15337677489719,
+        "dtw_p95_m": 109.13957793766043
+      },
+      "len_lt_200m": {
+        "count": 16699,
+        "dtw_mean_m": 3.0416048358469063,
+        "dtw_p95_m": 7.980373534486906
+      }
+    }
+  },
+  "stratified_metrics_present": true,
+  "thresholds": {
+    "dp_dtw_p95_m_max": 37.38574404903727,
+    "dtw_p95_m_max": 50.0,
+    "latency_ms_p95_max": 1000.0,
+    "maneuver_p_at_10_min": 0.9,
+    "zpe_ge_dp_compression": true
+  }
+}

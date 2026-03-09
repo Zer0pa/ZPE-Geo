@@ -1,0 +1,7 @@
+{
+  "artifacts": [
+    "falsification_results.md",
+    "determinism_replay_results.json"
+  ],
+  "gate": "D"
+}

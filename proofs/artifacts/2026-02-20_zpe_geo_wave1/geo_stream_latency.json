@@ -1,0 +1,9 @@
+{
+  "encode_latency_ms_mean": 0.10696041931782731,
+  "encode_latency_ms_p95": 0.12236269540153433,
+  "encoded_size_mean_bytes": 48.75976645701255,
+  "encoded_updates": 39907,
+  "pass": true,
+  "threshold_ms": 10.0,
+  "updates_processed": 40000
+}
