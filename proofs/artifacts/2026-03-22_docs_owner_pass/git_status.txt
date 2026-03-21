@@ -1,0 +1,36 @@
+ M AUDITOR_PLAYBOOK.md
+ M CONTRIBUTING.md
+ M PUBLIC_AUDIT_LIMITS.md
+ M README.md
+ M SECURITY.md
+ M SUPPORT.md
+ M docs/LEGAL_BOUNDARIES.md
+ M docs/README.md
+ M docs/SUPPORT.md
+ M proofs/CONSOLIDATED_PROOF_REPORT.md
+ M proofs/FINAL_STATUS.md
+ M proofs/README.md
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/before_after_metrics.json
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/blockers_before_after.json
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/command_log.txt
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/concept_open_questions_resolution.md
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/concept_resource_traceability.json
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/h3_resolution_sweep_pack.json
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/innovation_delta_report.md
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/integration_readiness_contract.json
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/quality_gate_scorecard.json
+ D proofs/artifacts/2026-02-20_zpe_geo_wave1/runpod_requirements_lock.txt
+?? .github/
+?? CHANGELOG.md
+?? CITATION.cff
+?? GOVERNANCE.md
+?? RELEASING.md
+?? code/README.md
+?? docs/ARCHITECTURE.md
+?? docs/CANONICAL_DOC_REGISTRY.md
+?? docs/FAQ.md
+?? proofs/artifacts/2026-03-21_docs_owner_pass/
+?? proofs/artifacts/2026-03-21_operator_status/
+?? proofs/artifacts/2026-03-22_docs_owner_pass/
+?? proofs/runbooks/REPO_DOCS_ALIGNMENT_PLAN_2026-03-21.md
+?? proofs/runbooks/REPO_DOCS_PLAYBOOK_CANONICAL_2026-03-21.md

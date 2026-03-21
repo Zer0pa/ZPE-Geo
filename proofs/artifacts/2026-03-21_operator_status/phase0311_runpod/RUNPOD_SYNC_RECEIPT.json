@@ -1,0 +1,84 @@
+{
+  "generated_at_utc": "2026-03-21T16:08:46Z",
+  "remote_workspace": "/workspace/zpe_geo_phase3_20260320",
+  "remote_git_present": false,
+  "synced_files": [
+    {
+      "relative_path": ".gpd/phases/03.1.1-durable-av2-and-noaa-full-corpus-completion/03.1.1-01-PLAN.md",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/.gpd/phases/03.1.1-durable-av2-and-noaa-full-corpus-completion/03.1.1-01-PLAN.md",
+      "exists": true,
+      "sha256": "4571039b30e6ef414e4e36dbdffff60f2d7bee540c8879c83652e80b059cbfcc",
+      "matches_local": true
+    },
+    {
+      "relative_path": "scripts/build_operational_realignment.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/scripts/build_operational_realignment.py",
+      "exists": true,
+      "sha256": "8f667e0252cc2d451112a1aa7d78dbca24446076825396086fbe3d145893a1e9",
+      "matches_local": true
+    },
+    {
+      "relative_path": "scripts/gate_e_netnew_package.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/scripts/gate_e_netnew_package.py",
+      "exists": true,
+      "sha256": "1749167de7f5ce3ba3c0f67c83cb2fe4e279b06b82a64b04df710305a11e16aa",
+      "matches_local": true
+    },
+    {
+      "relative_path": "scripts/gate_m1_max_resources.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/scripts/gate_m1_max_resources.py",
+      "exists": true,
+      "sha256": "ff8533496bb45973c4c00b0c9dbcd5bb3dfc6fa5657a80ae142e96ca9a15de79",
+      "matches_local": true
+    },
+    {
+      "relative_path": "scripts/gate_run_all.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/scripts/gate_run_all.py",
+      "exists": true,
+      "sha256": "a117b18820a73f21370fdeb85bd53850546036808d4bcf1818521a19c9c75bf2",
+      "matches_local": true
+    },
+    {
+      "relative_path": "scripts/max_common.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/scripts/max_common.py",
+      "exists": true,
+      "sha256": "597b8df1a1e3552a3d973470b225a50c6365ed4b692dce1ddca74bf8b532a787",
+      "matches_local": true
+    },
+    {
+      "relative_path": "tests/test_gate_e_netnew_package.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/tests/test_gate_e_netnew_package.py",
+      "exists": true,
+      "sha256": "5a88b34809d8e2db32f61042e8a204ad7b2ffb1626e66a73a5fd126dfc595643",
+      "matches_local": true
+    },
+    {
+      "relative_path": "tests/test_gate_m1_max_resources.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/tests/test_gate_m1_max_resources.py",
+      "exists": true,
+      "sha256": "b36155dfa0c0e7bc48cb15e751b48d2f1a7c2d8222504ad62684b537c8430b2c",
+      "matches_local": true
+    },
+    {
+      "relative_path": "tests/test_gate_runner.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/tests/test_gate_runner.py",
+      "exists": true,
+      "sha256": "639adc69df00da983b11aab35586218e16c37a68d56037facf4ad8f554526ab3",
+      "matches_local": true
+    },
+    {
+      "relative_path": "tests/test_max_common.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/tests/test_max_common.py",
+      "exists": true,
+      "sha256": "1d9fb75d98c57b0635ef3894483922bf8972ff38ff071632055003e21e29073a",
+      "matches_local": true
+    },
+    {
+      "relative_path": "zpe_geo/constants.py",
+      "remote_path": "/workspace/zpe_geo_phase3_20260320/zpe_geo/constants.py",
+      "exists": true,
+      "sha256": "d9d9fba4278773384e972ada1e52cf11c1ca8b3cd251c42060fd3f7fd9dcfc45",
+      "matches_local": true
+    }
+  ]
+}

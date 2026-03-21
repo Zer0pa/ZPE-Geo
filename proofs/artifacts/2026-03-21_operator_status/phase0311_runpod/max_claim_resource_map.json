@@ -1,0 +1,119 @@
+{
+  "claim_links": {
+    "GEO-C001": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "FAIL_RESOURCE_ATTEMPT",
+      "resources": [
+        "argoverse2"
+      ]
+    },
+    "GEO-C002": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "FAIL_RESOURCE_ATTEMPT",
+      "resources": [
+        "argoverse2",
+        "noaa_ais"
+      ]
+    },
+    "GEO-C003": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "desi_dr1"
+      ]
+    },
+    "GEO-C004": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "FAIL_RESOURCE_ATTEMPT",
+      "resources": [
+        "argoverse2",
+        "noaa_ais"
+      ]
+    },
+    "GEO-C005": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "noaa_gfs_aws"
+      ]
+    },
+    "GEO-C006": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "noaa_gfs_aws"
+      ]
+    },
+    "GEO-C007": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "desi_dr1"
+      ]
+    },
+    "GEO-C008": {
+      "core_wave_status": "PASS",
+      "max_wave_status": "PASS",
+      "resources": [
+        "desi_dr1",
+        "autoware_runtime"
+      ]
+    }
+  },
+  "generated_at_utc": "2026-03-21T16:14:04+00:00",
+  "policy_note": "Appendix D7 requires full-corpus evidence; subset-only evidence cannot produce max-wave PASS for linked claims. Historical IMP-STORAGE rows become non-governing once a current full-corpus attempt exists for that resource.",
+  "resource_evidence": {
+    "argoverse2": {
+      "current_attempt_status": "IN_PROGRESS",
+      "governing_impracticality_codes": [
+        "IMP-ACCESS",
+        "IMP-ACCESS"
+      ],
+      "has_current_full_corpus_attempt": true,
+      "historical_non_governing_impracticality_codes": [],
+      "status": "FAILED"
+    },
+    "autoware_runtime": {
+      "current_attempt_status": null,
+      "governing_impracticality_codes": [],
+      "has_current_full_corpus_attempt": false,
+      "historical_non_governing_impracticality_codes": [],
+      "status": "MISSING"
+    },
+    "desi_dr1": {
+      "current_attempt_status": null,
+      "governing_impracticality_codes": [
+        "IMP-STORAGE"
+      ],
+      "has_current_full_corpus_attempt": false,
+      "historical_non_governing_impracticality_codes": [],
+      "status": "MISSING"
+    },
+    "noaa_ais": {
+      "current_attempt_status": "IN_PROGRESS",
+      "governing_impracticality_codes": [
+        "IMP-COMPUTE",
+        "IMP-COMPUTE"
+      ],
+      "has_current_full_corpus_attempt": true,
+      "historical_non_governing_impracticality_codes": [],
+      "status": "FAILED"
+    },
+    "noaa_gfs_aws": {
+      "current_attempt_status": null,
+      "governing_impracticality_codes": [
+        "IMP-STORAGE"
+      ],
+      "has_current_full_corpus_attempt": false,
+      "historical_non_governing_impracticality_codes": [],
+      "status": "MISSING"
+    }
+  },
+  "resource_status": {
+    "argoverse2": "FAILED",
+    "autoware_runtime": "PASS",
+    "desi_dr1": "ATTEMPTED",
+    "noaa_ais": "FAILED",
+    "noaa_gfs_aws": "ATTEMPTED"
+  }
+}

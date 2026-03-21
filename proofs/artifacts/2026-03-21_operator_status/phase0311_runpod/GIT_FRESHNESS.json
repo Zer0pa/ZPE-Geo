@@ -1,0 +1,63 @@
+{
+  "generated_at_utc": "2026-03-21T16:07:43Z",
+  "workspace": "/Users/Zer0pa/ZPE/ZPE Geo",
+  "authoritative_surface": "top-level live repo surface",
+  "parent_repo": {
+    "path": "/Users/Zer0pa/ZPE",
+    "head": "35ab732ab92ec82e8c8acd332ad803b03ee53a38",
+    "origin": "https://github.com/Zer0pa/Tokenizer-v5.0"
+  },
+  "inner_repo": {
+    "path": "/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo",
+    "head": "a93dde98b0f88fb52b401be1f9b4fcb043218376",
+    "origin": "https://github.com/Zer0pa/ZPE-Geo.git"
+  },
+  "remote_workspace": "/workspace/zpe_geo_phase3_20260320",
+  "remote_git_present_expected": false,
+  "synced_files": [
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/.gpd/phases/03.1.1-durable-av2-and-noaa-full-corpus-completion/03.1.1-01-PLAN.md",
+      "sha256": "4571039b30e6ef414e4e36dbdffff60f2d7bee540c8879c83652e80b059cbfcc"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/scripts/build_operational_realignment.py",
+      "sha256": "8f667e0252cc2d451112a1aa7d78dbca24446076825396086fbe3d145893a1e9"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/scripts/gate_e_netnew_package.py",
+      "sha256": "1749167de7f5ce3ba3c0f67c83cb2fe4e279b06b82a64b04df710305a11e16aa"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/scripts/gate_m1_max_resources.py",
+      "sha256": "ff8533496bb45973c4c00b0c9dbcd5bb3dfc6fa5657a80ae142e96ca9a15de79"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/scripts/gate_run_all.py",
+      "sha256": "a117b18820a73f21370fdeb85bd53850546036808d4bcf1818521a19c9c75bf2"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/scripts/max_common.py",
+      "sha256": "597b8df1a1e3552a3d973470b225a50c6365ed4b692dce1ddca74bf8b532a787"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/tests/test_gate_e_netnew_package.py",
+      "sha256": "5a88b34809d8e2db32f61042e8a204ad7b2ffb1626e66a73a5fd126dfc595643"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/tests/test_gate_m1_max_resources.py",
+      "sha256": "b36155dfa0c0e7bc48cb15e751b48d2f1a7c2d8222504ad62684b537c8430b2c"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/tests/test_gate_runner.py",
+      "sha256": "639adc69df00da983b11aab35586218e16c37a68d56037facf4ad8f554526ab3"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/tests/test_max_common.py",
+      "sha256": "1d9fb75d98c57b0635ef3894483922bf8972ff38ff071632055003e21e29073a"
+    },
+    {
+      "path": "/Users/Zer0pa/ZPE/ZPE Geo/zpe_geo/constants.py",
+      "sha256": "d9d9fba4278773384e972ada1e52cf11c1ca8b3cd251c42060fd3f7fd9dcfc45"
+    }
+  ]
+}

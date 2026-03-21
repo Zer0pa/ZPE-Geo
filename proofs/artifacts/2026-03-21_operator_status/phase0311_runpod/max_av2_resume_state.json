@@ -1,0 +1,40 @@
+{
+  "attempt_status": "IN_PROGRESS",
+  "attempts": [
+    {
+      "attempt_status": "IN_PROGRESS",
+      "bytes_added_this_run": 1715080383,
+      "bytes_before_run": 0,
+      "bytes_downloaded": 1715080383,
+      "command": "mkdir -p /workspace/zpe_geo_phase0311_cache/argoverse2 && curl -L -f -C - --max-time 120 -o /workspace/zpe_geo_phase0311_cache/argoverse2/train.tar https://s3.amazonaws.com/argoverse/datasets/av2/tars/motion-forecasting/train.tar",
+      "exit_code": 28,
+      "expected_bytes": 50873856000,
+      "stderr_tail": "3 47.3G    3 1596M    0     0  13.6M      0  0:59:11  0:01:56  0:57:15 10.3M\n  3 47.3G    3 1607M    0     0  13.6M      0  0:59:17  0:01:57  0:57:20 10.6M\n  3 47.3G    3 1620M    0     0  13.6M      0  0:59:19  0:01:58  0:57:21 11.1M\n  3 47.3G    3 1633M    0     0  13.6M      0  0:59:19  0:01:59  0:57:20 11.7M\n  3 47.3G    3 1635M    0     0  13.6M      0  0:59:19  0:01:59  0:57:20 12.1M\ncurl: (28) Operation timed out after 119999 milliseconds with 1715080383 out of 50873856000 bytes received\n",
+      "stdout_tail": "",
+      "timeout_s": 120,
+      "timestamp_utc": "2026-03-21T16:11:09+00:00"
+    },
+    {
+      "attempt_status": "IN_PROGRESS",
+      "bytes_added_this_run": 710439057,
+      "bytes_before_run": 1715080383,
+      "bytes_downloaded": 2425519440,
+      "command": "mkdir -p /workspace/zpe_geo_phase0311_cache/argoverse2 && curl -L -f -C - --max-time 120 -o /workspace/zpe_geo_phase0311_cache/argoverse2/train.tar https://s3.amazonaws.com/argoverse/datasets/av2/tars/motion-forecasting/train.tar",
+      "exit_code": 28,
+      "expected_bytes": 50873856000,
+      "stderr_tail": " 1 45.7G    1  650M    0     0  5732k      0  2:19:34  0:01:56  2:17:38 9036k\n  1 45.7G    1  657M    0     0  5747k      0  2:19:12  0:01:57  2:17:15 8531k\n  1 45.7G    1  665M    0     0  5762k      0  2:18:51  0:01:58  2:16:53 8116k\n  1 45.7G    1  672M    0     0  5773k      0  2:18:34  0:01:59  2:16:35 7622k\n  1 45.7G    1  677M    0     0  5781k      0  2:18:23  0:02:00  2:16:23 7296k\ncurl: (28) Operation timed out after 120001 milliseconds with 710439057 out of 49158775617 bytes received\n",
+      "stdout_tail": "",
+      "timeout_s": 120,
+      "timestamp_utc": "2026-03-21T16:13:40+00:00"
+    }
+  ],
+  "completed_units": 2425519440,
+  "last_completed_unit": 2425519440,
+  "resource": "argoverse2",
+  "resume_supported": true,
+  "source_url": "https://s3.amazonaws.com/argoverse/datasets/av2/tars/motion-forecasting/train.tar",
+  "status": "FAILED",
+  "target_path": "/workspace/zpe_geo_phase0311_cache/argoverse2/train.tar",
+  "target_units": 50873856000,
+  "updated_at_utc": "2026-03-21T16:13:40+00:00"
+}

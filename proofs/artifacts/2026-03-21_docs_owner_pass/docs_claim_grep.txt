@@ -1,0 +1,2 @@
+CHANGELOG.md:34:- GitHub-safe visual assets from the ZPE-IMC documentation system are now carried locally inside this repo
+CONTRIBUTING.md:22:3. Keep sector-specific claims sector-specific. Reuse ZPE-IMC structure if helpful, but never import ZPE-IMC claims.

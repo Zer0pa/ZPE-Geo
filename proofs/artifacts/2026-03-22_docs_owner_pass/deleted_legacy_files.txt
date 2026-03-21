@@ -1,0 +1,11 @@
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/.venv_docs
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/before_after_metrics.json
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/blockers_before_after.json
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/command_log.txt
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/concept_open_questions_resolution.md
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/concept_resource_traceability.json
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/h3_resolution_sweep_pack.json
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/innovation_delta_report.md
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/integration_readiness_contract.json
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/quality_gate_scorecard.json
+/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-02-20_zpe_geo_wave1/runpod_requirements_lock.txt

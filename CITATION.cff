@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: >-
+  If you use the ZPE Geo workstream repo, cite this repository record.
+type: software
+title: "ZPE Geo: Deterministic geospatial trajectory package and staged proof surface"
+authors:
+  - given-names: Zer0pa
+    family-names: Architect-Prime
+  - name: Zer0pa Labs
+repository-code: https://github.com/Zer0pa/ZPE-Geo
+url: https://github.com/Zer0pa/ZPE-Geo
+license: LicenseRef-Zer0pa-SAL-6.0
+abstract: >-
+  ZPE Geo is the Git-backed private workstream repo for the deterministic
+  geospatial trajectory lane. It contains the install-facing Python package,
+  the staged archived wave bundle, and the copied-back compact current operator
+  status pack that documents the current red full-corpus closure state.
+keywords:
+  - geospatial trajectories
+  - deterministic codec
+  - trajectory compression
+  - AIS
+  - AV
+  - H3
+  - evidence discipline
+  - falsification-first
+  - staged proof surface

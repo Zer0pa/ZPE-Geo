@@ -1,9 +1,18 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE Geo Masthead" width="100%">
+</p>
+
 # Support
 
-Support routing for this staged repo lives in `docs/SUPPORT.md`.
+<p>
+  <img src=".github/assets/readme/section-bars/where-to-go.svg" alt="WHERE TO GO" width="100%">
+</p>
+
+Support routing for this repo lives in [docs/SUPPORT.md](docs/SUPPORT.md).
 
 Use that document for:
 
-- what is in scope
-- what is intentionally deferred
-- how to report repo-boundary or proof-surface issues
+- bug and proof-surface routing
+- package-layout and install-surface issues
+- support boundaries and deferred work categories
+- security handoff back to [SECURITY.md](SECURITY.md)

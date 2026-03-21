@@ -1,18 +1,57 @@
+<p>
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE Geo Masthead" width="100%">
+</p>
+
 # Contributing
 
-This repo is in private staging. Keep changes scoped to the staged repo boundary.
+This repo is a private staged workstream surface. Contributions must improve the repo without weakening the evidence boundary.
 
-## Rules
+<p>
+  <img src=".github/assets/readme/section-bars/before-you-start.svg" alt="BEFORE YOU START" width="100%">
+</p>
 
-1. Touch only repo-local material under `code/`, `docs/`, `proofs/`, and root repo docs.
-2. Do not reintroduce outer-shell material such as `.env`, `data/external_samples/`, raw `third_party/`, or sector-orchestrator reports into git.
-3. Do not rewrite archived generated proof files to make the story cleaner. Add clarifying docs around them instead.
-4. Keep sector-specific claims sector-specific. Reuse IMC structure, not IMC content.
-5. Treat unresolved contradictions as blockers, not as wording problems.
+## Scope Discipline
 
-## Before Asking For Phase 5
+1. Touch repo-local material only: `code/`, `docs/`, `proofs/`, `.github/`, and root repo docs.
+2. Do not reintroduce outer-shell material such as `.env`, `data/external_samples/`, raw `third_party/`, or ad hoc orchestration reports into git unless there is an explicit copy-back decision.
+3. Do not proliferate new repos for the same workstream. This repo is the Git-backed authority surface.
 
-- keep repo structure coherent
-- keep the proof surface navigable
-- keep operator-only dependencies outside the repo
-- keep sanity checks lightweight unless Phase 5 has been explicitly authorized
+<p>
+  <img src=".github/assets/readme/section-bars/evidence-and-claims.svg" alt="EVIDENCE AND CLAIMS" width="100%">
+</p>
+
+## Evidence Discipline
+
+1. Preserve archived generated proof artifacts even when they are inconvenient.
+2. If a document cites a metric, verdict, or contradiction, route it to the canonical artifact instead of creating a second warehouse.
+3. Do not rewrite accepted proofs to improve the story. Add clarifying docs, registries, or status notes around them instead.
+4. Unresolved contradictions block merge. They are not copy problems.
+
+## Package And Proof Discipline
+
+1. Keep `code/` installable and truthful to the repo-local package surface.
+2. Keep `proofs/` readable and navigable for both current operator state and archived bundle state.
+3. Reuse ZPE-IMC structure if helpful, but never import ZPE-IMC claims.
+
+<p>
+  <img src=".github/assets/readme/section-bars/install.svg" alt="INSTALL" width="100%">
+</p>
+
+## Before Opening A Change
+
+Run the lowest-cost truthful check for the surface you touched.
+
+Package and test surface:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e "./code[dev,h3]"
+python -m pytest code/tests -q
+```
+
+Docs surface:
+
+- verify asset paths by document depth
+- verify repo URL, contact, license, and authority references
+- verify that current operator truth and historical bundle truth are not blurred

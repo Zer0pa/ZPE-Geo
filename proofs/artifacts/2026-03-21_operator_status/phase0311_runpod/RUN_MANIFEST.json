@@ -1,0 +1,133 @@
+{
+  "artifact_files": [
+    "DELETION_LOG.json",
+    "DISK_STATE_AFTER.json",
+    "DISK_STATE_BEFORE.json",
+    "GIT_FRESHNESS.json",
+    "RUNPOD_SYNC_RECEIPT.json",
+    "autoware_smoke_results.json",
+    "autoware_version_matrix.json",
+    "command_log.txt",
+    "commercialization_gate_report.json",
+    "concept_open_questions_resolution.md",
+    "dataset_subset_coverage_report.json",
+    "e2_run.log",
+    "gate_snapshots/gate_E2/gate_E2_manifest.json",
+    "gate_snapshots/gate_M1/gate_M1_manifest.json",
+    "gate_snapshots/gate_M4/gate_M4_manifest.json",
+    "h3_resolution_sweep_pack.json",
+    "handoff_manifest.json",
+    "impracticality_decisions.json",
+    "innovation_delta_report.md",
+    "m1_run1.log",
+    "m1_run2.log",
+    "m4_run.log",
+    "max_av2_resume_state.json",
+    "max_claim_resource_map.json",
+    "max_disk_report.json",
+    "max_gate_matrix.json",
+    "max_noaa_ais_resume_state.json",
+    "max_resource_lock.json",
+    "max_resource_validation_log.md",
+    "max_scale_search_eval.json",
+    "net_new_gap_closure_matrix.json",
+    "osm_parity_full_corpus_report.json",
+    "run_finished_utc.txt",
+    "run_started_utc.txt",
+    "runpod_exec_plan.md",
+    "runpod_readiness_manifest.json",
+    "runpod_requirements_lock.txt",
+    "trajectory_stratified_error_report.json"
+  ],
+  "artifact_root": "artifacts/2026-03-21_zpe_geo_phase0311_runpod",
+  "comet": {
+    "project_name": "zpe-geospatial",
+    "project_url": "https://www.comet.com/zer0pa/zpe-geospatial/view/new/panels",
+    "status": "UNAVAILABLE_MISSING_API_KEY",
+    "workspace": "zer0pa"
+  },
+  "continuity": {
+    "argoverse2": {
+      "attempt_status": "IN_PROGRESS",
+      "completed_units": 2425519440,
+      "last_completed_unit": 2425519440,
+      "resume_state_file": "max_av2_resume_state.json",
+      "resume_supported": true,
+      "status": "FAILED",
+      "target_units": 50873856000,
+      "updated_at_utc": "2026-03-21T16:13:40+00:00"
+    },
+    "noaa_ais": {
+      "attempt_status": "IN_PROGRESS",
+      "completed_units": 2,
+      "last_completed_unit": "2025-01-02",
+      "resume_state_file": "max_noaa_ais_resume_state.json",
+      "resume_supported": true,
+      "status": "FAILED",
+      "target_units": 365,
+      "updated_at_utc": "2026-03-21T16:13:58+00:00"
+    }
+  },
+  "duration_s": 300.0,
+  "finished_utc": "2026-03-21T16:14:05Z",
+  "gate_results": [
+    {
+      "command": "python3 scripts/gate_m1_max_resources.py",
+      "duration_s": null,
+      "exit_code": 0,
+      "gate": "M1",
+      "log_file": "m1_run1.log",
+      "script": "gate_m1_max_resources.py"
+    },
+    {
+      "command": "python3 scripts/gate_m1_max_resources.py",
+      "duration_s": null,
+      "exit_code": 0,
+      "gate": "M1",
+      "log_file": "m1_run2.log",
+      "script": "gate_m1_max_resources.py"
+    },
+    {
+      "command": "python3 scripts/gate_m4_risk_closure.py",
+      "duration_s": null,
+      "exit_code": 0,
+      "gate": "M4",
+      "log_file": "m4_run.log",
+      "script": "gate_m4_risk_closure.py"
+    },
+    {
+      "command": "python3 scripts/gate_e_netnew_package.py",
+      "duration_s": null,
+      "exit_code": 0,
+      "gate": "E2",
+      "log_file": "e2_run.log",
+      "script": "gate_e_netnew_package.py"
+    }
+  ],
+  "gate_sequence": [
+    "M1",
+    "M1",
+    "M4",
+    "E2"
+  ],
+  "git_commit": null,
+  "metrics": {},
+  "ops_context": {
+    "cache_root": "/workspace/zpe_geo_phase0311_cache",
+    "comet_api_key_present": false,
+    "comet_project_url": "https://www.comet.com/zer0pa/zpe-geospatial/view/new/panels",
+    "remote_workspace": "/workspace/zpe_geo_phase3_20260320"
+  },
+  "repo_root": "/workspace/zpe_geo_phase3_20260320",
+  "run_name": "ZPE_GEO_PHASE0311_DURABLE_20260321",
+  "schema_version": 1,
+  "started_utc": "2026-03-21T16:09:05Z",
+  "status": "PASS",
+  "tracking_projects": {
+    "comet": {
+      "project_name": "zpe-geospatial",
+      "project_url": "https://www.comet.com/zer0pa/zpe-geospatial/view/new/panels",
+      "workspace": "zer0pa"
+    }
+  }
+}

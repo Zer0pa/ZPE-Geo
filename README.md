@@ -1,77 +1,91 @@
-# ZPE Geo
+<p align="center">
+  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE Geo Masthead" width="100%">
+</p>
 
-Private staged repo for the ZPE Geo sector as of 2026-03-09.
+<h1 align="center">ZPE Geo</h1>
 
-This repo contains the extracted code, proofs, and front-door documentation for the deterministic geospatial trajectory lane. It is hardened through Phase 3 plus Phase 4 only. Phase 4.5 performance augmentation and Phase 5 blind-clone verification are explicitly deferred.
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v6.0-e5e7eb?labelColor=111111" alt="License: SAL v6.0"></a>
+  <a href="code/README.md"><img src="https://img.shields.io/badge/python-3.11%2B-e5e7eb?labelColor=111111" alt="Python 3.11+"></a>
+  <a href="proofs/FINAL_STATUS.md"><img src="https://img.shields.io/badge/release%20posture-not%20release--ready-e5e7eb?labelColor=111111" alt="Release posture: not release-ready"></a>
+  <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/current%20operator%20state-red%20claims%20remain-e5e7eb?labelColor=111111" alt="Current operator state: red claims remain"></a>
+  <a href="proofs/artifacts/2026-02-20_zpe_geo_wave1/claim_status_delta.md"><img src="https://img.shields.io/badge/historical%20bundle-archived%20only-e5e7eb?labelColor=111111" alt="Historical bundle: archived only"></a>
+</p>
 
-## What This Is
+<p>
+  <img src=".github/assets/readme/section-bars/what-this-is.svg" alt="WHAT THIS IS" width="100%">
+</p>
 
-ZPE Geo is a deterministic geospatial trajectory package and proof surface for:
+ZPE Geo is the Git-backed private workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, and H3 roundtrip validation.
 
-- AV-style XY trajectories
-- AIS-style WGS84 vessel trajectories
-- maneuver search and query latency checks
-- H3 roundtrip consistency checks
-- adjudicated gate artifacts for the 2026-02-20 wave bundle
+For collaborators with repo access, this is the working GitHub surface for package code, proof custody, and documentation. It is not a release-ready repo, and the local install path here is a sanity check, not release validation.
 
-The package surface lives under `code/`. The proof surface lives under `proofs/`. Operator-only material remains outside this repo boundary.
+## Start Here
 
-## Current Status Snapshot
+1. Read [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md). This is the governing current-status document for this repo.
+2. Read [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md). This defines what the repo can and cannot currently prove.
+3. Read [AUDITOR_PLAYBOOK.md](AUDITOR_PLAYBOOK.md) if you want the shortest honest review path.
+4. Read [code/README.md](code/README.md) for the install-facing package surface.
 
-The adjudicated bundle in `proofs/artifacts/2026-02-20_zpe_geo_wave1/` still resolves the eight core claims to `PASS`, with known max-wave contradictions and open residual risks preserved rather than hidden.
+## Current Authority
 
-| Surface | Current staged fact | Evidence |
+| Question | Current answer | Canonical source |
 | --- | --- | --- |
-| Core claim count | `8 PASS / 0 FAIL / 0 INCONCLUSIVE / 0 PAUSED_EXTERNAL` | `proofs/artifacts/2026-02-20_zpe_geo_wave1/claim_status_delta.md` |
-| AV compression | median `107.39x` over `210` trajectories | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_benchmark.json` |
-| AIS compression | median `475.32x` over `190` trajectories | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json` |
-| AV fidelity | mean RMSE `0.823 m` | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_fidelity.json` |
-| AIS fidelity | mean DTW `2.619 m` | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_fidelity.json` |
-| Search quality | mean `P@10 = 1.0` | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_maneuver_search_eval.json` |
-| Query latency | `0.064 ms` p95 at simulated `10,000,200` corpus size | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_query_latency_benchmark.json` |
-| Streaming latency | `0.122 ms` p95 over `40,000` updates | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_stream_latency.json` |
-| H3 consistency | backend `official_h3`, `0` failures | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_h3_roundtrip_results.json` |
+| What is the governing current-status document? | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) |
+| What supports that current-status document? | The copied-back March 21 operator pack under [proofs/artifacts/2026-03-21_operator_status/](proofs/artifacts/2026-03-21_operator_status/) | [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) |
+| What is the current blocker state? | The lane is still blocked on `GEO-C001`, `GEO-C002`, and `GEO-C004` | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) |
+| What is not being claimed? | No blind-clone closure, no full-corpus closure, no public release readiness, and no open-ended superiority claim | [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) |
 
-## What Is In This Repo
+<p align="center">
+  <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE Geo Masthead Detail" width="100%">
+</p>
 
-- `code/zpe_geo/`: Python package
-- `code/scripts/`: gate and packaging scripts
-- `code/tests/`: lightweight unit tests copied from the sector lane
-- `code/fixtures/`: small deterministic fixtures only
-- `docs/`: legal, support, and navigation surfaces
-- `proofs/`: staged proof bundle, runbooks, and summary reports
+<p>
+  <img src=".github/assets/readme/section-bars/quickstart-and-license.svg" alt="QUICKSTART AND LICENSE" width="100%">
+</p>
 
-## What Stays Outside This Repo
-
-- `.env`
-- `data/external_samples/`
-- raw `third_party/`
-- outer-shell orchestration outputs and meta reports
-- Phase 5 verification outputs
-
-The copied code is path-hardened to look for operator-only `third_party/` and `data/external_samples/` one level above the repo root when those resources are needed.
-
-## Minimal Sanity
-
-This is the only sanctioned quick check in the current phase:
+Use the package surface from [code/README.md](code/README.md) if you want the lowest-cost repo-local sanity path:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -e "./code[dev]"
+python -m pip install -e "./code[dev,h3]"
+python -m pytest code/tests -q
 python - <<'PY'
-from zpe_geo import H3Bridge, decode_trajectory, encode_trajectory
+from zpe_geo import H3Bridge, ManeuverSearchIndex, decode_trajectory, encode_trajectory
 print("zpe-geo import OK")
 print("h3 backend:", H3Bridge().backend)
+print("search surface:", ManeuverSearchIndex.__name__)
 PY
 ```
 
-This is import and layout sanity only. It is not a substitute for Phase 5 verification.
+That verifies the repo-local package surface only.
 
-## Audit Entry Points
+## Historical Context Only
 
-- `docs/README.md`
-- `AUDITOR_PLAYBOOK.md`
-- `PUBLIC_AUDIT_LIMITS.md`
-- `proofs/FINAL_STATUS.md`
-- `proofs/CONSOLIDATED_PROOF_REPORT.md`
+The archived bundle under [proofs/artifacts/2026-02-20_zpe_geo_wave1/](proofs/artifacts/2026-02-20_zpe_geo_wave1/) remains part of the repo because it contains real historical evidence:
+
+- archived performance metrics across all eight promoted claims
+- archived comparator notes, including an in-repo AIS baseline comparison
+- preserved contradictions that explain why archived success does not equal current release authorization
+
+Read those facts as historical-only context through [proofs/CONSOLIDATED_PROOF_REPORT.md](proofs/CONSOLIDATED_PROOF_REPORT.md), not as current release status.
+
+<p align="center">
+  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE Geo Masthead Lower Detail" width="100%">
+</p>
+
+<p>
+  <img src=".github/assets/readme/section-bars/where-to-go.svg" alt="WHERE TO GO" width="100%">
+</p>
+
+| Need | Route |
+| --- | --- |
+| Current verdict and release posture | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) |
+| Detailed current evidence and historical bundle interpretation | [proofs/CONSOLIDATED_PROOF_REPORT.md](proofs/CONSOLIDATED_PROOF_REPORT.md) |
+| Audit path | [AUDITOR_PLAYBOOK.md](AUDITOR_PLAYBOOK.md) |
+| Audit limits and exclusions | [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) |
+| Architecture and evidence map | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
+| Docs ownership map | [docs/CANONICAL_DOC_REGISTRY.md](docs/CANONICAL_DOC_REGISTRY.md) |
+| FAQ and support | [docs/FAQ.md](docs/FAQ.md), [docs/SUPPORT.md](docs/SUPPORT.md) |
+| Install surface | [code/README.md](code/README.md) |
