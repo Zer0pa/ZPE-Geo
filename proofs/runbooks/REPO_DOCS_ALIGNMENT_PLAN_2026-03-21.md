@@ -38,7 +38,6 @@ Bring the Git-backed ZPE Geo repo to the ZPE-IMC documentation standard without 
    - `README.md`
    - `CONTRIBUTING.md`
    - `SECURITY.md`
-   - `SUPPORT.md`
    - `AUDITOR_PLAYBOOK.md`
    - `PUBLIC_AUDIT_LIMITS.md`
    - `docs/README.md`

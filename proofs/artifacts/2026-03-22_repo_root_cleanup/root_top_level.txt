@@ -1,0 +1,16 @@
+.git
+.github
+.gitignore
+AUDITOR_PLAYBOOK.md
+CHANGELOG.md
+CITATION.cff
+CONTRIBUTING.md
+GOVERNANCE.md
+LICENSE
+PUBLIC_AUDIT_LIMITS.md
+README.md
+RELEASING.md
+SECURITY.md
+code
+docs
+proofs
