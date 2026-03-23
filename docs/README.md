@@ -29,6 +29,7 @@ This directory routes readers through the ZPE Geo documentation surface.
 | [CANONICAL_DOC_REGISTRY.md](CANONICAL_DOC_REGISTRY.md) | Canonical ownership map for docs and fact families |
 | [FAQ.md](FAQ.md) | Reader-facing questions about repo truth, proof boundaries, and verification |
 | [SUPPORT.md](SUPPORT.md) | Support routing, issue categories, and security escalation handoff |
+| [../CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) | Community behavior and evidence-discipline norms |
 | [../CONTRIBUTING.md](../CONTRIBUTING.md) | Repo-local contribution rules |
 | [../SECURITY.md](../SECURITY.md) | Security reporting policy |
 

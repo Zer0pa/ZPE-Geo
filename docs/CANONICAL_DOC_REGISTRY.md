@@ -21,6 +21,7 @@ Rules:
 | [../README.md](../README.md) | front-door summary and first-hop routing | repo entry |
 | [../RELEASING.md](../RELEASING.md) | release gate and exit criteria | README |
 | [../GOVERNANCE.md](../GOVERNANCE.md) | evidence and status semantics | README, CONTRIBUTING |
+| [../CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) | contributor conduct and evidence-led community rules | README, CONTRIBUTING |
 | [../CONTRIBUTING.md](../CONTRIBUTING.md) | contribution discipline | README, SUPPORT |
 | [../SECURITY.md](../SECURITY.md) | security reporting policy | README, SUPPORT |
 | [FAQ.md](FAQ.md) | plain-language reader questions | README, SUPPORT |

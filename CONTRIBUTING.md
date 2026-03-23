@@ -6,6 +6,8 @@
 
 This repo is a private staged workstream surface. Contributions must improve the repo without weakening the evidence boundary.
 
+Read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [LICENSE](LICENSE) before opening a change.
+
 <p>
   <img src=".github/assets/readme/section-bars/before-you-start.svg" alt="BEFORE YOU START" width="100%">
 </p>
@@ -26,6 +28,7 @@ This repo is a private staged workstream surface. Contributions must improve the
 2. If a document cites a metric, verdict, or contradiction, route it to the canonical artifact instead of creating a second warehouse.
 3. Do not rewrite accepted proofs to improve the story. Add clarifying docs, registries, or status notes around them instead.
 4. Unresolved contradictions block merge. They are not copy problems.
+5. Keep the repo URL, license summary, GIF asset paths, and front-door routing consistent with the current docs standard across root docs and `docs/`.
 
 ## Package And Proof Discipline
 
