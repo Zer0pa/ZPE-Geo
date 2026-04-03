@@ -1,0 +1,26 @@
+{
+  "repo_name": "ZPE-Geo",
+  "repo_role": "product_candidate",
+  "status": "PRIVATE_STAGE",
+  "plain_english_summary": "Deterministic trajectory compression and maneuver search for geospatial telemetry and movement traces.",
+  "commercial_wedge": "Store and search large movement traces economically. Maneuver-aware search on compressed fleet routes, vessel tracks, and logistics traces with H3 spatial indexing.",
+  "technical_wedge": "Deterministic geospatial encoding with H3 roundtrip validation, maneuver search indexing, and trajectory fidelity checks.",
+  "ideal_first_buyer": "Mobility analytics platform or fleet telematics team",
+  "deployment_model": "SDK — Python package with H3 spatial backend",
+  "proof_anchors": [
+    "proofs/FINAL_STATUS.md",
+    "proofs/artifacts/2026-03-21_operator_status/README.md",
+    "proofs/CONSOLIDATED_PROOF_REPORT.md"
+  ],
+  "not_claimed": [
+    "Blind-clone closure (GEO-C001 active)",
+    "Full-corpus closure (GEO-C002 active)",
+    "Public release readiness (GEO-C004 active)",
+    "Superiority over incumbent geospatial compression",
+    "Runtime coupling to ZPE-IMC"
+  ],
+  "family_position": "Product candidate in the Zer0pa deterministic encoding family. ZPE-IMC is the umbrella integration layer.",
+  "license": "LicenseRef-Zer0pa-SAL-6.0",
+  "license_surface": "Free below $100M annual revenue",
+  "contact": "hello@zer0pa.com"
+}

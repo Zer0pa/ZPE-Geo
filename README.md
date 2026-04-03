@@ -27,6 +27,28 @@
   </tr>
 </table>
 
+---
+
+## What This Is
+
+ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression. H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation, all on the compressed representation.
+
+SAL v6.0 — free below $100M annual revenue. See [LICENSE](LICENSE).
+
+This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec doesn't just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
+
+The repo is **private-stage** with three open claim gates. The package surface installs and passes lightweight tests. **Blind-clone closure** (GEO-C001), **full-corpus closure** (GEO-C002), and **release readiness** (GEO-C004) are not claimed. No comparative benchmarks against incumbent geospatial compression have been published.
+
+**Not claimed:** blind-clone closure (GEO-C001), full-corpus closure (GEO-C002), release readiness (GEO-C004), or superiority over existing geospatial compression tools.
+
+| Anchor | Artifact |
+|---|---|
+| Final status | [`FINAL_STATUS.md`](proofs/FINAL_STATUS.md) |
+| Operator status pack | [`2026-03-21_operator_status/`](proofs/artifacts/2026-03-21_operator_status/README.md) |
+| Consolidated proof report | [`CONSOLIDATED_PROOF_REPORT.md`](proofs/CONSOLIDATED_PROOF_REPORT.md) |
+
+---
+
 <a id="quickstart-and-license"></a>
 <h2 align="center">Quickstart And License</h2>
 
