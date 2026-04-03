@@ -31,55 +31,19 @@
 
 ## What This Is
 
-ZPE-Geo is a deterministic trajectory compression and maneuver search system for geospatial telemetry and movement traces.
+ZPE-Geo is a deterministic trajectory compression and maneuver search system for geospatial movement traces — fleet routes, vessel tracks, autonomous-vehicle telemetry, logistics traces. It compresses trajectories while preserving maneuver-level searchability through H3 spatial indexing.
 
-## Commercial Wedge
+The codec performs deterministic geospatial encoding with H3 roundtrip validation, fidelity checks, and maneuver-aware search indexing on compressed data. Three claim gates remain active blockers (blind-clone closure, full-corpus closure, release readiness), so the current evidence is real but not closure-grade.
 
-This is for **mobility analytics teams, maritime/AIS analytics teams, fleet and telematics platforms, and mapping/geospatial infrastructure teams** who need to store and search large movement traces economically. The business value is smaller trajectory representations with maneuver-aware search and explicit fidelity checks — compressing fleet routes, vessel tracks, logistics traces, and autonomous movement telemetry while preserving searchability.
+The repo is **private-stage**. The package surface installs and passes lightweight tests. Blind-clone closure, full-corpus closure, and release readiness are not claimed. No comparative benchmarks against incumbent geospatial compression have been published.
 
-## Technical Wedge
-
-The technical edge is deterministic geospatial encoding with H3 roundtrip validation, maneuver search indexing, and trajectory fidelity checks. The codec compresses movement traces while maintaining maneuver-level searchability. Three claim gates (GEO-C001, GEO-C002, GEO-C004) remain active blockers — current evidence is real but not yet closure-grade.
-
-## Current Readiness
-
-**`PRIVATE_STAGE`** — Repo-local package surface is installable and testable. Blind-clone closure, full-corpus closure, and release readiness are not claimed. Three red claims remain active.
-
-## What Is Proved
-
-- Deterministic trajectory compression with H3 spatial indexing
-- Maneuver search indexing without full decode
-- Repo-local package surface installs and passes lightweight tests
-- Proof custody chain maintained with operator status artifacts
-- Historical wave1 benchmark bundle preserved as lineage
-
-## What Is Not Being Claimed
-
-- Blind-clone closure — GEO-C001 not resolved
-- Full-corpus closure — GEO-C002 not resolved
-- Public release readiness — GEO-C004 active
-- Superiority over incumbent geospatial compression — no comparative benchmarks published
-- Runtime coupling to ZPE-IMC
-
-## Ideal First Buyer
-
-Mobility analytics platform or fleet telematics team seeking deterministic trajectory compression with maneuver-aware search.
-
-## Deployment Model
-
-SDK — Python package with H3 spatial backend. Private repo checkout today; no public package available.
-
-## Authority / Proof Anchors
+**Not claimed:** blind-clone closure (GEO-C001), full-corpus closure (GEO-C002), release readiness (GEO-C004), or superiority over existing geospatial compression tools.
 
 | Anchor | Artifact |
 |---|---|
-| Final status | [`proofs/FINAL_STATUS.md`](proofs/FINAL_STATUS.md) |
-| Operator status pack | [`proofs/artifacts/2026-03-21_operator_status/README.md`](proofs/artifacts/2026-03-21_operator_status/README.md) |
-| Consolidated proof report | [`proofs/CONSOLIDATED_PROOF_REPORT.md`](proofs/CONSOLIDATED_PROOF_REPORT.md) |
-
-## Role In The Zer0pa Family
-
-ZPE-Geo is a product-candidate member of the Zer0pa deterministic encoding family. [ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) is the umbrella integration and dispatch layer; this repo is the domain-specific geospatial trajectory wedge.
+| Final status | [`FINAL_STATUS.md`](proofs/FINAL_STATUS.md) |
+| Operator status pack | [`2026-03-21_operator_status/`](proofs/artifacts/2026-03-21_operator_status/README.md) |
+| Consolidated proof report | [`CONSOLIDATED_PROOF_REPORT.md`](proofs/CONSOLIDATED_PROOF_REPORT.md) |
 
 ---
 
