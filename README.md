@@ -31,11 +31,13 @@
 
 ## What This Is
 
-ZPE-Geo is a deterministic trajectory compression and maneuver search system for geospatial movement traces — fleet routes, vessel tracks, autonomous-vehicle telemetry, logistics traces. It compresses trajectories while preserving maneuver-level searchability through H3 spatial indexing.
+ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression. H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation, all on the compressed representation.
 
-The codec performs deterministic geospatial encoding with H3 roundtrip validation, fidelity checks, and maneuver-aware search indexing on compressed data. Three claim gates remain active blockers (blind-clone closure, full-corpus closure, release readiness), so the current evidence is real but not closure-grade.
+SAL v6.0 — free below $100M annual revenue. See [LICENSE](LICENSE).
 
-The repo is **private-stage**. The package surface installs and passes lightweight tests. Blind-clone closure, full-corpus closure, and release readiness are not claimed. No comparative benchmarks against incumbent geospatial compression have been published.
+This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec doesn't just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
+
+The repo is **private-stage** with three open claim gates. The package surface installs and passes lightweight tests. **Blind-clone closure** (GEO-C001), **full-corpus closure** (GEO-C002), and **release readiness** (GEO-C004) are not claimed. No comparative benchmarks against incumbent geospatial compression have been published.
 
 **Not claimed:** blind-clone closure (GEO-C001), full-corpus closure (GEO-C002), release readiness (GEO-C004), or superiority over existing geospatial compression tools.
 
