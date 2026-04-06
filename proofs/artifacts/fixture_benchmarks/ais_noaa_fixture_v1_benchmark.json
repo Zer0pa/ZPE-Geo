@@ -1,0 +1,39 @@
+{
+  "compression_ratio": 1096.6671100133003,
+  "coord_system": "wgs84",
+  "decode_time_us": {
+    "mean": 664.5111789473684,
+    "median": 712.104,
+    "p95": 1132.0107500000004
+  },
+  "encode_time_us": {
+    "mean": 1707.9519894736843,
+    "median": 1850.4164999999998,
+    "p95": 2923.7668500000004
+  },
+  "encoded_bytes_total": 10526,
+  "fixture": "ais_noaa_fixture_v1.json",
+  "fixture_file_bytes": 18893602,
+  "generated_at_utc": "2026-04-06T16:57:11.825212+00:00",
+  "metadata": {
+    "classes": [
+      "left_turn",
+      "lane_merge",
+      "stop",
+      "straight",
+      "harbour"
+    ],
+    "count": 190,
+    "reference": "NOAA AIS schema-faithful synthetic (local fixture)",
+    "sample_interval_s": 10
+  },
+  "quant_step_m": 0.25,
+  "raw_json_bytes_total": 11543518,
+  "roundtrip": {
+    "all_coordinates_exact": false,
+    "coordinate_exact_match_count": 0,
+    "coordinate_exact_match_ratio": 0.0,
+    "max_abs_coordinate_error": 1.2798263213653627e-06
+  },
+  "trajectory_count": 190
+}
