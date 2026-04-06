@@ -1,0 +1,33 @@
+{
+  "compression_ratio": 12.722916666666666,
+  "coord_system": "wgs84",
+  "decode_time_us": {
+    "mean": 128.9164,
+    "median": 127.083,
+    "p95": 172.65820000000002
+  },
+  "encode_time_us": {
+    "mean": 300.1084,
+    "median": 334.5,
+    "p95": 387.83320000000003
+  },
+  "encoded_bytes_total": 480,
+  "fixture": "osm_monaco_way_extract.json",
+  "fixture_file_bytes": 13288,
+  "fixture_path": "code/fixtures/real_world/osm_monaco_way_extract.json",
+  "generated_at_utc": "2026-04-06T17:09:40.630199+00:00",
+  "metadata": {
+    "reference": "Geofabrik Monaco latest extract",
+    "source_url": "https://download.geofabrik.de/europe/monaco-latest.osm.pbf",
+    "trajectory_count": 5
+  },
+  "quant_step_m": 0.25,
+  "raw_json_bytes_total": 6107,
+  "roundtrip": {
+    "all_coordinates_exact": false,
+    "coordinate_exact_match_count": 0,
+    "coordinate_exact_match_ratio": 0.0,
+    "max_abs_coordinate_error": 3.6999999998954536e-05
+  },
+  "trajectory_count": 5
+}

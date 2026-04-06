@@ -1,0 +1,35 @@
+{
+  "compression_ratio": 21.04679802955665,
+  "coord_system": "wgs84",
+  "decode_time_us": {
+    "mean": 153.2082,
+    "median": 122.166,
+    "p95": 347.17519999999996
+  },
+  "encode_time_us": {
+    "mean": 184.21699999999998,
+    "median": 90.209,
+    "p95": 404.2335999999999
+  },
+  "encoded_bytes_total": 406,
+  "fixture": "noaa_ais_day_extract.json",
+  "fixture_file_bytes": 15234,
+  "fixture_path": "code/fixtures/real_world/noaa_ais_day_extract.json",
+  "generated_at_utc": "2026-04-06T17:09:30.972798+00:00",
+  "metadata": {
+    "license": "public domain (per MarineCadastre FAQ)",
+    "reference": "NOAA MarineCadastre daily AIS CSV extract",
+    "rows_scanned": 55505,
+    "source_url": "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2025/ais-2025-01-01.csv.zst",
+    "trajectory_count": 5
+  },
+  "quant_step_m": 0.25,
+  "raw_json_bytes_total": 8545,
+  "roundtrip": {
+    "all_coordinates_exact": false,
+    "coordinate_exact_match_count": 0,
+    "coordinate_exact_match_ratio": 0.0,
+    "max_abs_coordinate_error": 0.0018500000000010175
+  },
+  "trajectory_count": 5
+}

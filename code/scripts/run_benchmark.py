@@ -43,6 +43,12 @@ def parse_args() -> argparse.Namespace:
         help="Fixture filename under code/fixtures. May be passed multiple times.",
     )
     parser.add_argument(
+        "--fixture-path",
+        action="append",
+        dest="fixture_paths",
+        help="Absolute or repo-relative path to a fixture JSON file. May be passed multiple times.",
+    )
+    parser.add_argument(
         "--output-dir",
         default=str(DEFAULT_OUTPUT_ROOT),
         help="Directory for benchmark artifacts.",
@@ -97,8 +103,7 @@ def quant_step_for(trajectory: dict[str, Any]) -> float:
     return DEFAULT_QUANT_BY_COORD.get(coord_system, 0.05)
 
 
-def benchmark_fixture(fixture_name: str) -> dict[str, Any]:
-    fixture_path = FIXTURE_ROOT / fixture_name
+def benchmark_fixture_path(fixture_path: Path) -> dict[str, Any]:
     metadata, trajectories = load_fixture(fixture_path)
     encode_timings_us: list[float] = []
     decode_timings_us: list[float] = []
@@ -126,7 +131,8 @@ def benchmark_fixture(fixture_name: str) -> dict[str, Any]:
 
     coord_system = trajectories[0].get("coord_system", "xy")
     return {
-        "fixture": fixture_name,
+        "fixture": fixture_path.name,
+        "fixture_path": str(fixture_path.relative_to(REPO_ROOT)),
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "metadata": metadata,
         "coord_system": coord_system,
@@ -153,6 +159,10 @@ def benchmark_fixture(fixture_name: str) -> dict[str, Any]:
             "max_abs_coordinate_error": max_abs_error,
         },
     }
+
+
+def benchmark_fixture(fixture_name: str) -> dict[str, Any]:
+    return benchmark_fixture_path(FIXTURE_ROOT / fixture_name)
 
 
 def write_json(path: Path, payload: Any) -> None:
@@ -197,10 +207,12 @@ def write_markdown(path: Path, results: list[dict[str, Any]]) -> None:
 def main() -> None:
     args = parse_args()
     fixture_names = args.fixtures or list(DEFAULT_FIXTURES)
+    fixture_paths = [REPO_ROOT / path for path in (args.fixture_paths or [])]
     output_root = Path(args.output_dir).resolve()
     ensure_dir(output_root)
 
     results = [benchmark_fixture(name) for name in fixture_names]
+    results.extend(benchmark_fixture_path(path.resolve()) for path in fixture_paths)
     summary = {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "fixtures": [result["fixture"] for result in results],
