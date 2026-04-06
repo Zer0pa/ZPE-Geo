@@ -1,0 +1,11 @@
+{
+  "fixtures": [
+    "ais_noaa_fixture_v1.json",
+    "av_argoverse2_fixture_v1.json"
+  ],
+  "generated_at_utc": "2026-04-06T16:57:12.262302+00:00",
+  "result_files": [
+    "ais_noaa_fixture_v1_benchmark.json",
+    "av_argoverse2_fixture_v1_benchmark.json"
+  ]
+}

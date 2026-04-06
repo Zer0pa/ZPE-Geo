@@ -1,0 +1,53 @@
+{
+  "generated_at_utc": "2026-04-06T17:09:40.654830+00:00",
+  "statuses": [
+    {
+      "benchmark_path": "proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json",
+      "dataset": "NOAA AIS",
+      "detail": "Extracted five real vessel trajectories from the official 2025-01-01 daily CSV.",
+      "fixture_path": "code/fixtures/real_world/noaa_ais_day_extract.json",
+      "source_url": "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2025/ais-2025-01-01.csv.zst",
+      "status": "completed"
+    },
+    {
+      "benchmark_path": "proofs/artifacts/real_world_benchmarks/geolife_extract_benchmark.json",
+      "dataset": "GeoLife GPS Trajectories",
+      "detail": "Extracted five track files from the official GeoLife 1.3 ZIP.",
+      "fixture_path": "code/fixtures/real_world/geolife_extract.json",
+      "source_url": "https://download.microsoft.com/download/f/4/8/f4894aa5-fdbc-481e-9285-d5f8c4c4f039/Geolife%20Trajectories%201.3.zip",
+      "status": "completed"
+    },
+    {
+      "benchmark_path": null,
+      "dataset": "NYC Taxi Trip Records",
+      "detail": "Official 2026 parquet lacks direct pickup/dropoff lat/lon columns; only zone-style fields are available.",
+      "fixture_path": null,
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2026-01.parquet",
+      "status": "blocked"
+    },
+    {
+      "benchmark_path": "proofs/artifacts/real_world_benchmarks/osm_monaco_way_extract_benchmark.json",
+      "dataset": "OpenStreetMap Node Dumps",
+      "detail": "Extracted five Monaco highway ways from the official Geofabrik PBF using osmium.",
+      "fixture_path": "code/fixtures/real_world/osm_monaco_way_extract.json",
+      "source_url": "https://download.geofabrik.de/europe/monaco-latest.osm.pbf",
+      "status": "completed"
+    },
+    {
+      "benchmark_path": null,
+      "dataset": "Argoverse 2 Motion Forecasting",
+      "detail": "Official source requires registration, so no unattended download was possible.",
+      "fixture_path": null,
+      "source_url": "https://www.argoverse.org/av2.html",
+      "status": "blocked"
+    },
+    {
+      "benchmark_path": null,
+      "dataset": "Porto Taxi Trajectories",
+      "detail": "Official Kaggle distribution requires account-authenticated access.",
+      "fixture_path": null,
+      "source_url": "https://www.kaggle.com/datasets/crailtap/uber-taxi-for-porto-portugal",
+      "status": "blocked"
+    }
+  ]
+}

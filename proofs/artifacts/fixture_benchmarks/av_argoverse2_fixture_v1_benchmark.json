@@ -1,0 +1,39 @@
+{
+  "compression_ratio": 264.3365800865801,
+  "coord_system": "xy",
+  "decode_time_us": {
+    "mean": 164.04004285714285,
+    "median": 140.583,
+    "p95": 330.2266000000001
+  },
+  "encode_time_us": {
+    "mean": 590.5336,
+    "median": 538.0,
+    "p95": 952.9936000000007
+  },
+  "encoded_bytes_total": 12936,
+  "fixture": "av_argoverse2_fixture_v1.json",
+  "fixture_file_bytes": 5943008,
+  "generated_at_utc": "2026-04-06T16:57:12.258387+00:00",
+  "metadata": {
+    "classes": [
+      "left_turn",
+      "lane_merge",
+      "stop",
+      "straight",
+      "zigzag"
+    ],
+    "count": 210,
+    "reference": "Argoverse2 schema-faithful synthetic (local fixture)",
+    "sample_rate_hz": 10
+  },
+  "quant_step_m": 0.05,
+  "raw_json_bytes_total": 3419458,
+  "roundtrip": {
+    "all_coordinates_exact": false,
+    "coordinate_exact_match_count": 0,
+    "coordinate_exact_match_ratio": 0.0,
+    "max_abs_coordinate_error": 0.024982542405166175
+  },
+  "trajectory_count": 210
+}
