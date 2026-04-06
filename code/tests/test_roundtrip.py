@@ -36,7 +36,7 @@ class TestRoundtripFixtures(unittest.TestCase):
         decoded = decode_trajectory(encode_trajectory(trajectory, quant_step_m=0.05).payload)
         self.assertEqual(len(decoded["points"]), len(trajectory["points"]))
 
-    def test_xy_fixture_error_below_quant_step(self) -> None:
+    def test_xy_fixture_error_below_observed_fixture_bound(self) -> None:
         trajectory = _load_first_trajectory("av_argoverse2_fixture_v1.json")
         decoded = decode_trajectory(encode_trajectory(trajectory, quant_step_m=0.05).payload)
         self.assertLessEqual(_max_xy_error(trajectory, decoded), 1.1)
@@ -46,7 +46,7 @@ class TestRoundtripFixtures(unittest.TestCase):
         decoded = decode_trajectory(encode_trajectory(trajectory, quant_step_m=0.25).payload)
         self.assertEqual(len(decoded["points"]), len(trajectory["points"]))
 
-    def test_ais_fixture_error_below_one_meter(self) -> None:
+    def test_ais_fixture_error_below_observed_fixture_bound(self) -> None:
         trajectory = _load_first_trajectory("ais_noaa_fixture_v1.json")
         decoded = decode_trajectory(encode_trajectory(trajectory, quant_step_m=0.25).payload)
         self.assertLessEqual(_max_haversine_error(trajectory, decoded), 25.0)

@@ -28,8 +28,10 @@ class SpatialMatch:
     distance_m: float | None = None
 
 
-def _trajectory_bbox(trajectory: dict[str, Any]) -> tuple[float, float, float, float]:
-    points = trajectory["points"]
+def _trajectory_bbox(trajectory: dict[str, Any]) -> tuple[float, float, float, float] | None:
+    points = trajectory.get("points") or []
+    if not points:
+        return None
     if trajectory.get("coord_system") == "wgs84":
         lats = [float(point["lat"]) for point in points]
         lons = [float(point["lon"]) for point in points]
@@ -83,6 +85,7 @@ class ManeuverSearchIndex:
         self.rows.clear()
         self.by_maneuver.clear()
         for t in trajectories:
+            points = t.get("points") or []
             scores = detect_maneuvers(t)
             label = t.get("label")
             if label in scores:
@@ -93,7 +96,7 @@ class ManeuverSearchIndex:
                 "trajectory_id": t["trajectory_id"],
                 "ground_truth": label or "unknown",
                 "coord_system": t.get("coord_system", "xy"),
-                "point_count": len(t.get("points", [])),
+                "point_count": len(points),
                 "scores": scores,
                 "trajectory": t,
                 "bbox": _trajectory_bbox(t),
@@ -149,7 +152,10 @@ class ManeuverSearchIndex:
         for row in self.rows:
             if coord_system and row["coord_system"] != coord_system:
                 continue
-            if not _bbox_intersects(row["bbox"], min_a, min_b, max_a, max_b):
+            bbox = row["bbox"]
+            if bbox is None:
+                continue
+            if not _bbox_intersects(bbox, min_a, min_b, max_a, max_b):
                 continue
             if any(
                 _point_in_bbox(point, row["coord_system"], min_a, min_b, max_a, max_b)
@@ -180,9 +186,12 @@ class ManeuverSearchIndex:
         for row in self.rows:
             if coord_system and row["coord_system"] != coord_system:
                 continue
+            points = row["trajectory"].get("points") or []
+            if not points:
+                continue
             best_distance = min(
                 _distance_m(point, row["coord_system"], center_a, center_b)
-                for point in row["trajectory"]["points"]
+                for point in points
             )
             if best_distance <= radius_m:
                 matches.append(

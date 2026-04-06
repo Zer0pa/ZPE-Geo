@@ -81,6 +81,7 @@ def roundtrip_check(original: dict[str, Any], decoded: dict[str, Any]) -> Roundt
 
     coord_system = original.get("coord_system", "xy")
     max_error = 0.0
+    exact = True
     for source, recovered in zip(original["points"], decoded["points"], strict=True):
         if coord_system == "wgs84":
             errors = [
@@ -94,8 +95,8 @@ def roundtrip_check(original: dict[str, Any], decoded: dict[str, Any]) -> Roundt
             ]
         max_error = max(max_error, *errors)
         if any(error != 0.0 for error in errors):
-            return RoundtripCheck(exact=False, max_abs_error=max_error)
-    return RoundtripCheck(exact=True, max_abs_error=max_error)
+            exact = False
+    return RoundtripCheck(exact=exact, max_abs_error=max_error)
 
 
 def quant_step_for(trajectory: dict[str, Any]) -> float:
@@ -130,9 +131,13 @@ def benchmark_fixture_path(fixture_path: Path) -> dict[str, Any]:
         max_abs_error = max(max_abs_error, check.max_abs_error)
 
     coord_system = trajectories[0].get("coord_system", "xy")
+    try:
+        fixture_ref = str(fixture_path.relative_to(REPO_ROOT))
+    except ValueError:
+        fixture_ref = str(fixture_path)
     return {
         "fixture": fixture_path.name,
-        "fixture_path": str(fixture_path.relative_to(REPO_ROOT)),
+        "fixture_path": fixture_ref,
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "metadata": metadata,
         "coord_system": coord_system,
@@ -207,7 +212,10 @@ def write_markdown(path: Path, results: list[dict[str, Any]]) -> None:
 def main() -> None:
     args = parse_args()
     fixture_names = args.fixtures or list(DEFAULT_FIXTURES)
-    fixture_paths = [REPO_ROOT / path for path in (args.fixture_paths or [])]
+    fixture_paths = []
+    for raw_path in args.fixture_paths or []:
+        path = Path(raw_path)
+        fixture_paths.append(path if path.is_absolute() else REPO_ROOT / path)
     output_root = Path(args.output_dir).resolve()
     ensure_dir(output_root)
 
