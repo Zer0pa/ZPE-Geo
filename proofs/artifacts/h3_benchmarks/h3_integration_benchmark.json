@@ -1,0 +1,403 @@
+{
+  "fixtures": [
+    "noaa_ais_day_extract.json",
+    "geolife_extract.json",
+    "osm_monaco_way_extract.json"
+  ],
+  "generated_at_utc": "2026-04-06T17:15:54.390163+00:00",
+  "resolutions": [
+    {
+      "backend": "official_h3",
+      "cell_index": {
+        "distinct_cells": 24,
+        "hit_queries": 24,
+        "miss_queries": 15
+      },
+      "codec_payload_bytes_mean": 102.86666666666666,
+      "codec_smaller_than_raw_h3_uint64_count": 0,
+      "h3_encode_time_us": {
+        "mean": 30.400133333333333,
+        "median": 20.458,
+        "p95": 61.66690000000006
+      },
+      "hex_query_time_us": {
+        "mean": 0.1581025641025641,
+        "median": 0.125,
+        "p95": 0.208
+      },
+      "per_trajectory": [
+        {
+          "codec_payload_bytes": 84,
+          "h3_cell_count": 2,
+          "raw_h3_string_bytes": 30,
+          "raw_h3_uint64_bytes": 16,
+          "trajectory_id": "noaa_368306880"
+        },
+        {
+          "codec_payload_bytes": 88,
+          "h3_cell_count": 6,
+          "raw_h3_string_bytes": 90,
+          "raw_h3_uint64_bytes": 48,
+          "trajectory_id": "noaa_367618070"
+        },
+        {
+          "codec_payload_bytes": 59,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "noaa_338358775"
+        },
+        {
+          "codec_payload_bytes": 88,
+          "h3_cell_count": 5,
+          "raw_h3_string_bytes": 75,
+          "raw_h3_uint64_bytes": 40,
+          "trajectory_id": "noaa_256982000"
+        },
+        {
+          "codec_payload_bytes": 87,
+          "h3_cell_count": 3,
+          "raw_h3_string_bytes": 45,
+          "raw_h3_uint64_bytes": 24,
+          "trajectory_id": "noaa_366995450"
+        },
+        {
+          "codec_payload_bytes": 132,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081023025304.plt"
+        },
+        {
+          "codec_payload_bytes": 126,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081024020959.plt"
+        },
+        {
+          "codec_payload_bytes": 132,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081026134407.plt"
+        },
+        {
+          "codec_payload_bytes": 131,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081027115449.plt"
+        },
+        {
+          "codec_payload_bytes": 136,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081028003826.plt"
+        },
+        {
+          "codec_payload_bytes": 89,
+          "h3_cell_count": 2,
+          "raw_h3_string_bytes": 30,
+          "raw_h3_uint64_bytes": 16,
+          "trajectory_id": "osm_way_4097656"
+        },
+        {
+          "codec_payload_bytes": 86,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "osm_way_4098197"
+        },
+        {
+          "codec_payload_bytes": 126,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "osm_way_4227155"
+        },
+        {
+          "codec_payload_bytes": 86,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "osm_way_4227157"
+        },
+        {
+          "codec_payload_bytes": 93,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "osm_way_4227203"
+        }
+      ],
+      "raw_h3_string_bytes_mean": 28,
+      "raw_h3_uint64_bytes_mean": 14.933333333333334,
+      "resolution": 7,
+      "trajectory_count": 15
+    },
+    {
+      "backend": "official_h3",
+      "cell_index": {
+        "distinct_cells": 57,
+        "hit_queries": 57,
+        "miss_queries": 15
+      },
+      "codec_payload_bytes_mean": 102.86666666666666,
+      "codec_smaller_than_raw_h3_uint64_count": 2,
+      "h3_encode_time_us": {
+        "mean": 24.791666666666668,
+        "median": 19.167,
+        "p95": 36.7956
+      },
+      "hex_query_time_us": {
+        "mean": 0.14469444444444446,
+        "median": 0.125,
+        "p95": 0.18545000000000011
+      },
+      "per_trajectory": [
+        {
+          "codec_payload_bytes": 84,
+          "h3_cell_count": 10,
+          "raw_h3_string_bytes": 150,
+          "raw_h3_uint64_bytes": 80,
+          "trajectory_id": "noaa_368306880"
+        },
+        {
+          "codec_payload_bytes": 88,
+          "h3_cell_count": 12,
+          "raw_h3_string_bytes": 180,
+          "raw_h3_uint64_bytes": 96,
+          "trajectory_id": "noaa_367618070"
+        },
+        {
+          "codec_payload_bytes": 59,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "noaa_338358775"
+        },
+        {
+          "codec_payload_bytes": 88,
+          "h3_cell_count": 12,
+          "raw_h3_string_bytes": 180,
+          "raw_h3_uint64_bytes": 96,
+          "trajectory_id": "noaa_256982000"
+        },
+        {
+          "codec_payload_bytes": 87,
+          "h3_cell_count": 6,
+          "raw_h3_string_bytes": 90,
+          "raw_h3_uint64_bytes": 48,
+          "trajectory_id": "noaa_366995450"
+        },
+        {
+          "codec_payload_bytes": 132,
+          "h3_cell_count": 2,
+          "raw_h3_string_bytes": 30,
+          "raw_h3_uint64_bytes": 16,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081023025304.plt"
+        },
+        {
+          "codec_payload_bytes": 126,
+          "h3_cell_count": 3,
+          "raw_h3_string_bytes": 45,
+          "raw_h3_uint64_bytes": 24,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081024020959.plt"
+        },
+        {
+          "codec_payload_bytes": 132,
+          "h3_cell_count": 2,
+          "raw_h3_string_bytes": 30,
+          "raw_h3_uint64_bytes": 16,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081026134407.plt"
+        },
+        {
+          "codec_payload_bytes": 131,
+          "h3_cell_count": 2,
+          "raw_h3_string_bytes": 30,
+          "raw_h3_uint64_bytes": 16,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081027115449.plt"
+        },
+        {
+          "codec_payload_bytes": 136,
+          "h3_cell_count": 7,
+          "raw_h3_string_bytes": 105,
+          "raw_h3_uint64_bytes": 56,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081028003826.plt"
+        },
+        {
+          "codec_payload_bytes": 89,
+          "h3_cell_count": 2,
+          "raw_h3_string_bytes": 30,
+          "raw_h3_uint64_bytes": 16,
+          "trajectory_id": "osm_way_4097656"
+        },
+        {
+          "codec_payload_bytes": 86,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "osm_way_4098197"
+        },
+        {
+          "codec_payload_bytes": 126,
+          "h3_cell_count": 3,
+          "raw_h3_string_bytes": 45,
+          "raw_h3_uint64_bytes": 24,
+          "trajectory_id": "osm_way_4227155"
+        },
+        {
+          "codec_payload_bytes": 86,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "osm_way_4227157"
+        },
+        {
+          "codec_payload_bytes": 93,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "osm_way_4227203"
+        }
+      ],
+      "raw_h3_string_bytes_mean": 65,
+      "raw_h3_uint64_bytes_mean": 34.666666666666664,
+      "resolution": 9,
+      "trajectory_count": 15
+    },
+    {
+      "backend": "official_h3",
+      "cell_index": {
+        "distinct_cells": 189,
+        "hit_queries": 100,
+        "miss_queries": 15
+      },
+      "codec_payload_bytes_mean": 102.86666666666666,
+      "codec_smaller_than_raw_h3_uint64_count": 8,
+      "h3_encode_time_us": {
+        "mean": 37.69453333333333,
+        "median": 26.625,
+        "p95": 86.3296
+      },
+      "hex_query_time_us": {
+        "mean": 0.18041739130434784,
+        "median": 0.167,
+        "p95": 0.292
+      },
+      "per_trajectory": [
+        {
+          "codec_payload_bytes": 84,
+          "h3_cell_count": 12,
+          "raw_h3_string_bytes": 180,
+          "raw_h3_uint64_bytes": 96,
+          "trajectory_id": "noaa_368306880"
+        },
+        {
+          "codec_payload_bytes": 88,
+          "h3_cell_count": 12,
+          "raw_h3_string_bytes": 180,
+          "raw_h3_uint64_bytes": 96,
+          "trajectory_id": "noaa_367618070"
+        },
+        {
+          "codec_payload_bytes": 59,
+          "h3_cell_count": 1,
+          "raw_h3_string_bytes": 15,
+          "raw_h3_uint64_bytes": 8,
+          "trajectory_id": "noaa_338358775"
+        },
+        {
+          "codec_payload_bytes": 88,
+          "h3_cell_count": 12,
+          "raw_h3_string_bytes": 180,
+          "raw_h3_uint64_bytes": 96,
+          "trajectory_id": "noaa_256982000"
+        },
+        {
+          "codec_payload_bytes": 87,
+          "h3_cell_count": 11,
+          "raw_h3_string_bytes": 165,
+          "raw_h3_uint64_bytes": 88,
+          "trajectory_id": "noaa_366995450"
+        },
+        {
+          "codec_payload_bytes": 132,
+          "h3_cell_count": 30,
+          "raw_h3_string_bytes": 450,
+          "raw_h3_uint64_bytes": 240,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081023025304.plt"
+        },
+        {
+          "codec_payload_bytes": 126,
+          "h3_cell_count": 19,
+          "raw_h3_string_bytes": 285,
+          "raw_h3_uint64_bytes": 152,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081024020959.plt"
+        },
+        {
+          "codec_payload_bytes": 132,
+          "h3_cell_count": 18,
+          "raw_h3_string_bytes": 270,
+          "raw_h3_uint64_bytes": 144,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081026134407.plt"
+        },
+        {
+          "codec_payload_bytes": 131,
+          "h3_cell_count": 14,
+          "raw_h3_string_bytes": 210,
+          "raw_h3_uint64_bytes": 112,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081027115449.plt"
+        },
+        {
+          "codec_payload_bytes": 136,
+          "h3_cell_count": 13,
+          "raw_h3_string_bytes": 195,
+          "raw_h3_uint64_bytes": 104,
+          "trajectory_id": "Geolife Trajectories 1.3_Data_000_Trajectory_20081028003826.plt"
+        },
+        {
+          "codec_payload_bytes": 89,
+          "h3_cell_count": 9,
+          "raw_h3_string_bytes": 135,
+          "raw_h3_uint64_bytes": 72,
+          "trajectory_id": "osm_way_4097656"
+        },
+        {
+          "codec_payload_bytes": 86,
+          "h3_cell_count": 9,
+          "raw_h3_string_bytes": 135,
+          "raw_h3_uint64_bytes": 72,
+          "trajectory_id": "osm_way_4098197"
+        },
+        {
+          "codec_payload_bytes": 126,
+          "h3_cell_count": 15,
+          "raw_h3_string_bytes": 225,
+          "raw_h3_uint64_bytes": 120,
+          "trajectory_id": "osm_way_4227155"
+        },
+        {
+          "codec_payload_bytes": 86,
+          "h3_cell_count": 11,
+          "raw_h3_string_bytes": 165,
+          "raw_h3_uint64_bytes": 88,
+          "trajectory_id": "osm_way_4227157"
+        },
+        {
+          "codec_payload_bytes": 93,
+          "h3_cell_count": 11,
+          "raw_h3_string_bytes": 165,
+          "raw_h3_uint64_bytes": 88,
+          "trajectory_id": "osm_way_4227203"
+        }
+      ],
+      "raw_h3_string_bytes_mean": 197,
+      "raw_h3_uint64_bytes_mean": 105.06666666666666,
+      "resolution": 12,
+      "trajectory_count": 15
+    }
+  ]
+}
