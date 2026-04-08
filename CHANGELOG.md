@@ -34,6 +34,8 @@ Docs-owner and authority-surface alignment pass.
 - support, security, and contribution docs now route readers explicitly instead of relying on staging shorthand
 - proof docs now treat the 2026-02-20 wave bundle as historical evidence and the 2026-03-21 operator pack as the current operator status surface
 - GitHub-safe visual assets from the ZPE-IMC documentation system are now carried locally inside this repo
+- README now leads with proof-backed metrics, target use cases, tooling neighbors, and a short quick-start snippet
+- `code/pyproject.toml` now declares project URLs and geospatial package classifiers
 
 ### Not Changed
 

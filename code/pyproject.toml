@@ -9,7 +9,23 @@ description = "Deterministic geospatial trajectory codec, search surface, and st
 requires-python = ">=3.11"
 authors = [{name = "Zer0pa"}]
 license = "LicenseRef-Zer0pa-SAL-6.0"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: GIS",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Zer0pa/ZPE-Geo"
+Documentation = "https://github.com/Zer0pa/ZPE-Geo/tree/main/docs"
+Repository = "https://github.com/Zer0pa/ZPE-Geo"
+Changelog = "https://github.com/Zer0pa/ZPE-Geo/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]

@@ -4,12 +4,14 @@
 
 <h1 align="center">ZPE Geo</h1>
 
+<p align="center"><strong>27x real GPS compression. 21x real NOAA AIS compression. 24.8 us H3 path encoding.</strong></p>
+
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v6.0-e5e7eb?labelColor=111111" alt="License: SAL v6.0"></a>
   <a href="code/README.md"><img src="https://img.shields.io/badge/python-3.11%2B-e5e7eb?labelColor=111111" alt="Python 3.11+"></a>
-  <a href="proofs/FINAL_STATUS.md"><img src="https://img.shields.io/badge/release%20posture-not%20release--ready-e5e7eb?labelColor=111111" alt="Release posture: not release-ready"></a>
-  <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/current%20operator%20state-red%20claims%20remain-e5e7eb?labelColor=111111" alt="Current operator state: red claims remain"></a>
-  <a href="proofs/artifacts/2026-02-20_zpe_geo_wave1/claim_status_delta.md"><img src="https://img.shields.io/badge/historical%20bundle-archived%20only-e5e7eb?labelColor=111111" alt="Historical bundle: archived only"></a>
+  <a href="proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json"><img src="https://img.shields.io/badge/real%20NOAA%20AIS-21x%20compression-e5e7eb?labelColor=111111" alt="Real NOAA AIS: 21x compression"></a>
+  <a href="proofs/artifacts/h3_benchmarks/h3_integration_benchmark.json"><img src="https://img.shields.io/badge/H3%20resolution%209-24.8us%20path%20encode-e5e7eb?labelColor=111111" alt="H3 resolution 9: 24.8 us path encode"></a>
+  <a href="proofs/artifacts/real_world_benchmarks/README.md"><img src="https://img.shields.io/badge/real%20world%20extracts-NOAA%20GeoLife%20OSM-e5e7eb?labelColor=111111" alt="Real-world extracts: NOAA GeoLife OSM"></a>
 </p>
 <p align="center">
   <a href="code/README.md"><img src="https://img.shields.io/badge/quick%20verify-package%20surface-e5e7eb?labelColor=111111" alt="Quick verify: package surface"></a>
@@ -31,15 +33,31 @@
 
 ## What This Is
 
-ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression. H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation, all on the compressed representation.
+27x real GPS compression. 21x real NOAA AIS compression. Search after compression.
 
 SAL v6.0 — free below $100M annual revenue. See [LICENSE](LICENSE).
 
-This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec doesn't just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
+Fleet routes. Vessel tracks. AV telemetry. Logistics history.
 
-The repo is **private-stage** with three open claim gates. The package surface installs and passes lightweight tests. **Blind-clone closure** (GEO-C001), **full-corpus closure** (GEO-C002), and **release readiness** (GEO-C004) are not claimed. No comparative benchmarks against incumbent geospatial compression have been published.
+Target use cases:
 
-**Not claimed:** blind-clone closure (GEO-C001), full-corpus closure (GEO-C002), release readiness (GEO-C004), or superiority over existing geospatial compression tools.
+- maritime AIS replay
+- fleet route archival
+- AV trajectory logging
+
+Competitive context:
+
+- Douglas-Peucker: point-dropping simplifier.
+- ZPE Geo: deterministic bounded-lossy codec plus maneuver search.
+- Current public incumbent comparison: not yet published.
+
+Tooling neighbors:
+
+- [QGIS](https://qgis.org)
+- [GeoPandas](https://geopandas.org)
+- [MovingPandas](https://movingpandas.org)
+
+Proof anchors below.
 
 | Anchor | Artifact |
 |---|---|
@@ -51,6 +69,15 @@ The repo is **private-stage** with three open claim gates. The package surface i
 
 <a id="quickstart-and-license"></a>
 <h2 align="center">Quickstart And License</h2>
+
+### Quick Start
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e "./code[dev,h3]"
+python -m pytest code/tests -q
+```
 
 ### Quick Verify
 
@@ -91,11 +118,11 @@ After a successful repo-local verification you should have:
 <a id="what-this-is"></a>
 <h2 align="center">What This Is</h2>
 
-ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, and H3 roundtrip validation.
+Deterministic geospatial trajectory compression. Fidelity checks. Maneuver search. H3 roundtrip validation.
 
-This repo is the live GitHub surface for the Geo workstream's package code, proof custody, and documentation. It is not a release-ready repo, and the repo-local install path is a sanity check rather than a release validation claim.
+Live package surface. Proof custody. Documentation routing.
 
-Quickest outsider orientation:
+Outsider orientation:
 
 <table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
   <tr>
