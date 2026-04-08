@@ -47,11 +47,11 @@ class TestSearchComprehensive(unittest.TestCase):
         self.index = ManeuverSearchIndex(seed=7)
         self.index.build([self.xy_a, self.xy_b, self.xy_c, self.wgs_a, self.wgs_b])
 
-    def test_bbox_query_returns_expected_xy_trajectory(self) -> None:
+    def test_bbox_query_returns_expected_xy_trajectories(self) -> None:
         matches = self.index.query_bbox(0.0, 0.0, 2.1, 2.1, coord_system="xy")
         self.assertEqual([match.trajectory_id for match in matches], ["xy_a", "xy_b"])
 
-    def test_bbox_query_returns_multiple_matches(self) -> None:
+    def test_bbox_query_returns_expected_single_subset_match(self) -> None:
         matches = self.index.query_bbox(1.5, -0.1, 3.1, 1.1, coord_system="xy")
         self.assertEqual([match.trajectory_id for match in matches], ["xy_b"])
 
@@ -70,6 +70,26 @@ class TestSearchComprehensive(unittest.TestCase):
     def test_radius_query_orders_by_distance(self) -> None:
         matches = self.index.query_radius(37.7765, -122.4195, 700.0, coord_system="wgs84")
         self.assertEqual([match.trajectory_id for match in matches], ["wgs_a", "wgs_b"])
+
+    def test_bbox_query_ignores_empty_trajectories(self) -> None:
+        self.index.build(
+            [
+                self.xy_a,
+                {"trajectory_id": "empty_xy", "coord_system": "xy", "label": "straight", "points": []},
+            ]
+        )
+        matches = self.index.query_bbox(0.0, 0.0, 2.1, 2.1, coord_system="xy")
+        self.assertEqual([match.trajectory_id for match in matches], ["xy_a"])
+
+    def test_radius_query_ignores_empty_trajectories(self) -> None:
+        self.index.build(
+            [
+                self.wgs_a,
+                {"trajectory_id": "empty_wgs", "coord_system": "wgs84", "label": "straight", "points": []},
+            ]
+        )
+        matches = self.index.query_radius(37.7749, -122.4194, 60.0, coord_system="wgs84")
+        self.assertEqual([match.trajectory_id for match in matches], ["wgs_a"])
 
 
 if __name__ == "__main__":

@@ -28,7 +28,9 @@ Repository = "https://github.com/Zer0pa/ZPE-Geo"
 Changelog = "https://github.com/Zer0pa/ZPE-Geo/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
+dev = ["build>=1.2", "markdown>=3.6", "pytest>=8.0", "pytest-cov>=5.0"]
+test = ["build>=1.2", "pytest>=8.0", "pytest-cov>=5.0"]
+docs = ["markdown>=3.6"]
 h3 = ["h3>=4.1"]
 
 [tool.setuptools.packages.find]

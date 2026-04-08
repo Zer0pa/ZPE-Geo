@@ -36,6 +36,15 @@ Docs-owner and authority-surface alignment pass.
 - GitHub-safe visual assets from the ZPE-IMC documentation system are now carried locally inside this repo
 - README now leads with proof-backed metrics, target use cases, tooling neighbors, and a short quick-start snippet
 - `code/pyproject.toml` now declares project URLs and geospatial package classifiers
+- packaging metadata now exposes `dev`, `test`, and `docs` extras alongside the H3 extra
+- CI now enforces a package coverage threshold instead of only a raw pass/fail test run
+- benchmark and spatial-search helpers now handle empty trajectories and absolute fixture paths cleanly
+
+### Added
+
+- `examples/ais_compress.py` and `examples/gpx_bridge.py` as runnable repo-root examples
+- `code/tests/test_clean_install.py`, `code/tests/test_examples.py`, `code/tests/test_maneuver_detection.py`, and `code/tests/test_search_without_decode.py`
+- `BENCHMARKS.md` as the canonical benchmark methodology and artifact-routing surface
 
 ### Not Changed
 

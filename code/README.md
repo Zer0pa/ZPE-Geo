@@ -23,6 +23,8 @@ python -m pip install -e "./code[dev,h3]"
 Optional extras currently declared here:
 
 - `dev`
+- `test`
+- `docs`
 - `h3`
 
 The package does not ship the full external corpora or raw vendored payloads used by heavier outer-workspace runs.
@@ -71,7 +73,9 @@ The install-facing metadata is defined in `pyproject.toml` under this directory.
 
 | Extra | Why it exists |
 | --- | --- |
-| `dev` | pytest and local verification tooling |
+| `dev` | local verification, build, and coverage tooling |
+| `test` | clean-install and coverage checks |
+| `docs` | markdown render support for docs-only workflows |
 | `h3` | H3 backend dependency for roundtrip checks |
 
 Heavy corpus and parity stacks are not exposed as declared extras in this inner repo package surface.
