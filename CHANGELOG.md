@@ -45,6 +45,7 @@ Docs-owner and authority-surface alignment pass.
 - `examples/ais_compress.py` and `examples/gpx_bridge.py` as runnable repo-root examples
 - `code/tests/test_clean_install.py`, `code/tests/test_examples.py`, `code/tests/test_maneuver_detection.py`, and `code/tests/test_search_without_decode.py`
 - `BENCHMARKS.md` as the canonical benchmark methodology and artifact-routing surface
+- `code/scripts/benchmark_real_world_baselines.py` plus rerun-backed real-world baseline benchmark artifacts
 
 ### Not Changed
 

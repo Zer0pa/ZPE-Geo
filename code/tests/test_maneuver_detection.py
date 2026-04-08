@@ -12,8 +12,23 @@ def _left_turn_trajectory() -> dict:
         "points": [
             {"x": 0.0, "y": 0.0, "speed": 4.0},
             {"x": 0.0, "y": 1.0, "speed": 4.0},
-            {"x": 1.0, "y": 2.0, "speed": 4.0},
-            {"x": 2.0, "y": 2.0, "speed": 4.0},
+            {"x": 0.5, "y": 1.5, "speed": 4.0},
+            {"x": 1.5, "y": 1.5, "speed": 4.0},
+        ],
+    }
+
+
+def _lane_merge_trajectory() -> dict:
+    return {
+        "trajectory_id": "lane_merge_demo",
+        "coord_system": "xy",
+        "points": [
+            {"x": 0.0, "y": 0.0, "speed": 4.0},
+            {"x": 0.0, "y": 1.0, "speed": 4.0},
+            {"x": 0.0, "y": 2.0, "speed": 4.0},
+            {"x": 1.0, "y": 3.0, "speed": 4.0},
+            {"x": 1.0, "y": 4.0, "speed": 4.0},
+            {"x": 1.0, "y": 5.0, "speed": 4.0},
         ],
     }
 
@@ -36,6 +51,10 @@ class TestManeuverDetection(unittest.TestCase):
     def test_left_turn_scores_high(self) -> None:
         scores = detect_maneuvers(_left_turn_trajectory())
         self.assertGreaterEqual(scores["left_turn"], 0.9)
+
+    def test_lane_merge_scores_high(self) -> None:
+        scores = detect_maneuvers(_lane_merge_trajectory())
+        self.assertGreaterEqual(scores["lane_merge"], 0.9)
 
     def test_stop_scores_high(self) -> None:
         scores = detect_maneuvers(_stop_trajectory())

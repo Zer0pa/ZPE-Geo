@@ -1,0 +1,88 @@
+{
+  "fixtures": [
+    "noaa_ais_day_extract.json",
+    "geolife_extract.json",
+    "osm_monaco_way_extract.json"
+  ],
+  "generated_at_utc": "2026-04-08T02:29:41.716401+00:00",
+  "records": [
+    {
+      "baselines": {
+        "douglas_peucker": {
+          "bytes_total": 520,
+          "compression_ratio": 16.432692307692307,
+          "epsilon_m": 12.0,
+          "improvement_vs_zpe": 1.2807881773399015
+        },
+        "gzip": {
+          "bytes_total": 2009,
+          "compression_ratio": 4.253359880537581,
+          "improvement_vs_zpe": 4.948275862068965
+        }
+      },
+      "dataset": "NOAA AIS extract",
+      "fixture": "noaa_ais_day_extract.json",
+      "fixture_path": "code/fixtures/real_world/noaa_ais_day_extract.json",
+      "max_abs_coordinate_error": 0.014429029349557254,
+      "point_count_total": 60,
+      "raw_json_bytes_total": 8545,
+      "source_reference": "NOAA MarineCadastre daily AIS CSV extract",
+      "source_url": "https://coast.noaa.gov/htdata/CMSP/AISDataHandler/2025/ais-2025-01-01.csv.zst",
+      "trajectory_count": 5,
+      "zpe_bytes_total": 406,
+      "zpe_compression_ratio": 21.04679802955665
+    },
+    {
+      "baselines": {
+        "douglas_peucker": {
+          "bytes_total": 440,
+          "compression_ratio": 40.76136363636363,
+          "epsilon_m": 12.0,
+          "improvement_vs_zpe": 0.669710806697108
+        },
+        "gzip": {
+          "bytes_total": 2820,
+          "compression_ratio": 6.359929078014185,
+          "improvement_vs_zpe": 4.292237442922374
+        }
+      },
+      "dataset": "GeoLife extract",
+      "fixture": "geolife_extract.json",
+      "fixture_path": "code/fixtures/real_world/geolife_extract.json",
+      "max_abs_coordinate_error": 0.000549743650367418,
+      "point_count_total": 160,
+      "raw_json_bytes_total": 17935,
+      "source_reference": "Microsoft Research GeoLife GPS Trajectories 1.3",
+      "source_url": "https://download.microsoft.com/download/f/4/8/f4894aa5-fdbc-481e-9285-d5f8c4c4f039/Geolife%20Trajectories%201.3.zip",
+      "trajectory_count": 5,
+      "zpe_bytes_total": 657,
+      "zpe_compression_ratio": 27.298325722983257
+    },
+    {
+      "baselines": {
+        "douglas_peucker": {
+          "bytes_total": 424,
+          "compression_ratio": 14.403301886792454,
+          "epsilon_m": 12.0,
+          "improvement_vs_zpe": 0.8833333333333333
+        },
+        "gzip": {
+          "bytes_total": 1728,
+          "compression_ratio": 3.5341435185185186,
+          "improvement_vs_zpe": 3.6
+        }
+      },
+      "dataset": "OSM Monaco extract",
+      "fixture": "osm_monaco_way_extract.json",
+      "fixture_path": "code/fixtures/real_world/osm_monaco_way_extract.json",
+      "max_abs_coordinate_error": 0.0003114791058962396,
+      "point_count_total": 100,
+      "raw_json_bytes_total": 6107,
+      "source_reference": "Geofabrik Monaco latest extract",
+      "source_url": "https://download.geofabrik.de/europe/monaco-latest.osm.pbf",
+      "trajectory_count": 5,
+      "zpe_bytes_total": 480,
+      "zpe_compression_ratio": 12.722916666666666
+    }
+  ]
+}

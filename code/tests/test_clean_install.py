@@ -17,7 +17,7 @@ class TestCleanInstall(unittest.TestCase):
             venv_dir = Path(temp_dir) / "clean-venv"
             dist_dir = Path(temp_dir) / "dist"
             python_bin = venv_dir / "bin" / "python"
-            sdist_name = None
+            sdist_path = None
 
             subprocess.run(
                 [sys.executable, "-m", "build", "--sdist", "--outdir", str(dist_dir), str(PACKAGE_ROOT)],
@@ -25,19 +25,14 @@ class TestCleanInstall(unittest.TestCase):
                 cwd=REPO_ROOT,
             )
             for candidate in dist_dir.glob("zpe_geo-*.tar.gz"):
-                sdist_name = candidate
+                sdist_path = candidate
                 break
-            if sdist_name is None:
-                self.fail("sdist build did not produce a tar.gz artifact")
+            if sdist_path is None:
+                self.fail("sdist build did not produce a .tar.gz artifact")
 
             subprocess.run([sys.executable, "-m", "venv", str(venv_dir)], check=True, cwd=REPO_ROOT)
             subprocess.run(
-                [str(python_bin), "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"],
-                check=True,
-                cwd=REPO_ROOT,
-            )
-            subprocess.run(
-                [str(python_bin), "-m", "pip", "install", "--no-build-isolation", str(sdist_name)],
+                [str(python_bin), "-m", "pip", "install", "--disable-pip-version-check", str(sdist_path)],
                 check=True,
                 cwd=REPO_ROOT,
             )

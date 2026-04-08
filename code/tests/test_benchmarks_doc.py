@@ -12,6 +12,8 @@ class TestBenchmarksDoc(unittest.TestCase):
         content = (REPO_ROOT / "BENCHMARKS.md").read_text(encoding="utf-8")
         self.assertIn("## Methodology", content)
         self.assertIn("| Dataset | Script | Fixture | Artifact |", content)
+        self.assertIn("| Dataset | Trajectories | Points | Raw JSON Bytes | ZPE Bytes | ZPE Ratio | Max Error |", content)
+        self.assertIn("| Dataset | Baseline | Baseline Bytes | ZPE Bytes | Improvement vs Baseline |", content)
 
 
 if __name__ == "__main__":

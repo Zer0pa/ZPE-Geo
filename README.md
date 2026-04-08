@@ -49,7 +49,7 @@ Competitive context:
 
 - Douglas-Peucker: point-dropping simplifier.
 - ZPE Geo: deterministic bounded-lossy codec plus maneuver search.
-- Current public incumbent comparison: not yet published.
+- Current public incumbent comparison: `BENCHMARKS.md` publishes gzip and Douglas-Peucker routes.
 
 Tooling neighbors:
 
