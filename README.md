@@ -20,7 +20,7 @@
 </p>
 <table align="center" width="100%" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="25%"><a href="#quickstart-and-license"><img src=".github/assets/readme/nav/quickstart-and-license.svg" alt="Quickstart And License" width="100%"></a></td>
+    <td width="25%"><a href="#quick-start"><img src=".github/assets/readme/nav/quickstart-and-license.svg" alt="Quickstart And License" width="100%"></a></td>
     <td width="25%"><a href="#what-this-is"><img src=".github/assets/readme/nav/what-this-is.svg" alt="What This Is" width="100%"></a></td>
     <td width="25%"><a href="#current-authority"><img src=".github/assets/readme/nav/current-authority.svg" alt="Current Authority" width="100%"></a></td>
     <td width="25%"><a href="#go-next"><img src=".github/assets/readme/nav/go-next.svg" alt="Go Next" width="100%"></a></td>
@@ -31,26 +31,108 @@
 
 ## What This Is
 
-ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression. H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation, all on the compressed representation.
+ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression. H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation all operate on the compressed representation.
 
-SAL v6.0 — free below $100M annual revenue. See [LICENSE](LICENSE).
+This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec does not just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
 
-This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec doesn't just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
+ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, H3 roundtrip validation, proof custody, and documentation routing. SAL v6.0 is free below $100M annual revenue. See [LICENSE](LICENSE).
 
-The repo is **private-stage** with three open claim gates. The package surface installs and passes lightweight tests. **Blind-clone closure** (GEO-C001), **full-corpus closure** (GEO-C002), and **release readiness** (GEO-C004) are not claimed. No comparative benchmarks against incumbent geospatial compression have been published.
+| Field | Value |
+|-------|-------|
+| Architecture | TRAJECTORY_MANIFOLD |
+| Encoding | H3_HEX_PACK |
 
-**Not claimed:** blind-clone closure (GEO-C001), full-corpus closure (GEO-C002), release readiness (GEO-C004), or superiority over existing geospatial compression tools.
+## Key Metrics
 
-| Anchor | Artifact |
-|---|---|
-| Final status | [`FINAL_STATUS.md`](proofs/FINAL_STATUS.md) |
-| Operator status pack | [`2026-03-21_operator_status/`](proofs/artifacts/2026-03-21_operator_status/README.md) |
-| Consolidated proof report | [`CONSOLIDATED_PROOF_REPORT.md`](proofs/CONSOLIDATED_PROOF_REPORT.md) |
+| Metric | Value | Tag |
+|--------|-------|-----|
+| Capabilities | compress+index+search | TRIPLE_OP |
+| Spatial Index | H3 hex | HIERARCHICAL |
+| Tests | lightweight pass | LOCAL_ONLY |
+| Open Gates | C001 C002 C004 | 3_OPEN |
 
----
+<p align="center">
+  <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE Geo Upper Insert" width="100%">
+</p>
 
-<a id="quickstart-and-license"></a>
-<h2 align="center">Quickstart And License</h2>
+## What We Prove
+
+- Trajectory compression with preserved query capability
+- H3 hexagonal spatial indexing during encoding
+- Maneuver-aware search on compressed representation
+- Lightweight test suite passes
+
+## What We Don't Claim
+
+- No claim of blind-clone closure (GEO-C001)
+- No claim of full-corpus closure (GEO-C002)
+- No claim of release readiness (GEO-C004)
+- No claim of superiority over incumbent geospatial compression
+
+<p align="center">
+  <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE Geo Lower Insert" width="100%">
+</p>
+
+## Current Authority
+
+| Field | Value |
+|-------|-------|
+| Verdict | NOT_RELEASE_READY |
+| Commit SHA | bb9b5e39fc2e |
+| Confidence | 62.5% |
+| Source | proofs/FINAL_STATUS.md |
+
+- Supporting operator pack: [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md)
+- Open gates: `GEO-C001`, `GEO-C002`, `GEO-C004`
+- Confidence basis: `5 / 8` tracked claims green on [proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json)
+
+<p align="center">
+  <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE Geo Mid Masthead" width="100%">
+</p>
+
+## Verification Status
+
+| Code | Check | Verdict |
+|------|-------|---------|
+| V_01 | Repo-local package surface | PASS |
+| V_02 | Lightweight code tests | PASS |
+| V_03 | GEO-C001 blind-clone closure | FAIL |
+| V_04 | GEO-C002 full-corpus closure | FAIL |
+| V_05 | GEO-C004 release readiness | FAIL |
+| V_06 | H3 roundtrip consistency | PASS |
+
+## Proof Anchors
+
+| Path | State |
+|------|-------|
+| proofs/FINAL_STATUS.md | VERIFIED |
+| proofs/CONSOLIDATED_PROOF_REPORT.md | VERIFIED |
+| proofs/artifacts/2026-03-21_operator_status/README.md | VERIFIED |
+| proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json | VERIFIED |
+| proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md | VERIFIED |
+
+Quickest outsider orientation:
+
+| Route | Why |
+| --- | --- |
+| [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) | Governing current repo verdict |
+| [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) | Explicit public claim boundary |
+| [AUDITOR_PLAYBOOK.md](AUDITOR_PLAYBOOK.md) | Audit route and reading order |
+| [code/README.md](code/README.md) | Install-facing package surface |
+
+## Repo Shape
+
+| Field | Value |
+|-------|-------|
+| Proof Anchors | 5 |
+| Modality Lanes | 4 |
+| Authority Source | proofs/FINAL_STATUS.md |
+
+<p align="center">
+  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE Geo Lower Masthead" width="100%">
+</p>
+
+## Quick Start
 
 ### Quick Verify
 
@@ -85,54 +167,18 @@ After a successful repo-local verification you should have:
 - `LICENSE` is the legal source of truth. Repo docs summarize it; they do not override it.
 
 <p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE Geo Upper Insert" width="100%">
+  <img src=".github/assets/readme/zpe-masthead-option-3.6.gif" alt="ZPE Geo Authority Insert" width="100%">
 </p>
 
-<a id="what-this-is"></a>
-<h2 align="center">What This Is</h2>
+## Ecosystem
 
-ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, and H3 roundtrip validation.
-
-This repo is the live GitHub surface for the Geo workstream's package code, proof custody, and documentation. It is not a release-ready repo, and the repo-local install path is a sanity check rather than a release validation claim.
-
-Quickest outsider orientation:
-
-<table width="100%" border="1" bordercolor="#111111" cellpadding="16" cellspacing="0">
-  <tr>
-    <td width="25%" valign="top" align="center"><a href="proofs/FINAL_STATUS.md"><code>proofs/FINAL_STATUS.md</code></a></td>
-    <td width="25%" valign="top" align="center"><a href="PUBLIC_AUDIT_LIMITS.md"><code>PUBLIC_AUDIT_LIMITS.md</code></a></td>
-    <td width="25%" valign="top" align="center"><a href="AUDITOR_PLAYBOOK.md"><code>AUDITOR_PLAYBOOK.md</code></a></td>
-    <td width="25%" valign="top" align="center"><a href="code/README.md"><code>code/README.md</code></a></td>
-  </tr>
-</table>
-
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE Geo Lower Insert" width="100%">
-</p>
-
-<a id="current-authority"></a>
-<h2 align="center">Current Authority</h2>
-
-| Question | Current answer | Canonical source |
+| Workstream | Route | Notes |
 | --- | --- | --- |
-| What is the governing current-status document? | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) |
-| What supports that current-status document? | The copied-back March 21 operator pack under [proofs/artifacts/2026-03-21_operator_status/](proofs/artifacts/2026-03-21_operator_status/) | [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) |
-| What is the current blocker state? | The lane is still blocked on `GEO-C001`, `GEO-C002`, and `GEO-C004` | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) |
-| What is not being claimed? | No blind-clone closure, no full-corpus closure, no public release readiness, and no open-ended superiority claim | [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) |
-| What is the correct acquisition surface for this workstream? | `https://github.com/Zer0pa/ZPE-Geo.git` | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
-
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE Geo Mid Masthead" width="100%">
-</p>
-
-<h2 align="center">Runtime Proof Surface</h2>
-
-| Evidence family | What it answers | Route |
-| --- | --- | --- |
-| Repo-local package sanity check | Does the install-facing package still import and pass lightweight tests? | [code/README.md](code/README.md) |
-| Governing current repo verdict | What is true now about release posture and blocking claims? | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) |
-| Current supporting evidence | Which copied-back operator artifacts support the current verdict? | [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) |
-| Historical custody surface | What was proved earlier and why does it stay historical-only? | [proofs/CONSOLIDATED_PROOF_REPORT.md](proofs/CONSOLIDATED_PROOF_REPORT.md) |
+| ZPE Geo | [github.com/Zer0pa/ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo) | This geospatial codec, search, and H3 workstream. |
+| ZPE-IMC | [github.com/Zer0pa/ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) | Current documentation-structure reference surface reused by sibling repos. |
+| ZPE-FT | [github.com/Zer0pa/ZPE-FT](https://github.com/Zer0pa/ZPE-FT) | Parallel ZPE family workstream. |
+| ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Parallel ZPE family workstream. |
+| ZPE-IoT | [github.com/Zer0pa/ZPE-IoT](https://github.com/Zer0pa/ZPE-IoT) | Parallel ZPE family workstream. |
 
 ## Historical Context Only
 
@@ -144,12 +190,7 @@ The archived bundle under [proofs/artifacts/2026-02-20_zpe_geo_wave1/](proofs/ar
 
 Read those facts as historical-only context through [proofs/CONSOLIDATED_PROOF_REPORT.md](proofs/CONSOLIDATED_PROOF_REPORT.md), not as current release status.
 
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE Geo Lower Masthead" width="100%">
-</p>
-
-<a id="go-next"></a>
-<h2 align="center">Go Next</h2>
+## Go Next
 
 | Need | Route |
 | --- | --- |
@@ -163,7 +204,7 @@ Read those facts as historical-only context through [proofs/CONSOLIDATED_PROOF_R
 | Community conduct | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
 | Install surface | [code/README.md](code/README.md) |
 
-<h2 align="center">Contributing, Security, Support</h2>
+## Contributing, Security, Support
 
 | Need | Route |
 | --- | --- |
@@ -171,17 +212,3 @@ Read those facts as historical-only context through [proofs/CONSOLIDATED_PROOF_R
 | Community conduct and evidence norms | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
 | Vulnerability reporting and secret-exposure handling | [SECURITY.md](SECURITY.md) |
 | Reader routing and response expectations | [docs/SUPPORT.md](docs/SUPPORT.md) |
-
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3.6.gif" alt="ZPE Geo Authority Insert" width="100%">
-</p>
-
-<h2 align="center">ZPE Ecosystem</h2>
-
-| Workstream | Route | Notes |
-| --- | --- | --- |
-| ZPE Geo | [github.com/Zer0pa/ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo) | This geospatial codec, search, and H3 workstream. |
-| ZPE-IMC | [github.com/Zer0pa/ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) | Current documentation-structure reference surface reused by sibling repos. |
-| ZPE-FT | [github.com/Zer0pa/ZPE-FT](https://github.com/Zer0pa/ZPE-FT) | Parallel ZPE family workstream. |
-| ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Parallel ZPE family workstream. |
-| ZPE-IoT | [github.com/Zer0pa/ZPE-IoT](https://github.com/Zer0pa/ZPE-IoT) | Parallel ZPE family workstream. |
