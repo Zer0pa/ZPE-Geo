@@ -73,7 +73,7 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
   <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE Geo Lower Insert" width="100%">
 </p>
 
-## Current Authority
+## Commercial Readiness
 
 | Field | Value |
 |-------|-------|
@@ -90,7 +90,7 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE Geo Mid Masthead" width="100%">
 </p>
 
-## Verification Status
+## Tests and Verification
 
 | Code | Check | Verdict |
 |------|-------|---------|
