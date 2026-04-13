@@ -14,10 +14,12 @@ This package surface is intentionally smaller than the broader outer workspace. 
   <img src="../.github/assets/readme/section-bars/install.svg" alt="INSTALL" width="100%">
 </p>
 
+From the repo root:
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -e "./code[dev,h3]"
+python -m pip install -e ".[dev,h3]"
 ```
 
 Optional extras currently declared here:
@@ -61,7 +63,7 @@ The repo-local import surface currently exposes:
 - `zpe_geo.H3Bridge`
 - `zpe_geo.ManeuverSearchIndex`
 
-The install-facing metadata is defined in `pyproject.toml` under this directory.
+The install-facing metadata is defined in the repo-root [pyproject.toml](../pyproject.toml). The package source remains under `code/`.
 
 ---
 

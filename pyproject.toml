@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "zpe-geo"
 version = "0.1.0"
 description = "Deterministic geospatial trajectory codec, search surface, and staged proof bundle."
+readme = "README.md"
 requires-python = ">=3.11"
 authors = [{name = "Zer0pa"}]
 license = "LicenseRef-Zer0pa-SAL-6.2"
@@ -15,6 +16,9 @@ dependencies = []
 dev = ["pytest>=8.0"]
 h3 = ["h3>=4.1"]
 
+[tool.setuptools]
+package-dir = {"" = "code"}
+
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["code"]
 include = ["zpe_geo*"]

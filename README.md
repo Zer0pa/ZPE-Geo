@@ -5,7 +5,7 @@
 <h1 align="center">ZPE Geo</h1>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v6.0-e5e7eb?labelColor=111111" alt="License: SAL v6.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Zer0pa%20SAL-e5e7eb?labelColor=111111" alt="License: Zer0pa SAL"></a>
   <a href="code/README.md"><img src="https://img.shields.io/badge/python-3.11%2B-e5e7eb?labelColor=111111" alt="Python 3.11+"></a>
   <a href="proofs/FINAL_STATUS.md"><img src="https://img.shields.io/badge/release%20posture-not%20release--ready-e5e7eb?labelColor=111111" alt="Release posture: not release-ready"></a>
   <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/current%20operator%20state-red%20claims%20remain-e5e7eb?labelColor=111111" alt="Current operator state: red claims remain"></a>
@@ -35,7 +35,7 @@ ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, 
 
 This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec does not just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
 
-ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, H3 roundtrip validation, proof custody, and documentation routing. SAL v6.0 is free below $100M annual revenue. See [LICENSE](LICENSE).
+ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, H3 roundtrip validation, proof custody, and documentation routing. Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 | Field | Value |
 |-------|-------|
@@ -44,12 +44,16 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 
 ## Key Metrics
 
-| Metric | Value | Tag |
-|--------|-------|-----|
-| Capabilities | compress+index+search | TRIPLE_OP |
-| Spatial Index | H3 hex | HIERARCHICAL |
-| Tests | lightweight pass | LOCAL_ONLY |
-| Open Gates | C001 C002 C004 | 3_OPEN |
+| Metric | Value | Baseline |
+|--------|-------|----------|
+| CONFIDENCE | 62.5% (5/8 green) | — |
+| OPEN_GATES | 3 | GEO-C001/C002/C004 |
+| VERIFICATION | 3/6 pass | — |
+| AIS_CR | 475× median | vs Douglas-Peucker ~315× |
+
+> Source: [proofs/V6_AUTHORITY_SURFACE_SUMMARY.md](proofs/V6_AUTHORITY_SURFACE_SUMMARY.md)
+>
+> Note: The AIS comparator row is retained historical evidence and does not override the current March 21 red-state operator posture.
 
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE Geo Upper Insert" width="100%">
@@ -143,7 +147,7 @@ git clone https://github.com/Zer0pa/ZPE-Geo.git zpe-geo
 cd zpe-geo
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install -e "./code[dev,h3]"
+python -m pip install -e ".[dev,h3]"
 python -m pytest code/tests -q
 python - <<'PY'
 from zpe_geo import H3Bridge, ManeuverSearchIndex, decode_trajectory, encode_trajectory
@@ -155,14 +159,14 @@ PY
 
 After a successful repo-local verification you should have:
 
-- an editable install of the inner `code/` package surface
+- an editable install of the repo-root package surface
 - passing lightweight repo-local tests under `code/tests`
 - an importable `zpe_geo` surface without relying on outer-workspace material
 
 ### License Boundary
 
-- This repo uses the same SAL v6.0 license text as the current `ZPE-IMC` reference surface.
-- SPDX tag: `LicenseRef-Zer0pa-SAL-6.0`.
+- Repo-root package metadata uses `LicenseRef-Zer0pa-SAL-6.2`.
+- `LICENSE` remains the in-repo legal text shipped with this checkout.
 - Commercial or hosted use above the SAL threshold requires contact at `architects@zer0pa.ai`.
 - `LICENSE` is the legal source of truth. Repo docs summarize it; they do not override it.
 
