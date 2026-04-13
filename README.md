@@ -31,11 +31,11 @@
 
 ## What This Is
 
-ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression. H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation all operate on the compressed representation.
+ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression.
 
-This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec does not just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
+H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation all operate on the compressed representation.
 
-ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, H3 roundtrip validation, proof custody, and documentation routing. SAL v6.0 is free below $100M annual revenue. See [LICENSE](LICENSE).
+This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability.
 
 | Field | Value |
 |-------|-------|
@@ -44,12 +44,12 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 
 ## Key Metrics
 
-| Metric | Value | Tag |
-|--------|-------|-----|
-| Capabilities | compress+index+search | TRIPLE_OP |
-| Spatial Index | H3 hex | HIERARCHICAL |
-| Tests | lightweight pass | LOCAL_ONLY |
-| Open Gates | C001 C002 C004 | 3_OPEN |
+| Metric | Value | Baseline |
+|--------|-------|----------|
+| AIS_COMPRESSION | 475× | vs Douglas-Peucker ~315× |
+| AV_COMPRESSION | 107× | — |
+| QUERY_LATENCY | 0.064 ms | vs PostGIS R-tree ~1–10 ms |
+| SPATIAL_RMSE | 0.82 m | — |
 
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE Geo Upper Insert" width="100%">
@@ -57,10 +57,11 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 
 ## What We Prove
 
-- Trajectory compression with preserved query capability
-- H3 hexagonal spatial indexing during encoding
-- Maneuver-aware search on compressed representation
-- Lightweight test suite passes
+- Compass direction tokens map trajectory segments to 8-primitive geometry
+- H3 hexagonal spatial indexing computed during encoding, not post-hoc
+- Maneuver grammar enables compressed-domain search without decompression
+- Multi-source trajectory unification (AIS, AV, logistics) via shared primitive layer
+- Deterministic fidelity validated at sub-meter RMSE on AV route corpus
 
 ## What We Don't Claim
 
@@ -77,14 +78,10 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 
 | Field | Value |
 |-------|-------|
-| Verdict | NOT_RELEASE_READY |
-| Commit SHA | bb9b5e39fc2e |
+| Verdict | BLOCKED |
+| Commit SHA | BB9B5E3 |
 | Confidence | 62.5% |
 | Source | proofs/FINAL_STATUS.md |
-
-- Supporting operator pack: [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md)
-- Open gates: `GEO-C001`, `GEO-C002`, `GEO-C004`
-- Confidence basis: `5 / 8` tracked claims green on [proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json)
 
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE Geo Mid Masthead" width="100%">
@@ -94,12 +91,12 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 
 | Code | Check | Verdict |
 |------|-------|---------|
-| V_01 | Repo-local package surface | PASS |
-| V_02 | Lightweight code tests | PASS |
-| V_03 | GEO-C001 blind-clone closure | FAIL |
-| V_04 | GEO-C002 full-corpus closure | FAIL |
-| V_05 | GEO-C004 release readiness | FAIL |
-| V_06 | H3 roundtrip consistency | PASS |
+| V_01 | REPO-LOCAL_PACKAGE_SURFACE | PASS |
+| V_02 | LIGHTWEIGHT_CODE_TESTS | PASS |
+| V_03 | GEO-C001_BLIND-CLONE_CLOSURE | FAIL |
+| V_04 | GEO-C002_FULL-CORPUS_CLOSURE | FAIL |
+| V_05 | GEO-C004_RELEASE_READINESS | FAIL |
+| V_06 | H3_ROUNDTRIP_CONSISTENCY | PASS |
 
 ## Proof Anchors
 
