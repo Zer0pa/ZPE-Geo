@@ -46,14 +46,14 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 | Metric | Value | Baseline |
 |--------|-------|----------|
-| CONFIDENCE | 62.5% (5/8 green) | — |
-| OPEN_GATES | 3 | GEO-C001/C002/C004 |
-| VERIFICATION | 3/6 pass | — |
-| AIS_CR | 475× median | vs Douglas-Peucker ~315× |
+| AIS_CR | 475× | vs Douglas-Peucker ~315× |
+| AV_CR | 107× | vehicle telemetry median |
+| SEARCH | p@10 1.0 | maneuver search (210 trajs) |
+| ENCODE_P95 | 0.12 | ms AIS online (GEO-C007) |
 
-> Source: [proofs/V6_AUTHORITY_SURFACE_SUMMARY.md](proofs/V6_AUTHORITY_SURFACE_SUMMARY.md)
+> Source: [`proofs/CONSOLIDATED_PROOF_REPORT.md`](proofs/CONSOLIDATED_PROOF_REPORT.md) | [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
 >
-> Note: The AIS comparator row is retained historical evidence and does not override the current March 21 red-state operator posture.
+> Note: All metrics from Wave-1 archived proofs. Does not override current March 21 red-state operator posture.
 
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE Geo Upper Insert" width="100%">
