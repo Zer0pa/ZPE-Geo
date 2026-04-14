@@ -200,6 +200,8 @@ After a successful repo-local verification you should have:
 | ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Parallel ZPE family workstream. |
 | ZPE-IoT | [github.com/Zer0pa/ZPE-IoT](https://github.com/Zer0pa/ZPE-IoT) | Parallel ZPE family workstream. |
 
+**Observability:** [Comet dashboard](https://www.comet.com/zer0pa/zpe-geospatial/view/new/panels) (public)
+
 ## Who This Is For
 
 | | |
