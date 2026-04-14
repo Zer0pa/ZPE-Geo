@@ -19,7 +19,7 @@
       "duration_s": 0.0,
       "exit_code": 0,
       "stderr": "",
-      "stdout": "/Users/prinivenpillay/ZPE Multimodality/ZPE Geo/third_party/bin/colcon"
+      "stdout": "/Users/zer0pa-build/ZPE Multimodality/ZPE Geo/third_party/bin/colcon"
     },
     "ros2_cli": {
       "command": "command -v ros2 || true",
