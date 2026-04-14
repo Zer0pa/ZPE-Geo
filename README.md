@@ -55,6 +55,17 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 >
 > Note: All metrics from Wave-1 archived proofs. Does not override current March 21 red-state operator posture.
 
+## Competitive Benchmarks
+
+> Wave-1 AIS corpus (190 trajectories). Source: [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
+
+| Tool | AIS Ratio | Notes |
+|------|----------|-------|
+| **ZPE-Geo** | **475×** | H3-indexed; search preserved |
+| Douglas-Peucker | ~315× | no spatial index; no search |
+
+ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3770598). Direct dataset parity with paper corpus INCONCLUSIVE.
+
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE Geo Upper Insert" width="100%">
 </p>
