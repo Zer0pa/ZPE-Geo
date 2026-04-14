@@ -59,8 +59,8 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 > Wave-1 AIS corpus (190 trajectories). Source: [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
 
-| Tool | AIS Ratio | Notes |
-|------|----------|-------|
+| Tool | AIS Ratio (median) | Notes |
+|------|-------------------|-------|
 | **ZPE-Geo** | **475×** | H3-indexed; search preserved |
 | Douglas-Peucker | ~315× | no spatial index; no search |
 
