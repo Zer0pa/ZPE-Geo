@@ -72,6 +72,7 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 - No claim of full-corpus closure (GEO-C002)
 - No claim of release readiness (GEO-C004)
 - No claim of superiority over incumbent geospatial compression
+- Real-corpus equivalence for simulated query benchmarks — the 10M-corpus query-latency figure in historical proofs uses replicated synthetic trajectories, not a real-world corpus
 
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE Geo Lower Insert" width="100%">
