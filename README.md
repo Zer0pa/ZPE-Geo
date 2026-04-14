@@ -31,11 +31,11 @@
 
 ## What This Is
 
-ZPE-Geo compresses and indexes movement traces — fleet routes, vessel tracks, AV telemetry, logistics trajectories — so they stay searchable after compression. H3 hexagonal spatial indexing, maneuver-aware search, and deterministic fidelity validation all operate on the compressed representation.
+Compress movement traces and keep them searchable. Fleet routes, vessel tracks, AV telemetry, logistics trajectories — indexed during encoding so downstream search never touches the raw stream.
 
-This is for teams that store or transmit large volumes of trajectory data and need compression that preserves query capability. The codec does not just shrink traces; it indexes maneuvers during encoding so downstream search never touches the raw stream.
+ZPE-Geo is deterministic trajectory compression with H3 hexagonal spatial indexing, maneuver-aware search, and fidelity validation on the compressed representation. Built for mobility analytics platforms, fleet telematics teams, and maritime AIS infrastructure where trajectory archives grow without bound and query-after-decompress is operationally painful.
 
-ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajectory compression, fidelity checks, maneuver search, H3 roundtrip validation, proof custody, and documentation routing. Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
+Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 | Field | Value |
 |-------|-------|
@@ -60,6 +60,8 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 </p>
 
 ## What We Prove
+
+> Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
 
 - Trajectory compression with preserved query capability
 - H3 hexagonal spatial indexing during encoding
@@ -86,6 +88,8 @@ ZPE Geo is the Git-backed workstream repo for deterministic geospatial trajector
 | Commit SHA | bb9b5e39fc2e |
 | Confidence | 62.5% |
 | Source | proofs/FINAL_STATUS.md |
+
+> **Evaluators:** Proof surface available for inspection. See Open Risks for remaining gaps. Contact hello@zer0pa.com.
 
 - Supporting operator pack: [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md)
 - Open gates: `GEO-C001`, `GEO-C002`, `GEO-C004`
@@ -184,6 +188,15 @@ After a successful repo-local verification you should have:
 | ZPE-FT | [github.com/Zer0pa/ZPE-FT](https://github.com/Zer0pa/ZPE-FT) | Parallel ZPE family workstream. |
 | ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Parallel ZPE family workstream. |
 | ZPE-IoT | [github.com/Zer0pa/ZPE-IoT](https://github.com/Zer0pa/ZPE-IoT) | Parallel ZPE family workstream. |
+
+## Who This Is For
+
+| | |
+|---|---|
+| **Ideal first buyer** | Mobility analytics platform or fleet telematics team |
+| **Pain statement** | Large movement-trace archives are expensive to store and operationally painful to search — conventional compression destroys spatial query capability |
+| **Deployment model** | Python SDK with H3 spatial backend, private-stage |
+| **Family position** | Product candidate — the trajectory compression problem has clear enterprise buyers |
 
 ## Historical Context Only
 
