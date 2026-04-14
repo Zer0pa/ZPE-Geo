@@ -47,9 +47,9 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 | Metric | Value | Baseline |
 |--------|-------|----------|
 | AIS_CR | 475× | vs Douglas-Peucker ~315× |
-| AV_CR | 107× | vehicle telemetry median |
-| SEARCH | p@10 1.0 | maneuver search (210 trajs) |
-| ENCODE_P95 | 0.12 | ms AIS online (GEO-C007) |
+| AV_CR | 107× | — |
+| SEARCH | p@10 1.0 | — |
+| ENCODE_P95 | 0.12 | ms |
 
 > Source: [`proofs/CONSOLIDATED_PROOF_REPORT.md`](proofs/CONSOLIDATED_PROOF_REPORT.md) | [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
 >
