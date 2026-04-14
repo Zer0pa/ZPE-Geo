@@ -154,7 +154,13 @@ Quickest outsider orientation:
 
 ## Quick Start
 
-### Quick Verify
+### Install from PyPI
+
+```bash
+pip install zpe-geo
+```
+
+### Quick Verify (from source)
 
 The steps below verify the current repo-local package surface. They do not prove blind-clone closure, full-corpus closure, or release readiness.
 
