@@ -33,7 +33,7 @@
 
 Compress movement traces and keep them searchable. Fleet routes, vessel tracks, AV telemetry, logistics trajectories — indexed during encoding so downstream search never touches the raw stream.
 
-ZPE-Geo is deterministic trajectory compression with H3 hexagonal spatial indexing, maneuver-aware search, and fidelity validation on the compressed representation. Built for mobility analytics platforms, fleet telematics teams, and maritime AIS infrastructure where trajectory archives grow without bound and query-after-decompress is operationally painful.
+ZPE-Geo is deterministic trajectory compression with H3 hexagonal spatial indexing, maneuver-aware search, and fidelity validation on the compressed representation. Trajectories are encoded as sequences of 8-compass direction tokens with magnitude quantisation and RLE compression. Built for mobility analytics platforms, fleet telematics teams, and maritime AIS infrastructure where trajectory archives grow without bound and query-after-decompress is operationally painful.
 
 Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
