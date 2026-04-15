@@ -102,6 +102,7 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 | Field | Value |
 |-------|-------|
 | Verdict | NOT_RELEASE_READY |
+| Release posture | Live work in progress; not a final official release |
 | Confidence | 62.5% |
 | Source | [`proofs/artifacts/2026-03-21_operator_status/README.md`](proofs/artifacts/2026-03-21_operator_status/README.md) + [`proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json`](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) |
 
