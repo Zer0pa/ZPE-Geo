@@ -46,8 +46,8 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 | Metric | Value | Baseline |
 |--------|-------|----------|
-| AIS_CR | 475× | vs Douglas-Peucker ~315× |
-| AV_CR | 107× | — |
+| AIS_CR | 475× (lossy; quant_step=0.25m) | vs Douglas-Peucker ~315× (also lossy) |
+| AV_CR | 107× (lossy; quant_step=0.25m) | — |
 | SEARCH | p@10 1.0 | — |
 | ENCODE_P95 | 0.12 | ms |
 
@@ -59,10 +59,12 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 > Wave-1 AIS corpus (190 trajectories). Source: [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
 
+> **Framing disclosure:** ZPE-Geo is a lossy trajectory codec (lossy at quant_step=0.25m; max coordinate error 0.0018° ≈ 200m at equator on real NOAA AIS data). Douglas-Peucker is also lossy, so the comparison below is lossy-vs-lossy. Neither codec preserves lossless coordinates. On real-world NOAA AIS extracts, coordinate_exact_match_count = 0/5. See [`proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json).
+
 | Tool | AIS Ratio (median) | Notes |
 |------|-------------------|-------|
-| **ZPE-Geo** | **475×** | H3-indexed; search preserved |
-| Douglas-Peucker | ~315× | no spatial index; no search |
+| **ZPE-Geo** | **475×** | Lossy; H3-indexed; search preserved |
+| Douglas-Peucker | ~315× | Lossy; no spatial index; no search |
 
 ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3770598). Direct dataset parity with paper corpus INCONCLUSIVE.
 
@@ -85,6 +87,7 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 - No claim of full-corpus closure (GEO-C002)
 - No claim of release readiness (GEO-C004)
 - No claim of superiority over incumbent geospatial compression
+- Lossless coordinate preservation — compression at default settings (quant_step=0.25m) introduces up to 0.0018° (~200m at equator) coordinate error. On real NOAA AIS data, coordinate_exact_match_count = 0/5. See [`proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json)
 - Real-corpus equivalence for simulated query benchmarks — the 10M-corpus query-latency figure in historical proofs uses replicated synthetic trajectories, not a real-world corpus
 
 <p align="center">
