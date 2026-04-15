@@ -7,13 +7,13 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Zer0pa%20SAL-e5e7eb?labelColor=111111" alt="License: Zer0pa SAL"></a>
   <a href="code/README.md"><img src="https://img.shields.io/badge/python-3.11%2B-e5e7eb?labelColor=111111" alt="Python 3.11+"></a>
-  <a href="proofs/FINAL_STATUS.md"><img src="https://img.shields.io/badge/release%20posture-not%20release--ready-e5e7eb?labelColor=111111" alt="Release posture: not release-ready"></a>
+  <img src="https://img.shields.io/badge/release%20posture-not%20release--ready-e5e7eb?labelColor=111111" alt="Release posture: not release-ready">
   <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/current%20operator%20state-red%20claims%20remain-e5e7eb?labelColor=111111" alt="Current operator state: red claims remain"></a>
   <a href="proofs/artifacts/2026-02-20_zpe_geo_wave1/claim_status_delta.md"><img src="https://img.shields.io/badge/historical%20bundle-archived%20only-e5e7eb?labelColor=111111" alt="Historical bundle: archived only"></a>
 </p>
 <p align="center">
   <a href="code/README.md"><img src="https://img.shields.io/badge/quick%20verify-package%20surface-e5e7eb?labelColor=111111" alt="Quick verify: package surface"></a>
-  <a href="proofs/FINAL_STATUS.md"><img src="https://img.shields.io/badge/proof%20anchors-final%20status%20%2B%20operator%20pack-e5e7eb?labelColor=111111" alt="Proof anchors: final status and operator pack"></a>
+  <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/proof%20anchors-final%20status%20%2B%20operator%20pack-e5e7eb?labelColor=111111" alt="Proof anchors: final status and operator pack"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-repo%20map-e5e7eb?labelColor=111111" alt="Architecture: repo map"></a>
   <a href="PUBLIC_AUDIT_LIMITS.md"><img src="https://img.shields.io/badge/public%20limits-explicit%20boundary-e5e7eb?labelColor=111111" alt="Public limits: explicit boundary"></a>
   <a href="docs/README.md"><img src="https://img.shields.io/badge/docs-routing%20index-e5e7eb?labelColor=111111" alt="Docs routing index"></a>
@@ -51,7 +51,7 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 | SEARCH | p@10 1.0 | — |
 | ENCODE_P95 | 0.12 | ms |
 
-> Source: [`proofs/CONSOLIDATED_PROOF_REPORT.md`](proofs/CONSOLIDATED_PROOF_REPORT.md) | [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
+> Source: [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
 >
 > Note: All metrics from Wave-1 archived proofs. Does not override current March 21 red-state operator posture.
 
@@ -101,7 +101,7 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 | Verdict | NOT_RELEASE_READY |
 | Commit SHA | bb9b5e39fc2e |
 | Confidence | 62.5% |
-| Source | proofs/FINAL_STATUS.md |
+| Source | proofs/FINAL_STATUS.md (removed) |
 
 > **Evaluators:** Proof surface available for inspection. See Open Risks for remaining gaps. Contact hello@zer0pa.com.
 
@@ -128,8 +128,8 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 
 | Path | State |
 |------|-------|
-| proofs/FINAL_STATUS.md | VERIFIED |
-| proofs/CONSOLIDATED_PROOF_REPORT.md | VERIFIED |
+| proofs/FINAL_STATUS.md | REMOVED |
+| proofs/CONSOLIDATED_PROOF_REPORT.md | REMOVED |
 | proofs/artifacts/2026-03-21_operator_status/README.md | VERIFIED |
 | proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json | VERIFIED |
 | proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md | VERIFIED |
@@ -138,7 +138,7 @@ Quickest outsider orientation:
 
 | Route | Why |
 | --- | --- |
-| [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) | Governing current repo verdict |
+| proofs/FINAL_STATUS.md (removed) | Governing current repo verdict |
 | [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) | Explicit public claim boundary |
 | [AUDITOR_PLAYBOOK.md](AUDITOR_PLAYBOOK.md) | Audit route and reading order |
 | [code/README.md](code/README.md) | Install-facing package surface |
@@ -149,7 +149,7 @@ Quickest outsider orientation:
 |-------|-------|
 | Proof Anchors | 5 |
 | Modality Lanes | 4 |
-| Authority Source | proofs/FINAL_STATUS.md |
+| Authority Source | proofs/FINAL_STATUS.md (removed) |
 
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE Geo Lower Masthead" width="100%">
@@ -228,14 +228,14 @@ The archived bundle under [proofs/artifacts/2026-02-20_zpe_geo_wave1/](proofs/ar
 - archived comparator notes, including an in-repo AIS baseline comparison
 - preserved contradictions that explain why archived success does not equal current release authorization
 
-Read those facts as historical-only context through [proofs/CONSOLIDATED_PROOF_REPORT.md](proofs/CONSOLIDATED_PROOF_REPORT.md), not as current release status.
+Read those facts as historical-only context through the archived wave-1 bundle, not as current release status.
 
 ## Go Next
 
 | Need | Route |
 | --- | --- |
-| Current verdict and release posture | [proofs/FINAL_STATUS.md](proofs/FINAL_STATUS.md) |
-| Detailed current evidence and historical bundle interpretation | [proofs/CONSOLIDATED_PROOF_REPORT.md](proofs/CONSOLIDATED_PROOF_REPORT.md) |
+| Current verdict and release posture | proofs/FINAL_STATUS.md (removed) |
+| Detailed current evidence and historical bundle interpretation | proofs/CONSOLIDATED_PROOF_REPORT.md (removed) — see [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/) |
 | Audit path | [AUDITOR_PLAYBOOK.md](AUDITOR_PLAYBOOK.md) |
 | Audit limits and exclusions | [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) |
 | Architecture and evidence map | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
