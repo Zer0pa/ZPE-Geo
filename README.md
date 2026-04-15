@@ -15,8 +15,8 @@
   <a href="code/README.md"><img src="https://img.shields.io/badge/quick%20verify-package%20surface-e5e7eb?labelColor=111111" alt="Quick verify: package surface"></a>
   <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/proof%20anchors-final%20status%20%2B%20operator%20pack-e5e7eb?labelColor=111111" alt="Proof anchors: final status and operator pack"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-repo%20map-e5e7eb?labelColor=111111" alt="Architecture: repo map"></a>
-  <a href="PUBLIC_AUDIT_LIMITS.md"><img src="https://img.shields.io/badge/public%20limits-explicit%20boundary-e5e7eb?labelColor=111111" alt="Public limits: explicit boundary"></a>
-  <a href="docs/README.md"><img src="https://img.shields.io/badge/docs-routing%20index-e5e7eb?labelColor=111111" alt="Docs routing index"></a>
+  <a href="docs/LEGAL_BOUNDARIES.md"><img src="https://img.shields.io/badge/public%20limits-explicit%20boundary-e5e7eb?labelColor=111111" alt="Public limits: explicit boundary"></a>
+  <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/docs-architecture%20map-e5e7eb?labelColor=111111" alt="Docs: architecture map"></a>
 </p>
 <table align="center" width="100%" cellpadding="0" cellspacing="0">
   <tr>
@@ -31,9 +31,9 @@
 
 ## What This Is
 
-Compress movement traces and keep them searchable. Fleet routes, vessel tracks, AV telemetry, logistics trajectories — indexed during encoding so downstream search never touches the raw stream.
+Compress movement traces and keep them spatially searchable. Fleet routes, vessel tracks, AV telemetry, logistics trajectories — indexed during encoding so downstream lookup does not need the raw stream.
 
-ZPE-Geo is deterministic trajectory compression with H3 hexagonal spatial indexing, maneuver-aware search, and fidelity validation on the compressed representation. Trajectories are encoded as sequences of 8-compass direction tokens with magnitude quantisation and RLE compression. Built for mobility analytics platforms, fleet telematics teams, and maritime AIS infrastructure where trajectory archives grow without bound and query-after-decompress is operationally painful.
+ZPE-Geo is deterministic trajectory compression with H3 hexagonal spatial indexing, a maneuver-search surface on the compressed representation, and fidelity validation. Trajectories are encoded as sequences of 8-compass direction tokens with magnitude quantisation and RLE compression. The strongest current wedge is storage plus spatial indexing: the committed AV maneuver benchmark now measures p@10 mean `0.33` (`left_turn` `0.0`, `lane_merge` `0.0`, `stop` `1.0`), so this repo should not currently be read as a strong maneuver-ranking result.
 
 Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
@@ -48,12 +48,14 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 |--------|-------|----------|
 | AIS_CR | 475× (lossy; quant_step=0.25m) | vs Douglas-Peucker ~315× (also lossy) |
 | AV_CR | 107× (lossy; quant_step=0.25m) | — |
-| SEARCH | p@10 1.0 | — |
+| SEARCH | p@10 0.33 mean (`left_turn` 0.0, `lane_merge` 0.0, `stop` 1.0) | committed AV benchmark path |
 | ENCODE_P95 | 0.12 | ms |
 
-> Source: [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/)
+> Sources: `AIS_CR`, `AV_CR`, and `ENCODE_P95` remain historical-only Wave-1 metrics from [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/).
 >
-> Note: All metrics from Wave-1 archived proofs. Does not override current March 21 red-state operator posture.
+> `SEARCH` was recomputed on `2026-04-15` on the committed benchmark path in `code/scripts/gate_c_benchmarks.py` against `code/fixtures/av_argoverse2_fixture_v1.json` after removing benchmark label injection from `ManeuverSearchIndex.build()`.
+>
+> The March 21 operator pack remains the governing release-readiness surface.
 
 ## Competitive Benchmarks
 
@@ -63,7 +65,7 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 | Tool | AIS Ratio (median) | Notes |
 |------|-------------------|-------|
-| **ZPE-Geo** | **475×** | Lossy; H3-indexed; search preserved |
+| **ZPE-Geo** | **475×** | Lossy; H3-indexed; maneuver search surface exists, but the current committed AV benchmark is p@10 0.33 mean |
 | Douglas-Peucker | ~315× | Lossy; no spatial index; no search |
 
 ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3770598). Direct dataset parity with paper corpus INCONCLUSIVE.
@@ -74,11 +76,11 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 
 ## What We Prove
 
-> Auditable guarantees backed by committed proof artifacts. Start at `AUDITOR_PLAYBOOK.md`.
+> Auditable guarantees backed by committed proof artifacts. Start at `proofs/artifacts/2026-03-21_operator_status/README.md`.
 
-- Trajectory compression with preserved query capability
+- Trajectory compression with preserved spatial query capability
 - H3 hexagonal spatial indexing during encoding
-- Maneuver-aware search on compressed representation
+- Maneuver search surface on compressed representation; current committed AV benchmark is p@10 mean `0.33`
 - Lightweight test suite passes
 
 ## What We Don't Claim
@@ -86,6 +88,7 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 - No claim of blind-clone closure (GEO-C001)
 - No claim of full-corpus closure (GEO-C002)
 - No claim of release readiness (GEO-C004)
+- No claim of strong maneuver-retrieval quality — the committed AV benchmark path currently measures p@10 mean `0.33`, with `left_turn` and `lane_merge` at `0.0`
 - No claim of superiority over incumbent geospatial compression
 - Lossless coordinate preservation — compression at default settings (quant_step=0.25m) introduces up to 0.0018° (~200m at equator) coordinate error. On real NOAA AIS data, coordinate_exact_match_count = 0/5. See [`proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json)
 - Real-corpus equivalence for simulated query benchmarks — the 10M-corpus query-latency figure in historical proofs uses replicated synthetic trajectories, not a real-world corpus
@@ -99,9 +102,8 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 | Field | Value |
 |-------|-------|
 | Verdict | NOT_RELEASE_READY |
-| Commit SHA | bb9b5e39fc2e |
 | Confidence | 62.5% |
-| Source | proofs/FINAL_STATUS.md (removed) |
+| Source | [`proofs/artifacts/2026-03-21_operator_status/README.md`](proofs/artifacts/2026-03-21_operator_status/README.md) + [`proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json`](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) |
 
 > **Evaluators:** Proof surface available for inspection. See Open Risks for remaining gaps. Contact hello@zer0pa.com.
 
@@ -128,28 +130,28 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 
 | Path | State |
 |------|-------|
-| proofs/FINAL_STATUS.md | REMOVED |
-| proofs/CONSOLIDATED_PROOF_REPORT.md | REMOVED |
 | proofs/artifacts/2026-03-21_operator_status/README.md | VERIFIED |
 | proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json | VERIFIED |
 | proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md | VERIFIED |
+| proofs/artifacts/2026-02-20_zpe_geo_wave1/ | ARCHIVED_ONLY |
 
 Quickest outsider orientation:
 
 | Route | Why |
 | --- | --- |
-| proofs/FINAL_STATUS.md (removed) | Governing current repo verdict |
-| [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) | Explicit public claim boundary |
-| [AUDITOR_PLAYBOOK.md](AUDITOR_PLAYBOOK.md) | Audit route and reading order |
+| [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) | Governing current operator-status narrative |
+| [proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) | Current claim split and open-gate map |
+| [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) | Explicit public claim boundary |
+| [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) | Audit route and reading order |
 | [code/README.md](code/README.md) | Install-facing package surface |
 
 ## Repo Shape
 
 | Field | Value |
 |-------|-------|
-| Proof Anchors | 5 |
+| Proof Anchors | 4 |
 | Modality Lanes | 4 |
-| Authority Source | proofs/FINAL_STATUS.md (removed) |
+| Authority Source | March 21 operator status pack |
 
 <p align="center">
   <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE Geo Lower Masthead" width="100%">
@@ -234,21 +236,20 @@ Read those facts as historical-only context through the archived wave-1 bundle, 
 
 | Need | Route |
 | --- | --- |
-| Current verdict and release posture | proofs/FINAL_STATUS.md (removed) |
-| Detailed current evidence and historical bundle interpretation | proofs/CONSOLIDATED_PROOF_REPORT.md (removed) — see [`proofs/artifacts/2026-02-20_zpe_geo_wave1/`](proofs/artifacts/2026-02-20_zpe_geo_wave1/) |
-| Audit path | [AUDITOR_PLAYBOOK.md](AUDITOR_PLAYBOOK.md) |
-| Audit limits and exclusions | [PUBLIC_AUDIT_LIMITS.md](PUBLIC_AUDIT_LIMITS.md) |
+| Current verdict and release posture | [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) |
+| Current claim split and open gates | [proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) |
+| Historical Wave-1 metrics and contradictions | [proofs/artifacts/2026-02-20_zpe_geo_wave1/](proofs/artifacts/2026-02-20_zpe_geo_wave1/) |
+| Audit path | [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) |
+| Audit limits and exclusions | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
 | Architecture and evidence map | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
-| Docs ownership map | [docs/CANONICAL_DOC_REGISTRY.md](docs/CANONICAL_DOC_REGISTRY.md) |
-| FAQ and support | [docs/FAQ.md](docs/FAQ.md), [docs/SUPPORT.md](docs/SUPPORT.md) |
-| Community conduct | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
+| Docs ownership map | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
+| FAQ and support | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
 | Install surface | [code/README.md](code/README.md) |
 
 ## Contributing, Security, Support
 
 | Need | Route |
 | --- | --- |
-| Contribution rules and docs hygiene | [CONTRIBUTING.md](CONTRIBUTING.md) |
-| Community conduct and evidence norms | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
-| Vulnerability reporting and secret-exposure handling | [SECURITY.md](SECURITY.md) |
-| Reader routing and response expectations | [docs/SUPPORT.md](docs/SUPPORT.md) |
+| Contribution and package surface | [code/README.md](code/README.md) |
+| Evidence boundary and public limits | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
+| Reader routing and response expectations | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |

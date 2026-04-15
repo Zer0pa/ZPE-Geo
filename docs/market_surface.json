@@ -2,20 +2,21 @@
   "repo_name": "ZPE-Geo",
   "repo_role": "product_candidate",
   "status": "PRIVATE_STAGE",
-  "plain_english_summary": "Deterministic trajectory compression and maneuver search for geospatial telemetry and movement traces.",
-  "commercial_wedge": "Store and search large movement traces economically. Maneuver-aware search on compressed fleet routes, vessel tracks, and logistics traces with H3 spatial indexing.",
-  "technical_wedge": "Deterministic geospatial encoding using 8-compass direction primitives with magnitude quantisation and RLE, plus H3 roundtrip validation, maneuver search indexing, and trajectory fidelity checks.",
+  "plain_english_summary": "Deterministic trajectory compression with H3 spatial indexing for geospatial telemetry and movement traces; maneuver search exists, but the committed AV benchmark currently reports p@10 mean 0.33.",
+  "commercial_wedge": "Store and spatially index large movement traces economically. The present wedge is deterministic compression plus H3-backed retrieval for fleet routes, vessel tracks, and logistics traces; maneuver search quality is currently weak on the committed benchmark path.",
+  "technical_wedge": "Deterministic geospatial encoding using 8-compass direction primitives with magnitude quantisation and RLE, plus H3 roundtrip validation and spatial query surfaces. Current committed AV maneuver benchmark: p@10 mean 0.33 (left_turn 0.0, lane_merge 0.0, stop 1.0).",
   "ideal_first_buyer": "Mobility analytics platform or fleet telematics team",
   "deployment_model": "SDK — Python package with H3 spatial backend",
   "proof_anchors": [
-    "proofs/FINAL_STATUS.md",
     "proofs/artifacts/2026-03-21_operator_status/README.md",
-    "proofs/CONSOLIDATED_PROOF_REPORT.md"
+    "proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json",
+    "proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md"
   ],
   "not_claimed": [
     "Blind-clone closure (GEO-C001 active)",
     "Full-corpus closure (GEO-C002 active)",
     "Public release readiness (GEO-C004 active)",
+    "Strong maneuver-search quality; current committed AV benchmark is p@10 mean 0.33 (left_turn 0.0, lane_merge 0.0, stop 1.0)",
     "Superiority over incumbent geospatial compression",
     "Runtime coupling to ZPE-IMC"
   ],

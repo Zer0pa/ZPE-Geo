@@ -85,10 +85,6 @@ class ManeuverSearchIndex:
         for t in trajectories:
             scores = detect_maneuvers(t)
             label = t.get("label")
-            if label in scores:
-                # Ground-truth labeled corpora are used for benchmark indexing;
-                # keep detector scores but force the labeled maneuver to dominate.
-                scores[label] = max(scores[label], 0.99)
             row = {
                 "trajectory_id": t["trajectory_id"],
                 "ground_truth": label or "unknown",
