@@ -13,11 +13,15 @@ venv/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.hypothesis/
 
 # Build outputs
 build/
 dist/
 *.egg-info/
+
+# Coverage
+.coverage
 
 # OS/editor noise
 .DS_Store
