@@ -1,7 +1,7 @@
 {
   "repo_name": "ZPE-Geo",
   "repo_role": "product_candidate",
-  "status": "PRIVATE_STAGE",
+  "status": "ALWAYS_IN_BETA",
   "plain_english_summary": "Deterministic trajectory compression with H3 spatial indexing for geospatial telemetry and movement traces; maneuver search exists, but the committed AV benchmark currently reports p@10 mean 0.33.",
   "commercial_wedge": "Store and spatially index large movement traces economically. The present wedge is deterministic compression plus H3-backed retrieval for fleet routes, vessel tracks, and logistics traces; maneuver search quality is currently weak on the committed benchmark path.",
   "technical_wedge": "Deterministic geospatial encoding using 8-compass direction primitives with magnitude quantisation and RLE, plus H3 roundtrip validation and spatial query surfaces. Current committed AV maneuver benchmark: p@10 mean 0.33 (left_turn 0.0, lane_merge 0.0, stop 1.0).",
@@ -20,8 +20,8 @@
     "Superiority over incumbent geospatial compression",
     "Runtime coupling to ZPE-IMC"
   ],
-  "family_position": "Product candidate in the Zer0pa deterministic encoding family. ZPE-IMC is the umbrella integration layer.",
+  "family_position": "Independent geospatial encoding product in the Zer0pa portfolio. ZPE-IMC is a separate sibling integration product.",
   "license": "LicenseRef-Zer0pa-SAL-6.2",
   "license_surface": "Free below $100M annual revenue",
-  "contact": "hello@zer0pa.com"
+  "contact": "architects@zer0pa.ai"
 }

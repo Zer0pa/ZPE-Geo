@@ -1,16 +1,8 @@
-<p>
-  <img src="../../../.github/assets/readme/zpe-masthead.gif" alt="ZPE Geo Masthead" width="100%">
-</p>
-
 # 2026-03-21 Operator Status Pack
 
 This directory is the copied-back March 21 operator evidence pack for the Git-backed repo.
 
 It exists so the repo can state current March 21 status locally instead of referring only to the outer workspace.
-
-<p>
-  <img src="../../../.github/assets/readme/section-bars/summary.svg" alt="SUMMARY" width="100%">
-</p>
 
 ## What Is Here
 
@@ -27,7 +19,8 @@ It exists so the repo can state current March 21 status locally instead of refer
 
 ## How To Read It
 
-- Read [../../FINAL_STATUS.md](../../FINAL_STATUS.md) as the governing current verdict.
+- Read [../../../README.md](../../../README.md) as the governing current verdict and release-gate summary.
 - Read this pack as supporting current operator evidence, not as a standalone interpretation layer.
-- Read [../../CONSOLIDATED_PROOF_REPORT.md](../../CONSOLIDATED_PROOF_REPORT.md) for the full current-versus-historical interpretation.
+- Read [../../../docs/LEGAL_BOUNDARIES.md](../../../docs/LEGAL_BOUNDARIES.md) for the current-versus-historical boundary and explicit limits.
+- Read [../../../docs/ARCHITECTURE.md](../../../docs/ARCHITECTURE.md) for the repo map and evidence routing.
 - Read [../2026-02-20_zpe_geo_wave1/](../2026-02-20_zpe_geo_wave1/) as historical generated evidence.

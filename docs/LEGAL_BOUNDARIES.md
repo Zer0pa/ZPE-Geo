@@ -1,14 +1,6 @@
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE Geo Masthead" width="100%">
-</p>
-
 # Legal Boundaries
 
-This repo is a private staged workstream surface. It is not a public-release statement of final launch state.
-
-<p>
-  <img src="../.github/assets/readme/section-bars/scope.svg" alt="SCOPE" width="100%">
-</p>
+This repo is a live always-in-beta product surface with explicit proof boundaries. It is not a claim that blind-clone or full-corpus release gates are closed.
 
 ## Boundary Rules
 
@@ -16,10 +8,6 @@ This repo is a private staged workstream surface. It is not a public-release sta
 - operator-only data, secrets, and uncopied runtime payloads stay outside the repo
 - preserved proof artifacts outrank summary prose when they disagree
 - unresolved contradictions remain explicit and documented
-
-<p>
-  <img src="../.github/assets/readme/section-bars/repo-shape.svg" alt="REPO SHAPE" width="100%">
-</p>
 
 ## Repo-Local Versus Outside-Repo Material
 
@@ -29,10 +17,6 @@ This repo is a private staged workstream surface. It is not a public-release sta
 | Current copied-back compact operator status | inside repo | under `../proofs/artifacts/2026-03-21_operator_status/` |
 | Historical generated wave bundle | inside repo | under `../proofs/artifacts/2026-02-20_zpe_geo_wave1/` |
 | Raw heavy corpora, secrets, raw vendored payloads | outside repo | intentionally excluded unless explicitly copied back |
-
-<p>
-  <img src="../.github/assets/readme/section-bars/out-of-scope.svg" alt="OUT OF SCOPE" width="100%">
-</p>
 
 ## Current Integrity Limits
 

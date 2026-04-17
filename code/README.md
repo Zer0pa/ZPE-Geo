@@ -1,7 +1,3 @@
-<p>
-  <img src="../.github/assets/readme/zpe-masthead.gif" alt="ZPE Geo Masthead" width="100%">
-</p>
-
 # zpe-geo
 
 Install-facing package surface for the ZPE Geo workstream repo.
@@ -9,10 +5,6 @@ Install-facing package surface for the ZPE Geo workstream repo.
 This package surface is intentionally smaller than the broader outer workspace. It exposes the repo-local package, fixtures, scripts, and tests that ship inside this Git-backed repo.
 
 ---
-
-<p>
-  <img src="../.github/assets/readme/section-bars/install.svg" alt="INSTALL" width="100%">
-</p>
 
 From the repo root:
 
@@ -31,10 +23,6 @@ The package does not ship the full external corpora or raw vendored payloads use
 
 ---
 
-<p>
-  <img src="../.github/assets/readme/section-bars/verification.svg" alt="VERIFICATION" width="100%">
-</p>
-
 ```bash
 python -m pytest code/tests -q
 python - <<'PY'
@@ -48,13 +36,9 @@ The current copied-back package-alignment evidence is in:
 
 - `../proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md`
 
-That report is current package-alignment evidence. It is not a release-ready claim.
+That report is current package-alignment evidence. Release gates remain explicit in the repo proof surface.
 
 ---
-
-<p>
-  <img src="../.github/assets/readme/section-bars/public-api-contract.svg" alt="PUBLIC API CONTRACT" width="100%">
-</p>
 
 The repo-local import surface currently exposes:
 
@@ -66,10 +50,6 @@ The repo-local import surface currently exposes:
 The install-facing metadata is defined in the repo-root [pyproject.toml](../pyproject.toml). The package source remains under `code/`.
 
 ---
-
-<p>
-  <img src="../.github/assets/readme/section-bars/optional-dependency-groups.svg" alt="OPTIONAL DEPENDENCY GROUPS" width="100%">
-</p>
 
 | Extra | Why it exists |
 | --- | --- |

@@ -1,31 +1,25 @@
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead.gif" alt="ZPE Geo Masthead" width="100%">
-</p>
-
 <h1 align="center">ZPE Geo</h1>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Zer0pa%20SAL-e5e7eb?labelColor=111111" alt="License: Zer0pa SAL"></a>
   <a href="code/README.md"><img src="https://img.shields.io/badge/python-3.11%2B-e5e7eb?labelColor=111111" alt="Python 3.11+"></a>
-  <img src="https://img.shields.io/badge/release%20posture-not%20release--ready-e5e7eb?labelColor=111111" alt="Release posture: not release-ready">
+  <img src="https://img.shields.io/badge/release%20posture-always--in--beta-e5e7eb?labelColor=111111" alt="Release posture: always in beta">
   <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/current%20operator%20state-red%20claims%20remain-e5e7eb?labelColor=111111" alt="Current operator state: red claims remain"></a>
   <a href="proofs/artifacts/2026-02-20_zpe_geo_wave1/claim_status_delta.md"><img src="https://img.shields.io/badge/historical%20bundle-archived%20only-e5e7eb?labelColor=111111" alt="Historical bundle: archived only"></a>
 </p>
 <p align="center">
   <a href="code/README.md"><img src="https://img.shields.io/badge/quick%20verify-package%20surface-e5e7eb?labelColor=111111" alt="Quick verify: package surface"></a>
-  <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/proof%20anchors-final%20status%20%2B%20operator%20pack-e5e7eb?labelColor=111111" alt="Proof anchors: final status and operator pack"></a>
+  <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/proof%20anchors-operator%20pack%20%2B%20gates-e5e7eb?labelColor=111111" alt="Proof anchors: operator pack and gate map"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/architecture-repo%20map-e5e7eb?labelColor=111111" alt="Architecture: repo map"></a>
   <a href="docs/LEGAL_BOUNDARIES.md"><img src="https://img.shields.io/badge/public%20limits-explicit%20boundary-e5e7eb?labelColor=111111" alt="Public limits: explicit boundary"></a>
   <a href="docs/ARCHITECTURE.md"><img src="https://img.shields.io/badge/docs-architecture%20map-e5e7eb?labelColor=111111" alt="Docs: architecture map"></a>
 </p>
-<table align="center" width="100%" cellpadding="0" cellspacing="0">
-  <tr>
-    <td width="25%"><a href="#quick-start"><img src=".github/assets/readme/nav/quickstart-and-license.svg" alt="Quickstart And License" width="100%"></a></td>
-    <td width="25%"><a href="#what-this-is"><img src=".github/assets/readme/nav/what-this-is.svg" alt="What This Is" width="100%"></a></td>
-    <td width="25%"><a href="#current-authority"><img src=".github/assets/readme/nav/current-authority.svg" alt="Current Authority" width="100%"></a></td>
-    <td width="25%"><a href="#go-next"><img src=".github/assets/readme/nav/go-next.svg" alt="Go Next" width="100%"></a></td>
-  </tr>
-</table>
+<p align="center">
+  <a href="#quick-start">Quick Start</a> |
+  <a href="#what-this-is">What This Is</a> |
+  <a href="#commercial-readiness">Commercial Readiness</a> |
+  <a href="#go-next">Go Next</a>
+</p>
 
 ---
 
@@ -70,10 +64,6 @@ Zer0pa SAL is free below $100M annual revenue. See [LICENSE](LICENSE).
 
 ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3770598). Direct dataset parity with paper corpus INCONCLUSIVE.
 
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3.4.gif" alt="ZPE Geo Upper Insert" width="100%">
-</p>
-
 ## What We Prove
 
 > Auditable guarantees backed by committed proof artifacts. Start at `proofs/artifacts/2026-03-21_operator_status/README.md`.
@@ -93,28 +83,20 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 - Lossless coordinate preservation — compression at default settings (quant_step=0.25m) introduces up to 0.0018° (~200m at equator) coordinate error. On real NOAA AIS data, coordinate_exact_match_count = 0/5. See [`proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json)
 - Real-corpus equivalence for simulated query benchmarks — the 10M-corpus query-latency figure in historical proofs uses replicated synthetic trajectories, not a real-world corpus
 
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3.5.gif" alt="ZPE Geo Lower Insert" width="100%">
-</p>
-
 ## Commercial Readiness
 
 | Field | Value |
 |-------|-------|
 | Verdict | NOT_RELEASE_READY |
-| Release posture | Live work in progress; not a final official release |
+| Release posture | Always in beta; useful now, improving continuously while release gates remain open |
 | Confidence | 62.5% |
 | Source | [`proofs/artifacts/2026-03-21_operator_status/README.md`](proofs/artifacts/2026-03-21_operator_status/README.md) + [`proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json`](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) |
 
-> **Evaluators:** Proof surface available for inspection. See Open Risks for remaining gaps. Contact hello@zer0pa.com.
+> **Evaluators:** Proof surface available for inspection. See Open Risks for remaining gaps. Contact architects@zer0pa.ai.
 
 - Supporting operator pack: [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md)
 - Open gates: `GEO-C001`, `GEO-C002`, `GEO-C004`
 - Confidence basis: `5 / 8` tracked claims green on [proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json)
-
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE Geo Mid Masthead" width="100%">
-</p>
 
 ## Tests and Verification
 
@@ -153,10 +135,6 @@ Quickest outsider orientation:
 | Proof Anchors | 4 |
 | Modality Lanes | 4 |
 | Authority Source | March 21 operator status pack |
-
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3-3.gif" alt="ZPE Geo Lower Masthead" width="100%">
-</p>
 
 ## Quick Start
 
@@ -198,16 +176,12 @@ After a successful repo-local verification you should have:
 - Commercial or hosted use above the SAL threshold requires contact at `architects@zer0pa.ai`.
 - `LICENSE` is the legal source of truth. Repo docs summarize it; they do not override it.
 
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3.6.gif" alt="ZPE Geo Authority Insert" width="100%">
-</p>
-
 ## Ecosystem
 
 | Workstream | Route | Notes |
 | --- | --- | --- |
 | ZPE Geo | [github.com/Zer0pa/ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo) | This geospatial codec, search, and H3 workstream. |
-| ZPE-IMC | [github.com/Zer0pa/ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) | Current documentation-structure reference surface reused by sibling repos. |
+| ZPE-IMC | [github.com/Zer0pa/ZPE-IMC](https://github.com/Zer0pa/ZPE-IMC) | Sibling integration product in the Zer0pa portfolio. |
 | ZPE-FT | [github.com/Zer0pa/ZPE-FT](https://github.com/Zer0pa/ZPE-FT) | Parallel ZPE family workstream. |
 | ZPE-Bio | [github.com/Zer0pa/ZPE-Bio](https://github.com/Zer0pa/ZPE-Bio) | Parallel ZPE family workstream. |
 | ZPE-IoT | [github.com/Zer0pa/ZPE-IoT](https://github.com/Zer0pa/ZPE-IoT) | Parallel ZPE family workstream. |
@@ -220,8 +194,8 @@ After a successful repo-local verification you should have:
 |---|---|
 | **Ideal first buyer** | Mobility analytics platform or fleet telematics team |
 | **Pain statement** | Large movement-trace archives are expensive to store and operationally painful to search — conventional compression destroys spatial query capability |
-| **Deployment model** | Python SDK with H3 spatial backend, private-stage |
-| **Family position** | Product candidate — the trajectory compression problem has clear enterprise buyers |
+| **Deployment model** | Python SDK with H3 spatial backend, always in beta |
+| **Family position** | Independent geospatial encoding product in the Zer0pa portfolio |
 
 ## Historical Context Only
 
@@ -243,8 +217,8 @@ Read those facts as historical-only context through the archived wave-1 bundle, 
 | Audit path | [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md) |
 | Audit limits and exclusions | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
 | Architecture and evidence map | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
-| Docs ownership map | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
-| FAQ and support | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
+| Repo map and doc ownership | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) |
+| Evidence boundary and reader routing | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
 | Install surface | [code/README.md](code/README.md) |
 
 ## Contributing, Security, Support
@@ -252,5 +226,5 @@ Read those facts as historical-only context through the archived wave-1 bundle, 
 | Need | Route |
 | --- | --- |
 | Contribution and package surface | [code/README.md](code/README.md) |
-| Evidence boundary and public limits | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
-| Reader routing and response expectations | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
+| Evidence boundary and claim limits | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |
+| Reader routing and contact path | [docs/LEGAL_BOUNDARIES.md](docs/LEGAL_BOUNDARIES.md) |

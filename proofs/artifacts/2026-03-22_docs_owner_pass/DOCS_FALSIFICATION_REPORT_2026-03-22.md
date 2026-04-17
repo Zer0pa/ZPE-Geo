@@ -2,13 +2,14 @@
 
 Date: 2026-03-22
 Repo: /Users/Zer0pa/ZPE/ZPE Geo/zpe-geo
+Note: Historical audit artifact; file paths below reflect the 2026-03-22 repo state.
 
 ## Unsupported Claims Removed Or Downgraded
 
 - Removed the mixed current-versus-archived status framing from `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/README.md` and split the front door into current authority, repo-local sanity path, and historical context.
 - Reframed `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/RELEASING.md` so sovereign blockers are separated from supporting readiness checks.
-- Rewrote `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/FINAL_STATUS.md` to make it the governing current-status document instead of letting the copied-back handoff appear to be the interpreter.
-- Rewrote `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/CONSOLIDATED_PROOF_REPORT.md` so archived performance facts are explicitly historical-only and comparator notes are no longer front-door claims.
+- Rewrote the then-current root final-status summary so it became the governing current-status document instead of letting the copied-back handoff appear to be the interpreter.
+- Rewrote the then-current consolidated proof summary so archived performance facts were explicitly historical-only and comparator notes were no longer front-door claims.
 - Tightened `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-03-21_operator_status/README.md` so `handoff_manifest.json` is described as a hybrid supporting artifact rather than a clean standalone verdict surface.
 
 ## Path And Render Issues Found
@@ -24,7 +25,7 @@ Repo: /Users/Zer0pa/ZPE/ZPE Geo/zpe-geo
 
 ## Live-Vs-Local Drift Found And Resolved
 
-- Resolved for docs ownership: the repo now carries a copied-back March 21 operator pack under `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-03-21_operator_status/` and routes interpretation through `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/FINAL_STATUS.md`.
+- Resolved for docs ownership: the repo now carries a copied-back March 21 operator pack under `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-03-21_operator_status/` and routes interpretation through the then-current root final-status summary.
 - Not fully eliminated in raw evidence: `/Users/Zer0pa/ZPE/ZPE Geo/zpe-geo/proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/handoff_manifest.json` still embeds the February 20 `artifact_root` and historical `claim_statuses`.
 
 ## Cleanup Performed
@@ -35,5 +36,5 @@ Repo: /Users/Zer0pa/ZPE/ZPE Geo/zpe-geo
 ## Final Falsification Verdict
 
 - The docs pass is truthful and GitHub-renderable.
-- The repo still is not release-ready.
+- The repo remains always in beta, with release gates still open.
 - The remaining contradiction is explicit and localized to the copied-back March 21 hybrid handoff artifact, not hidden in the documentation layer.
