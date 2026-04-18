@@ -87,10 +87,12 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 
 | Field | Value |
 |-------|-------|
-| Verdict | NOT_RELEASE_READY |
-| Release posture | Always in beta; useful now, improving continuously while release gates remain open |
+| Verdict | BLOCKED |
+| Commit SHA | 30bc0b69f5d6 |
 | Confidence | 62.5% |
-| Source | [`proofs/artifacts/2026-03-21_operator_status/README.md`](proofs/artifacts/2026-03-21_operator_status/README.md) + [`proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json`](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) |
+| Source | proofs/artifacts/2026-03-21_operator_status/README.md |
+
+> Always in beta: useful now, improving continuously while release gates remain open.
 
 > **Evaluators:** Proof surface available for inspection. See Open Risks for remaining gaps. Contact architects@zer0pa.ai.
 
