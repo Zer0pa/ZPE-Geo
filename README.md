@@ -193,7 +193,7 @@ After a successful repo-local verification you should have:
 
 ### License Boundary
 
-- Repo-root package metadata uses `LicenseRef-Zer0pa-SAL-6.2`.
+- Repo-root package metadata uses `LicenseRef-Zer0pa-SAL-7.0`.
 - `LICENSE` remains the in-repo legal text shipped with this checkout.
 - Commercial or hosted use above the SAL threshold requires contact at `architects@zer0pa.ai`.
 - `LICENSE` is the legal source of truth. Repo docs summarize it; they do not override it.
