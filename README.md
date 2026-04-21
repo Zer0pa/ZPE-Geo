@@ -101,20 +101,10 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 
 | Field | Value |
 |-------|-------|
-| Verdict | NOT_RELEASE_READY |
-| Release posture | Live work in progress; not a final official release |
+| Verdict | BLOCKED |
+| Commit SHA | 30bc0b69f5d6 |
 | Confidence | 62.5% |
-| Source | [`proofs/artifacts/2026-03-21_operator_status/README.md`](proofs/artifacts/2026-03-21_operator_status/README.md) + [`proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json`](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) |
-
-> **Evaluators:** Proof surface available for inspection. See Open Risks for remaining gaps. Contact hello@zer0pa.com.
-
-- Supporting operator pack: [proofs/artifacts/2026-03-21_operator_status/README.md](proofs/artifacts/2026-03-21_operator_status/README.md)
-- Open gates: `GEO-C001`, `GEO-C002`, `GEO-C004`
-- Confidence basis: `5 / 8` tracked claims green on [proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json)
-
-<p align="center">
-  <img src=".github/assets/readme/zpe-masthead-option-3-2.gif" alt="ZPE Geo Mid Masthead" width="100%">
-</p>
+| Source | proofs/artifacts/2026-03-21_operator_status/README.md |
 
 ## Tests and Verification
 
