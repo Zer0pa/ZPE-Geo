@@ -5,7 +5,7 @@
 <h1 align="center">ZPE Geo</h1>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Zer0pa%20SAL-e5e7eb?labelColor=111111" alt="License: Zer0pa SAL"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v7.0-e5e7eb?labelColor=111111" alt="License: SAL v7.0"></a>
   <a href="code/README.md"><img src="https://img.shields.io/badge/python-3.11%2B-e5e7eb?labelColor=111111" alt="Python 3.11+"></a>
   <img src="https://img.shields.io/badge/release%20posture-not%20release--ready-e5e7eb?labelColor=111111" alt="Release posture: not release-ready">
   <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/current%20operator%20state-red%20claims%20remain-e5e7eb?labelColor=111111" alt="Current operator state: red claims remain"></a>
@@ -183,7 +183,7 @@ After a successful repo-local verification you should have:
 
 ### License Boundary
 
-- Repo-root package metadata uses `LicenseRef-Zer0pa-SAL-6.2`.
+- Repo-root package metadata uses `LicenseRef-Zer0pa-SAL-7.0`.
 - `LICENSE` remains the in-repo legal text shipped with this checkout.
 - Commercial or hosted use above the SAL threshold requires contact at `architects@zer0pa.ai`.
 - `LICENSE` is the legal source of truth. Repo docs summarize it; they do not override it.
@@ -210,7 +210,7 @@ After a successful repo-local verification you should have:
 |---|---|
 | **Ideal first buyer** | Mobility analytics platform or fleet telematics team |
 | **Pain statement** | Large movement-trace archives are expensive to store and operationally painful to search — conventional compression destroys spatial query capability |
-| **Deployment model** | Python SDK with H3 spatial backend, private-stage |
+| **Deployment model** | Python SDK with H3 spatial backend |
 | **Family position** | Product candidate — the trajectory compression problem has clear enterprise buyers |
 
 ## Historical Context Only
