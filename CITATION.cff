@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  If you use ZPE-Geo, please cite this repository record.
+type: software
+title: "ZPE-Geo: Deterministic geospatial trajectory codec with H3 spatial indexing"
+authors:
+  - name: "Zer0pa (Pty) Ltd"
+    email: architects@zer0pa.ai
+version: 0.1.0
+repository-code: https://github.com/Zer0pa/ZPE-Geo
+url: https://github.com/Zer0pa/ZPE-Geo
+license: LicenseRef-Zer0pa-SAL-7.0
+abstract: >-
+  ZPE-Geo is a deterministic geospatial trajectory codec that compresses
+  movement traces using 8-compass direction tokenisation, magnitude
+  quantisation, speed quantisation, and run-length encoding. H3 hexagonal
+  spatial indexing is built at encode time to support spatial-range queries
+  on the compressed representation. Applicable domains include AIS vessel
+  tracking, AV telemetry, fleet telematics, and logistics trajectory storage.
+keywords:
+  - geospatial trajectories
+  - deterministic codec
+  - trajectory compression
+  - H3 spatial indexing
+  - AIS
+  - AV telemetry
+  - compass-8
+  - run-length encoding
