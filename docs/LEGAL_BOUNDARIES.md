@@ -4,7 +4,7 @@
 
 # Legal Boundaries
 
-This repo is a private staged workstream surface. It is not a public-release statement of final launch state.
+This repo is a source-available workstream surface. It is an always-in-beta codec and proof lane, not a statement of final launch state.
 
 <p>
   <img src="../.github/assets/readme/section-bars/scope.svg" alt="SCOPE" width="100%">
