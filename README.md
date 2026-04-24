@@ -102,7 +102,7 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 | Field | Value |
 |-------|-------|
 | Verdict | BLOCKED |
-| Commit SHA | 30bc0b69f5d6 |
+| Commit SHA | 62814a4c279f |
 | Confidence | 62.5% |
 | Source | proofs/artifacts/2026-03-21_operator_status/README.md |
 
@@ -124,7 +124,7 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 | proofs/artifacts/2026-03-21_operator_status/README.md | VERIFIED |
 | proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json | VERIFIED |
 | proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md | VERIFIED |
-| proofs/artifacts/2026-02-20_zpe_geo_wave1/ | ARCHIVED_ONLY |
+| proofs/artifacts/2026-02-20_zpe_geo_wave1/ | VERIFIED |
 
 Quickest outsider orientation:
 

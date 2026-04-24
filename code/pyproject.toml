@@ -7,9 +7,31 @@ name = "zpe-geo"
 version = "0.1.0"
 description = "Deterministic geospatial trajectory codec, search surface, and staged proof bundle."
 requires-python = ">=3.11"
-authors = [{name = "Zer0pa"}]
-license = "LicenseRef-Zer0pa-SAL-7.0"
+authors = [{name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai"}]
+license = {text = "LicenseRef-Zer0pa-SAL-7.0"}
 dependencies = []
+keywords = [
+    "geospatial",
+    "trajectories",
+    "compression",
+    "H3",
+    "AIS",
+    "AV telemetry",
+    "spatial indexing",
+]
+classifiers = [
+    "License :: Other/Proprietary License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Development Status :: 4 - Beta",
+]
+
+[project.urls]
+Homepage = "https://github.com/Zer0pa/ZPE-Geo"
+Documentation = "https://github.com/Zer0pa/ZPE-Geo#readme"
+Repository = "https://github.com/Zer0pa/ZPE-Geo"
+Issues = "https://github.com/Zer0pa/ZPE-Geo/issues"
+Changelog = "https://github.com/Zer0pa/ZPE-Geo/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]

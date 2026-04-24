@@ -26,7 +26,7 @@ Canonical anchors:
 | --- | --- | --- |
 | Front door | Current repo summary and first-hop routing | [../README.md](../README.md) |
 | Package surface | Install-facing Python package, scripts, fixtures, and lightweight tests | [../code/](../code/) |
-| Current verdict surface | Governing current repo status and release posture | [../proofs/FINAL_STATUS.md](../proofs/FINAL_STATUS.md) |
+| Current verdict surface | Governing current repo status and release posture | [../proofs/artifacts/2026-03-21_operator_status/README.md](../proofs/artifacts/2026-03-21_operator_status/README.md) |
 | Current supporting evidence | Copied-back March 21 operator status pack | [../proofs/artifacts/2026-03-21_operator_status/](../proofs/artifacts/2026-03-21_operator_status/) |
 | Historical evidence | Archived February 20 generated bundle | [../proofs/artifacts/2026-02-20_zpe_geo_wave1/](../proofs/artifacts/2026-02-20_zpe_geo_wave1/) |
 | Outside-repo operator resources | Heavy data, secrets, and uncopied orchestration state | outside repo boundary |
@@ -46,8 +46,8 @@ Canonical anchors:
 
 | Evidence family | Primary source | Canonical interpretation layer |
 | --- | --- | --- |
-| Current release posture and current blocking claims | [../proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/](../proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/) | [../proofs/FINAL_STATUS.md](../proofs/FINAL_STATUS.md) |
-| Historical compression, fidelity, latency, search, and H3 facts | [../proofs/artifacts/2026-02-20_zpe_geo_wave1/](../proofs/artifacts/2026-02-20_zpe_geo_wave1/) | [../proofs/CONSOLIDATED_PROOF_REPORT.md](../proofs/CONSOLIDATED_PROOF_REPORT.md) |
+| Current release posture and current blocking claims | [../proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/](../proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/) | [../proofs/artifacts/2026-03-21_operator_status/README.md](../proofs/artifacts/2026-03-21_operator_status/README.md) |
+| Historical compression, fidelity, latency, search, and H3 facts | [../proofs/artifacts/2026-02-20_zpe_geo_wave1/](../proofs/artifacts/2026-02-20_zpe_geo_wave1/) | [../proofs/artifacts/2026-02-20_zpe_geo_wave1/claim_status_delta.md](../proofs/artifacts/2026-02-20_zpe_geo_wave1/claim_status_delta.md) |
 | Package-alignment and install-surface truth | [../proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md](../proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md) | [../code/README.md](../code/README.md) |
 
 <p>

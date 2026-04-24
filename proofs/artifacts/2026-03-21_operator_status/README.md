@@ -27,7 +27,7 @@ It exists so the repo can state current March 21 status locally instead of refer
 
 ## How To Read It
 
-- Read [../../FINAL_STATUS.md](../../FINAL_STATUS.md) as the governing current verdict.
+- Read this README as the governing current verdict route for the copied-back March 21 operator status pack.
 - Read this pack as supporting current operator evidence, not as a standalone interpretation layer.
-- Read [../../CONSOLIDATED_PROOF_REPORT.md](../../CONSOLIDATED_PROOF_REPORT.md) for the full current-versus-historical interpretation.
+- Read [../2026-02-20_zpe_geo_wave1/claim_status_delta.md](../2026-02-20_zpe_geo_wave1/claim_status_delta.md) for the archived historical claim-status interpretation.
 - Read [../2026-02-20_zpe_geo_wave1/](../2026-02-20_zpe_geo_wave1/) as historical generated evidence.
