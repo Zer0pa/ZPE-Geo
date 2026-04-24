@@ -102,7 +102,7 @@ ACM 2025: [doi:10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3
 | Field | Value |
 |-------|-------|
 | Verdict | BLOCKED |
-| Commit SHA | 30bc0b69f5d6 |
+| Commit SHA | 62814a4c279f |
 | Confidence | 62.5% |
 | Source | proofs/artifacts/2026-03-21_operator_status/README.md |
 

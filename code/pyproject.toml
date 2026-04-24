@@ -7,7 +7,7 @@ name = "zpe-geo"
 version = "0.1.0"
 description = "Deterministic geospatial trajectory codec, search surface, and staged proof bundle."
 requires-python = ">=3.11"
-authors = [{name = "Zer0pa"}]
+authors = [{name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai"}]
 license = "LicenseRef-Zer0pa-SAL-7.0"
 dependencies = []
 
