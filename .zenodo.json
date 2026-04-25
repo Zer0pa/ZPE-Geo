@@ -1,0 +1,28 @@
+{
+  "title": "ZPE-Geo: Deterministic geospatial trajectory codec with H3 spatial indexing",
+  "description": "Compress movement traces and keep them spatially searchable. ZPE-Geo is deterministic trajectory compression with H3 hexagonal spatial indexing, a maneuver-search surface on the compressed representation, and fidelity validation.",
+  "creators": [
+    {
+      "name": "Zer0pa (Pty) Ltd",
+      "affiliation": "Zer0pa (Pty) Ltd"
+    }
+  ],
+  "keywords": [
+    "geospatial",
+    "trajectory compression",
+    "H3",
+    "spatial search",
+    "fleet telematics",
+    "AV telemetry",
+    "AIS"
+  ],
+  "license": "LicenseRef-Zer0pa-SAL-7.0",
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Zer0pa/ZPE-Geo",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

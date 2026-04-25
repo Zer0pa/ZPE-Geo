@@ -9,7 +9,7 @@ authors:
 version: 0.1.0
 repository-code: https://github.com/Zer0pa/ZPE-Geo
 url: https://github.com/Zer0pa/ZPE-Geo
-license: LicenseRef-Zer0pa-SAL-7.0
+license-url: https://github.com/Zer0pa/ZPE-Geo/blob/main/LICENSE
 abstract: >-
   ZPE-Geo is a deterministic geospatial trajectory codec that compresses
   movement traces using 8-compass direction tokenisation, magnitude
