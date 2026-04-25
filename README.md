@@ -90,6 +90,15 @@ python -m pytest code/tests -q
 python -m build
 ```
 
+## Commercial Readiness
+
+| Field | Value |
+|-------|-------|
+| Verdict | BLOCKED |
+| Commit SHA | 62814a4c279f |
+| Confidence | 62.5% |
+| Source | proofs/artifacts/2026-03-21_operator_status/README.md |
+
 ## Proof Routes
 
 | Route | Purpose |
