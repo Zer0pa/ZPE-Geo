@@ -37,7 +37,7 @@ All numbers below are generated from committed proof artifacts. Fixture-level be
 | Microsoft GeoLife GPS (real extract) | 5 trajectories | 27.3× | [`proofs/artifacts/real_world_benchmarks/geolife_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/geolife_extract_benchmark.json) |
 | OSM Monaco highways (real Geofabrik extract) | 5 trajectories | 12.7× | [`proofs/artifacts/real_world_benchmarks/osm_monaco_way_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/osm_monaco_way_extract_benchmark.json) |
 
-Compression ratios compare uncompressed raw JSON payload bytes to encoded zpgeo payload bytes. Coordinate roundtrip is lossy: max absolute error is 1.28 × 10⁻⁶° on AIS WGS84 fixtures and 0.025 m on AV XY fixtures at the shipped quantization step.
+Compression ratios compare uncompressed raw JSON payload bytes to encoded zpgeo payload bytes. Coordinate roundtrip is lossy: max absolute error is 1.28 × 10⁻⁶° on AIS WGS84 fixtures ([`proofs/artifacts/fixture_benchmarks/ais_noaa_fixture_v1_benchmark.json`](proofs/artifacts/fixture_benchmarks/ais_noaa_fixture_v1_benchmark.json) → `roundtrip.max_abs_coordinate_error`) and 0.025 m on AV XY fixtures ([`proofs/artifacts/fixture_benchmarks/av_argoverse2_fixture_v1_benchmark.json`](proofs/artifacts/fixture_benchmarks/av_argoverse2_fixture_v1_benchmark.json) → `roundtrip.max_abs_coordinate_error`) at the shipped quantization step.
 
 ### Fidelity
 
