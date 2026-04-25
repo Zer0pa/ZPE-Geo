@@ -1,4 +1,0 @@
-## main...origin/main
- D SUPPORT.md
- M proofs/runbooks/REPO_DOCS_ALIGNMENT_PLAN_2026-03-21.md
-?? proofs/artifacts/2026-03-22_repo_root_cleanup/
