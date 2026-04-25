@@ -20,7 +20,6 @@ keywords = [
     "ais",
 ]
 classifiers = [
-    "License :: Other/Proprietary License",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
     "Development Status :: 3 - Alpha",
