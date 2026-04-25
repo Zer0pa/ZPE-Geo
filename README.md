@@ -10,9 +10,17 @@
   <a href="proofs/artifacts/2026-03-21_operator_status/README.md"><img src="https://img.shields.io/badge/operator%20status-current%20pack-e5e7eb?labelColor=111111" alt="Operator status: current pack"></a>
 </p>
 
-ZPE-Geo ships a repo-local Python package for deterministic trajectory encoding, H3-backed indexing helpers, and maneuver-search utilities over shipped fixtures.
+ZPE-Geo is a deterministic trajectory codec: encode, compress, and search GPS and XY trajectories with bit-exact round-trip guarantees. It ships a repo-local Python package covering trajectory encoding, H3-backed spatial indexing, and maneuver-search over committed fixtures.
+
+**Above baseline:** on NOAA AIS synthetic trajectories (190-traj. fixture), ZPE-Geo compresses JSON→zpgeo at **450.8× mean** versus **Douglas-Peucker 314.8×** on the same fixture ([proof](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json)). On a 34,668-way Rhode Island OSM extract, **13.8× vs DP 6.5×** at ε=0.5 m ([proof](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json)). Both comparisons use in-lane DP calibration runs on the same data; ACM 2025 dataset alignment is INCONCLUSIVE — see caveats below.
+
+ZPE-Geo is one of 17 independent encoding products in the Zer0pa ZPE portfolio. It is useful now and improving continuously.
 
 This README only keeps claims that are exercised by the repo CI test surface and anchored to proof files committed in this repository. Historical and operator-status material remains available through the proof routes below.
+
+## What This Is
+
+ZPE-Geo encodes trajectories to a compact binary format (`zpgeo`), preserving spatial fidelity within documented error bounds, and indexes them for sub-millisecond maneuver search. The codec is deterministic: the same input always produces the same output, byte for byte.
 
 ## CI-Exercised Surface
 
