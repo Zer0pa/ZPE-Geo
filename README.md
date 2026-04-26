@@ -12,7 +12,7 @@
 
 ZPE-Geo is a deterministic trajectory codec: encode, compress, and search GPS and XY trajectories with bit-exact round-trip guarantees. It ships a repo-local Python package covering trajectory encoding, H3-backed spatial indexing, and maneuver-search over committed fixtures.
 
-**Above baseline:** on NOAA AIS synthetic trajectories (190-traj. fixture), ZPE-Geo compresses JSON→zpgeo at **450.8× mean** versus **Douglas-Peucker 314.8×** on the same fixture ([proof](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json)). On a 34,668-way Rhode Island OSM extract, **13.8× vs DP 6.5×** at ε=0.5 m ([proof](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json)). Both comparisons use in-lane DP calibration runs on the same data; ACM 2025 dataset alignment is INCONCLUSIVE — see caveats below.
+**Above baseline (real-world headline):** on a 34,668-way Rhode Island OSM extract, ZPE-Geo compresses JSON→zpgeo at **13.8× vs Douglas-Peucker 6.5×** at ε=0.5 m ([proof](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json)). Real-world AIS, GeoLife GPS, and OSM extracts land in the **12.7×–27.3×** band on the same DP calibration. Synthetic-fixture ceilings are higher and reported in the benchmarks section. ACM 2025 dataset alignment is INCONCLUSIVE — see caveats below. ZPE-Geo trades fidelity for compression on static road-graph data — DTW p95 32.4 m vs DP 16.8 m; acceptable for open-ocean AIS and long-haul fleet archival, not for road-graph navigation.
 
 ZPE-Geo is one of 17 independent encoding products in the Zer0pa ZPE portfolio. It is useful now and improving continuously.
 
@@ -33,7 +33,7 @@ ZPE-Geo encodes trajectories to a compact binary format (`zpgeo`), preserving sp
 
 ## Performance Metrics
 
-All numbers below are generated from committed proof artifacts. Fixture-level benchmarks use synthetic schema-faithful data. Real-world extracts use public-domain or open-license sources.
+All numbers below are generated from committed proof artifacts. Real-world extracts (public-domain or open-license sources) carry the headline framing. Synthetic schema-faithful fixtures sit above as a **synthetic ceiling** — useful for codec stress and parity calibration, not as the credibility-bearing number.
 
 ### Compression
 
@@ -76,7 +76,7 @@ The simulated 10 M corpus result uses deterministic index replication over the 2
 | Compression ratio mean (AIS synthetic) | 450.8× | Douglas-Peucker 314.8× | 190-traj. NOAA AIS fixture | ACM 2025 in-lane DP framing — [dl.acm.org/doi/10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3770598) | [`geo_ais_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json) |
 | Compression ratio mean (OSM full extract) | 13.8× | Douglas-Peucker 6.5× (ε=0.5 m) | 34,668-way Rhode Island OSM extract | Same DP calibration; `osm_parity_full_corpus_report.json` | [`osm_parity_full_corpus_report.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json) |
 
-Caveats: The ACM 2025 paper dataset parity is labeled INCONCLUSIVE in the proof record (`geo_ais_benchmark.json` → `comparators.acm_2025_framing`) because supplementary dataset alignment was not completed. The DP compression numbers are generated from the repo's own DP calibration runs on the same fixtures; they are not taken from the ACM paper directly. DTW fidelity parity on the OSM full extract: ZPE p95 32.4 m vs DP p95 16.8 m at ε=0.5 m — ZPE trades some fidelity for higher compression on static road-graph data.
+Headline framing: the **real-world OSM row (13.8× vs DP 6.5×)** is the credibility-bearing comparison. The AIS synthetic row (450.8× vs DP 314.8×) is a **synthetic ceiling** — codec stress on schema-faithful generated trajectories, not real-world performance. Caveats: ACM 2025 paper dataset parity is labeled INCONCLUSIVE in the proof record (`geo_ais_benchmark.json` → `comparators.acm_2025_framing`) because supplementary dataset alignment was not completed; the DP numbers are from the repo's own in-lane calibration on the same fixtures, not lifted from the ACM paper. **Explicit fidelity disclosure:** ZPE-Geo trades fidelity for compression on static road-graph data — DTW p95 32.4 m vs DP 16.8 m at ε=0.5 m. Acceptable for open-ocean AIS and long-haul fleet archival; not acceptable for road-graph navigation.
 
 ## Quick Verify
 
@@ -121,3 +121,10 @@ The public repo-local import surface is:
 - `zpe_geo.ManeuverSearchIndex`
 
 See [LICENSE](LICENSE) for the governing license text.
+
+## Upcoming Workstreams
+
+This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
+
+- **ACM 2025 dataset alignment resolution** — Research-Deferred — Investigation Underway. INCONCLUSIVE alignment must be diagnosed; either the comparison is fixed or the dataset is formally excluded with rationale.
+- **Adaptive primitive for road-graph fidelity** — Research-Deferred — Investigation Underway. Foundations exist via H3 indexing; primitive-level investigation needed to close the regression vs Douglas-Peucker on static road graphs.
