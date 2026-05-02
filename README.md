@@ -22,7 +22,7 @@ This README only keeps claims that are exercised by the repo CI test surface and
 
 Deterministic trajectory codec. Compact zpgeo packets, documented spatial error bounds, and sub-millisecond maneuver search. Install from PyPI: `pip install zpe-geo`
 
-ZPE-Geo is a **trajectory archive and search codec** — not a navigation system, not a streaming playback codec, and not a lossless geometry store. Coordinate round-trip is lossy at the shipped quantization step (max absolute error 1.28 × 10⁻⁶° on AIS WGS84; 0.025 m on AV XY). The current Commercial Readiness verdict is BLOCKED — see §6.
+ZPE-Geo is a **trajectory archive and search codec** — not a navigation system, not a streaming playback codec, and not a lossless geometry store. Coordinate round-trip is lossy at the shipped quantization step (max absolute error 1.28 × 10⁻⁶° on AIS WGS84; 0.025 m on AV XY). The current Readiness verdict is BLOCKED.
 
 ## Codec Mechanics
 
@@ -120,6 +120,8 @@ No claim of blind-clone closure (GEO-C001); No claim of full-corpus closure (GEO
 | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json` | VERIFIED |
 | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_benchmark.json` | VERIFIED |
 | `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_fidelity.json` | VERIFIED |
+
+> Display-anchor policy: the six rows above are the canonical proof-anchor set consumed by website sync. Additional artifact paths in support sections are supplemental evidence, not display anchors.
 
 ## Repo Shape
 
