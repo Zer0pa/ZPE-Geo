@@ -20,19 +20,26 @@ This README only keeps claims that are exercised by the repo CI test surface and
 
 ## What This Is
 
-ZPE-Geo encodes trajectories to a compact binary format (`zpgeo`), preserving spatial fidelity within documented error bounds, and indexes them for sub-millisecond maneuver search. The codec is deterministic: the same input always produces the same output, byte for byte.
+Deterministic trajectory codec. Compact zpgeo packets, documented spatial error bounds, and sub-millisecond maneuver search. Install from PyPI: `pip install zpe-geo`
 
 ZPE-Geo is a **trajectory archive and search codec** — not a navigation system, not a streaming playback codec, and not a lossless geometry store. Coordinate round-trip is lossy at the shipped quantization step (max absolute error 1.28 × 10⁻⁶° on AIS WGS84; 0.025 m on AV XY). The current Commercial Readiness verdict is BLOCKED — see §6.
 
+## Codec Mechanics
+
+<p>
+  <img src=".github/assets/readme/lane-mechanics/GEO.gif" alt="ZPE-Geo Codec Mechanics animation" width="100%">
+</p>
+
 | Field | Value |
-|-------|-------|
+| ------- | ------- |
 | Architecture | GEO_STREAM |
 | Encoding | GEO_DELTA_V1 |
+| Mechanics Asset | `.github/assets/readme/lane-mechanics/GEO.gif` |
 
 ## Key Metrics
 
 | Metric | Value | Baseline |
-|--------|-------|----------|
+| -------- | ------- | ---------- |
 | COMPRESSION_AIS_SYNTHETIC | 450.8× mean | Douglas-Peucker 314.8× |
 | COMPRESSION_AV_SYNTHETIC | 123.1× mean | — |
 | MANEUVER_PRECISION | P@10 = 1.0 (all query types) | 210-traj fixture + 1,610-traj scale eval |
@@ -40,25 +47,45 @@ ZPE-Geo is a **trajectory archive and search codec** — not a navigation system
 
 > Source: [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json), [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_benchmark.json), [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_maneuver_search_eval.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_maneuver_search_eval.json), [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_query_latency_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_query_latency_benchmark.json)
 
-## Competitive Benchmarks
+## Repo Identity
 
-| Comparison | **ZPE-Geo** | Baseline | Dataset | Citation | Proof artifact |
-|------------|-------------|----------|---------|---------|----------------|
-| **Compression ratio mean (OSM full extract)** | **13.8×** | Douglas-Peucker 6.5× (ε=0.5 m) | 34,668-way Rhode Island OSM extract | Same DP calibration; `osm_parity_full_corpus_report.json` | [`osm_parity_full_corpus_report.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json) |
-| Compression ratio mean (AIS synthetic) | 450.8× | Douglas-Peucker 314.8× | 190-traj. NOAA AIS fixture (synthetic ceiling) | ACM 2025 in-lane DP framing — [dl.acm.org/doi/10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3770598) | [`geo_ais_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json) |
+| Field | Value |
+| ------- | ------- |
+| Identifier | ZPE-Geo |
+| Repository | https://github.com/Zer0pa/ZPE-Geo |
+| Section | encoding |
+| Visibility | PUBLIC |
+| Architecture | GEO_STREAM |
+| Encoding | GEO_DELTA_V1 |
+| Commit SHA | 62814a4c279f |
+| License | SAL-7.0 |
+| Authority Source | March 21 operator status pack |
 
-Headline framing: the **real-world OSM row (13.8× vs DP 6.5×)** is the credibility-bearing comparison. The AIS synthetic row (450.8× vs DP 314.8×) is a **synthetic ceiling** — codec stress on schema-faithful generated trajectories, not real-world performance. Caveats: ACM 2025 paper dataset parity is INCONCLUSIVE (`geo_ais_benchmark.json` → `comparators.acm_2025_framing`) because supplementary dataset alignment was not completed; the DP numbers are from the repo's own in-lane calibration on the same fixtures, not lifted from the ACM paper. **Explicit fidelity disclosure:** ZPE-Geo trades fidelity for compression on static road-graph data — DTW p95 32.4 m vs DP 16.8 m at ε=0.5 m. Acceptable for open-ocean AIS and long-haul fleet archival; not acceptable for road-graph navigation.
+## Readiness
+
+| Field | Value |
+| ------- | ------- |
+| Verdict | BLOCKED |
+| Checks | 8/8 |
+| Anchors | 6 display anchors |
+| Confidence | 62.5% |
+| Commit | 62814a4c279f |
+| Authority | March 21 operator status pack |
+
+### Honest Blocker
+
+No claim of blind-clone closure (GEO-C001); No claim of full-corpus closure (GEO-C002); No claim of release readiness (GEO-C004)
 
 ## What We Prove
 
-- `encode_trajectory` and `decode_trajectory` round-trip shipped XY and WGS84 fixtures without dropping point counts — exercised by `code/tests/test_codec.py`, `code/tests/test_roundtrip.py`, `code/tests/test_edge_cases.py` → [`proofs/artifacts/fixture_benchmarks/`](proofs/artifacts/fixture_benchmarks/)
-- `ManeuverSearchIndex` builds and answers deterministic label, bounding-box, and radius queries on repo-local fixtures with P@10 = 1.0 across all query types — exercised by `code/tests/test_search.py`, `code/tests/test_search_comprehensive.py` → [`geo_maneuver_search_eval.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_maneuver_search_eval.json)
-- `H3Bridge` round-trip and cell-path behavior stays stable across tested resolutions and edge coordinates — exercised by `code/tests/test_h3bridge.py`, `code/tests/test_h3bridge_resolution.py` → [`geo_h3_roundtrip_results.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_h3_roundtrip_results.json)
-- The repo-root package installs as an editable package and builds as a distribution — GitHub Actions CI + local `python -m build` → [`TECHNICAL_ALIGNMENT_REPORT.md`](proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md)
-- Compression ratio 13.8× mean on 34,668-way real-world OSM extract vs Douglas-Peucker 6.5× at ε=0.5 m — aggregate corpus, not single-sequence → [`osm_parity_full_corpus_report.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json)
-- Query latency mean 0.040 ms, p95 0.064 ms on simulated 10 M trajectory corpus (deterministic index replication over 210-trajectory fixture) → [`geo_query_latency_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_query_latency_benchmark.json)
-- Online encode latency mean 0.107 ms, p95 0.122 ms (threshold: 10 ms) across 39,907 streamed updates → [`geo_stream_latency.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_stream_latency.json)
-- Real-world AIS (21.0×), GeoLife GPS (27.3×), OSM Monaco (12.7×) compression ratios on 5-trajectory public-domain extracts → [`real_world_benchmarks/`](proofs/artifacts/real_world_benchmarks/)
+- encode_trajectory and decode_trajectory round-trip shipped XY and WGS84 fixtures without dropping point counts — exercised by code/tests/test_codec.py, code/tests/test_roundtrip.py, code/tests/test_edge_cases.py → proofs/artifacts/fixture_benchmarks/
+- ManeuverSearchIndex builds and answers deterministic label, bounding-box, and radius queries on repo-local fixtures with P@10 = 1.0 across all query types — exercised by code/tests/test_search.py, code/tests/test_search_comprehensive.py → geo_maneuver_search_eval.json
+- H3Bridge round-trip and cell-path behavior stays stable across tested resolutions and edge coordinates — exercised by code/tests/test_h3bridge.py, code/tests/test_h3bridge_resolution.py → geo_h3_roundtrip_results.json
+- The repo-root package installs as an editable package and builds as a distribution — GitHub Actions CI + local python -m build → TECHNICAL_ALIGNMENT_REPORT.md
+- Compression ratio 13.8× mean on 34,668-way real-world OSM extract vs Douglas-Peucker 6.5× at ε=0.5 m — aggregate corpus, not single-sequence → osm_parity_full_corpus_report.json
+- Query latency mean 0.040 ms, p95 0.064 ms on simulated 10 M trajectory corpus (deterministic index replication over 210-trajectory fixture) → geo_query_latency_benchmark.json
+- Online encode latency mean 0.107 ms, p95 0.122 ms (threshold: 10 ms) across 39,907 streamed updates → geo_stream_latency.json
+- Real-world AIS (21.0×), GeoLife GPS (27.3×), OSM Monaco (12.7×) compression ratios on 5-trajectory public-domain extracts → real_world_benchmarks/
 
 ## What We Don't Claim
 
@@ -70,65 +97,49 @@ Headline framing: the **real-world OSM row (13.8× vs DP 6.5×)** is the credibi
 - No claim of superiority over all compression algorithms. Comparison is scoped to Douglas-Peucker with documented calibration parameters.
 - This codec does not implement lossless geometry storage. It is not a substitute for formats requiring exact coordinate preservation (e.g., legal survey, precision navigation).
 
-## Commercial Readiness
-
-| Field | Value |
-|-------|-------|
-| Verdict | BLOCKED |
-| Commit SHA | 62814a4c279f |
-| Confidence | 62.5% |
-| Source | proofs/artifacts/2026-03-21_operator_status/README.md |
-
-## Tests and Verification
+## Verification Status
 
 | Code | Check | Verdict |
-|------|-------|---------|
-| V_01 — `code/tests/test_codec.py` | `encode_trajectory` / `decode_trajectory` round-trip; no point-count drop on XY and WGS84 fixtures | PASS |
-| V_02 — `code/tests/test_roundtrip.py` | Byte-exact determinism; coordinate error within documented bounds | PASS |
-| V_03 — `code/tests/test_edge_cases.py` | Edge coordinate inputs, empty trajectories, single-point degenerate cases | PASS |
-| V_04 — `code/tests/test_search.py` | `ManeuverSearchIndex` label, bounding-box, radius queries on 210-traj fixture | PASS |
-| V_05 — `code/tests/test_search_comprehensive.py` | P@10 = 1.0 across all query types; 1,610-traj scale eval | PASS |
-| V_06 — `code/tests/test_h3bridge.py` | `H3Bridge` round-trip stability across tested resolutions | PASS |
-| V_07 — `code/tests/test_h3bridge_resolution.py` | Cell-path behavior at edge coordinates; resolution sweep | PASS |
-| V_08 — GitHub Actions CI | Package installs as editable; `python -m build` produces distribution | PASS |
+| ------ | ------- | --------- |
+| V_01 | code/tests/test_codec.py — encode_trajectory / decode_trajectory round-trip; no point-count drop on XY and WGS84 fixtures | PASS |
+| V_02 | code/tests/test_roundtrip.py — Byte-exact determinism; coordinate error within documented bounds | PASS |
+| V_03 | code/tests/test_edge_cases.py — Edge coordinate inputs, empty trajectories, single-point degenerate cases | PASS |
+| V_04 | code/tests/test_search.py — ManeuverSearchIndex label, bounding-box, radius queries on 210-traj fixture | PASS |
+| V_05 | code/tests/test_search_comprehensive.py — P@10 = 1.0 across all query types; 1,610-traj scale eval | PASS |
+| V_06 | code/tests/test_h3bridge.py — H3Bridge round-trip stability across tested resolutions | PASS |
+| V_07 | code/tests/test_h3bridge_resolution.py — Cell-path behavior at edge coordinates; resolution sweep | PASS |
+| V_08 | GitHub Actions CI — Package installs as editable; python -m build produces distribution | PASS |
 
 ## Proof Anchors
 
 | Path | State |
-|------|-------|
-| [`proofs/artifacts/2026-03-21_operator_status/README.md`](proofs/artifacts/2026-03-21_operator_status/README.md) | VERIFIED — current operator-status pack |
-| [`proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json`](proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json) | VERIFIED — current claim/resource split |
-| [`proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md`](proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md) | VERIFIED — package-alignment evidence |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json) | VERIFIED — AIS synthetic compression + DP comparison |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_benchmark.json) | VERIFIED — AV synthetic compression |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_fidelity.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_fidelity.json) | VERIFIED — AIS DTW fidelity |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_fidelity.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_fidelity.json) | VERIFIED — AV RMSE fidelity |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_maneuver_search_eval.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_maneuver_search_eval.json) | VERIFIED — maneuver search P@10 |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/max_scale_search_eval.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/max_scale_search_eval.json) | VERIFIED — 1,610-traj scale eval |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_query_latency_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_query_latency_benchmark.json) | VERIFIED — query latency p95 |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_stream_latency.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_stream_latency.json) | VERIFIED — online encode latency |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_h3_roundtrip_results.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_h3_roundtrip_results.json) | VERIFIED — H3Bridge round-trip |
-| [`proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json) | VERIFIED — 34,668-way OSM vs DP real-world |
-| [`proofs/artifacts/fixture_benchmarks/ais_noaa_fixture_v1_benchmark.json`](proofs/artifacts/fixture_benchmarks/ais_noaa_fixture_v1_benchmark.json) | VERIFIED — AIS fixture round-trip error |
-| [`proofs/artifacts/fixture_benchmarks/av_argoverse2_fixture_v1_benchmark.json`](proofs/artifacts/fixture_benchmarks/av_argoverse2_fixture_v1_benchmark.json) | VERIFIED — AV fixture round-trip error |
-| [`proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/noaa_ais_day_extract_benchmark.json) | VERIFIED — real NOAA AIS extract 21.0× |
-| [`proofs/artifacts/real_world_benchmarks/geolife_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/geolife_extract_benchmark.json) | VERIFIED — GeoLife GPS extract 27.3× |
-| [`proofs/artifacts/real_world_benchmarks/osm_monaco_way_extract_benchmark.json`](proofs/artifacts/real_world_benchmarks/osm_monaco_way_extract_benchmark.json) | VERIFIED — OSM Monaco extract 12.7× |
-| [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | VERIFIED — repo structure and evidence map |
-| [`docs/LEGAL_BOUNDARIES.md`](docs/LEGAL_BOUNDARIES.md) | VERIFIED — public evidence boundary |
+| ------ | ------- |
+| `proofs/artifacts/2026-03-21_operator_status/README.md` | VERIFIED |
+| `proofs/artifacts/2026-03-21_operator_status/phase0311_runpod/max_claim_resource_map.json` | VERIFIED |
+| `proofs/artifacts/2026-03-21_operator_status/release_alignment/TECHNICAL_ALIGNMENT_REPORT.md` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_av_benchmark.json` | VERIFIED |
+| `proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_fidelity.json` | VERIFIED |
 
 ## Repo Shape
 
-| Key | Value |
-|-----|-------|
-| Proof Artifacts | 52 JSON + 10 markdown files across `proofs/` |
-| Test Modules | 7 (`test_codec`, `test_roundtrip`, `test_edge_cases`, `test_search`, `test_search_comprehensive`, `test_h3bridge`, `test_h3bridge_resolution`) |
-| Package Import Surface | `zpe_geo.encode_trajectory`, `zpe_geo.decode_trajectory`, `zpe_geo.H3Bridge`, `zpe_geo.ManeuverSearchIndex` |
-| Authority Source | `proofs/artifacts/2026-03-21_operator_status/README.md` |
-| License | SAL v7.0 — see [LICENSE](LICENSE) |
-| Install | `pip install -e ".[dev,h3]"` from repo root |
-| Code Location | [`code/`](code/) — see [`code/README.md`](code/README.md) for package details |
-| Docs | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md), [`docs/LEGAL_BOUNDARIES.md`](docs/LEGAL_BOUNDARIES.md) |
+| Field | Value |
+| ------- | ------- |
+| Proof Anchors | 6 display anchors |
+| Modality Lanes | 4 |
+| Architecture | GEO_STREAM |
+| Encoding | GEO_DELTA_V1 |
+| Verification | 8/8 checks |
+| Authority Source | March 21 operator status pack |
+
+## Competitive Benchmarks
+
+| Comparison | **ZPE-Geo** | Baseline | Dataset | Citation | Proof artifact |
+|------------|-------------|----------|---------|---------|----------------|
+| **Compression ratio mean (OSM full extract)** | **13.8×** | Douglas-Peucker 6.5× (ε=0.5 m) | 34,668-way Rhode Island OSM extract | Same DP calibration; `osm_parity_full_corpus_report.json` | [`osm_parity_full_corpus_report.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/osm_parity_full_corpus_report.json) |
+| Compression ratio mean (AIS synthetic) | 450.8× | Douglas-Peucker 314.8× | 190-traj. NOAA AIS fixture (synthetic ceiling) | ACM 2025 in-lane DP framing — [dl.acm.org/doi/10.1145/3764920.3770598](https://dl.acm.org/doi/10.1145/3764920.3770598) | [`geo_ais_benchmark.json`](proofs/artifacts/2026-02-20_zpe_geo_wave1/geo_ais_benchmark.json) |
+
+Headline framing: the **real-world OSM row (13.8× vs DP 6.5×)** is the credibility-bearing comparison. The AIS synthetic row (450.8× vs DP 314.8×) is a **synthetic ceiling** — codec stress on schema-faithful generated trajectories, not real-world performance. Caveats: ACM 2025 paper dataset parity is INCONCLUSIVE (`geo_ais_benchmark.json` → `comparators.acm_2025_framing`) because supplementary dataset alignment was not completed; the DP numbers are from the repo's own in-lane calibration on the same fixtures, not lifted from the ACM paper. **Explicit fidelity disclosure:** ZPE-Geo trades fidelity for compression on static road-graph data — DTW p95 32.4 m vs DP 16.8 m at ε=0.5 m. Acceptable for open-ocean AIS and long-haul fleet archival; not acceptable for road-graph navigation.
 
 ## Quick Start
 
