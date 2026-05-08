@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zpe-geo"
-version = "0.1.0"
+version = "0.1.1"
 description = "Deterministic geospatial trajectory codec, search surface, and staged proof bundle."
 requires-python = ">=3.11"
 authors = [{name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai"}]

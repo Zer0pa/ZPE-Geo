@@ -6,7 +6,7 @@ title: "ZPE-Geo: Deterministic geospatial trajectory codec with H3 spatial index
 authors:
   - name: "Zer0pa (Pty) Ltd"
     email: architects@zer0pa.ai
-version: 0.1.0
+version: 0.1.1
 repository-code: https://github.com/Zer0pa/ZPE-Geo
 url: https://github.com/Zer0pa/ZPE-Geo
 license-url: https://github.com/Zer0pa/ZPE-Geo/blob/main/LICENSE
