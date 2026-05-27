@@ -2,6 +2,32 @@
 
 ## Install / Developer Commands
 
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install zpe-geo`.
+Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-geo/).
+Source: [Zer0pa/ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo/).
+
+```bash
+python3.11 -m pip install zpe-geo
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import zpe_geo
+
+print("zpe-geo", md.version("zpe-geo"))
+PY
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- PyPI copy is stale; the repo keeps a root plus `code/` package layout for source verification.
+<!-- INSTALL-DX:END -->
+
 #### Quick Start
 
 ```bash
