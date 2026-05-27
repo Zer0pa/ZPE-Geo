@@ -66,7 +66,7 @@ python -m build
 <table width="100%">
 <tr>
 <td width="50%" valign="top">
-<div><b>03 · VALUE</b></div>
+<div><b>03 · VALUE OF MARKET</b></div>
       <div>$36.2<span>B</span></div>
       <div>Fleet telematics by 2030; ZPE-Geo addresses the archive-and-search slice, not navigation or fleet intelligence.</div>
 </td>
