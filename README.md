@@ -1,9 +1,6 @@
 # ZPE-Geo
 
-## Install / Developer Commands
-
-<!-- INSTALL-DX:START -->
-#### Package Install
+## Package Install
 
 Installable package: `python3.11 -m pip install zpe-geo`.
 Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-geo/).
@@ -13,32 +10,9 @@ Source: [Zer0pa/ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo/).
 python3.11 -m pip install zpe-geo
 ```
 
-Import smoke:
+For full install, smoke, source, and developer commands, [click here](#install-developer-commands-detailed).
 
-```bash
-python3.11 - <<'PY'
-import importlib.metadata as md
-import zpe_geo
-
-print("zpe-geo", md.version("zpe-geo"))
-PY
-```
-
-Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
-- PyPI copy is stale; the repo keeps a root plus `code/` package layout for source verification.
-<!-- INSTALL-DX:END -->
-
-#### Quick Start
-
-```bash
-git clone https://github.com/Zer0pa/ZPE-Geo.git zpe-geo
-cd zpe-geo
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[dev,h3]"
-python -m pytest code/tests -q
-python -m build
-```
+---
 
 <table width="100%">
 <tr>
@@ -311,3 +285,47 @@ python -m build
 </td>
 </tr>
 </table>
+
+---
+
+<a id="install-developer-commands-detailed"></a>
+
+## Install / Developer Commands Detailed
+
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install zpe-geo`.
+Current release: `0.1.1` on [PyPI](https://pypi.org/project/zpe-geo/).
+Source: [Zer0pa/ZPE-Geo](https://github.com/Zer0pa/ZPE-Geo/).
+
+```bash
+python3.11 -m pip install zpe-geo
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import zpe_geo
+
+print("zpe-geo", md.version("zpe-geo"))
+PY
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.
+- PyPI copy is stale; the repo keeps a root plus `code/` package layout for source verification.
+<!-- INSTALL-DX:END -->
+
+#### Quick Start
+
+```bash
+git clone https://github.com/Zer0pa/ZPE-Geo.git zpe-geo
+cd zpe-geo
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[dev,h3]"
+python -m pytest code/tests -q
+python -m build
+```
