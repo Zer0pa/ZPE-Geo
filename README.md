@@ -19,6 +19,7 @@ For full install, smoke, source, and developer commands, [click here](#install-d
 <td width="100%" valign="top">
 <div><span><b>00 · ZPE-GEO</b> · TRAJECTORY ARCHIVE</span> <span>DEVELOPER-READY · B3 OPEN</span></div>
       <h1>Journeys Seen as <span>Paths, Not Points.</span></h1>
+      <p><strong>Live experiment. Not a release. Ambition headlined. Claims bounded.</strong></p>
       <p>A trajectory archive for the shape of the route · ZPE-Geo · PyPI <em>zpe-geo</em> v0.1.1 · github.com/Zer0pa/ZPE-Geo</p>
       <p>GPS records where you were. It cannot show what the journey looked like. ZPE-Geo keeps the path itself &mdash; the curve of the road, the arc of the vessel, the sweep of the turn &mdash; as a compact archive packet. Movement compresses <strong>13.78&times;</strong> on a 34,668-way OpenStreetMap extract; a maneuver query returns <strong>P@10 = 1.0</strong> on 210 trajectories. Scope is bounded: archive and search only, not navigation, not lossless geometry.</p>
 </td>
